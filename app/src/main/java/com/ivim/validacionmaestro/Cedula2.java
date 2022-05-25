@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.DatePicker;
@@ -19,7 +20,7 @@ public class Cedula2 extends AppCompatActivity {
     private LinearLayout caja_edit_numProfesor,caja_numProfesor_final,caja_edit_apellido1,
             caja_apellido1_final,caja_edit_apellido2,caja_apellido2_final,
             caja_fecha_de_nacimiento,caja_fecha_de_nacimiento_final,caja_edad,caja_nombramiento_actual,
-            caja_nombramiento_actual_final,caja_edit_antiguedad,caja_antiguedad_final;
+            caja_nombramiento_actual_final,caja_edit_antiguedad,caja_antiguedad_final,caja_siguiente_scroll;
     private EditText numProfesor,apellido1_texto,apellido2_texto,fecha_de_nacimiento_texto,
             nombramiento_actual_texto,antiguedad_texto;
     private ImageView guardar_numProfesor,cambiar_numProfesor,guardar_apellido1,cambiar_apellido2,
@@ -27,7 +28,7 @@ public class Cedula2 extends AppCompatActivity {
             cambiar_apellido1,guardar_apellido2,cambiar_nombramiento_actual,
             guardar_nombramiento_actual,guardar_antiguedad,cambiar_antiguedad;
     private TextView numProfesor_final,apellido1,apellido2,edad,nombramiento_actual_vista,
-            antiguedad,fecha_de_nacimiento,ir_formAcademica;
+            antiguedad,fecha_de_nacimiento,ir_formAcademica,ir_capDocente,regresar_datosBasic;
 
 
     @Override
@@ -88,5 +89,25 @@ public class Cedula2 extends AppCompatActivity {
 
         ir_formAcademica = findViewById(R.id.ir_formAcademica);
         formulario_formaDocente = findViewById(R.id.formulario_formaDocente);
+
+        caja_siguiente_scroll = findViewById(R.id.caja_siguiente_scroll);
+        regresar_datosBasic = findViewById(R.id.regresar_datosBasic);
+        ir_capDocente = findViewById(R.id.ir_capDocente);
+
+        ir_formAcademica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_datosBasicos.setVisibility(View.GONE);
+                formulario_formaDocente.setVisibility(View.VISIBLE);
+            }
+        });
+
+        regresar_datosBasic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_datosBasicos.setVisibility(View.VISIBLE);
+                formulario_formaDocente.setVisibility(View.GONE);
+            }
+        });
     }
 }
