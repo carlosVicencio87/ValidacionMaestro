@@ -1,0 +1,3197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Cedula2">
+
+
+
+    <ScrollView
+        android:id="@+id/formulario_datosBasicos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blanco"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="right"
+                    android:text="Numero de profesor"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caja_edit_numProfesor"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <EditText
+
+                    android:id="@+id/numProfesor"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="number"/>
+                <ImageView
+                    android:id="@+id/guardar_numProfesor"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_numProfesor_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/numProfesor_final"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_numProfesor"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:text="Nombre de profesor"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Apellido paterno"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_apellido1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/apellido1_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"/>
+                <ImageView
+                    android:id="@+id/guardar_apellido1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_apellido1_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/apellido1"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_apellido1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Apellido materno"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_apellido2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/apellido2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_apellido2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_apellido2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/apellido2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_apellido2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Nombres"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nombre_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_nombre"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_nombre_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/nombre"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_nombre"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:text="Datos basicos"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Fecha de nacimiento"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_fecha_de_nacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/fecha_de_nacimiento_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="date"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_fecha_de_nacimiento"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_fecha_de_nacimiento_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/fecha_de_nacimiento"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_fecha_de_nacimiento"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Edad"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edad"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/edad"
+                    android:layout_width="300dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Nombramiento actual"
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_nombramiento_actual"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nombramiento_actual_texto"
+                    android:layout_width="200dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/guardar_nombramiento_actual"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_nombramiento_actual_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/nombramiento_actual_vista"
+                    android:layout_width="200dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_nombramiento_actual"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Antiguedad "
+                    android:textColor="@color/negro"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_antiguedad"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/antiguedad_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/guardar_antiguedad"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_antiguedad_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/antiguedad"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_antiguedad"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_siguiente_tab"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ir_formAcademica"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Ir a formacion academica"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/formulario_formaDocente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:text="Formacion Academica"
+                        android:textColor="@color/negro"
+                        android:textSize="25dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:text="Seccion Licenciatura"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Licenciatura"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_licenciatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/apellido1_licenciatura"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"/>
+                    <ImageView
+                        android:id="@+id/guardar_licenciatura"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_licenciatura_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/licenciatura"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_licenciatura"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instPais"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/apellido2_instPais"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instPais"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instPais_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instPais"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_instPais"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtecion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_anoObtencion"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoObtencion_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_anoObtencion"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoObtencion_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoObtencion"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoObtencion"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_cedulaProf"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/cedulaProf_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_cedulaProf"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_cedulaProf_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/cedulaProf"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_cedulaProf"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_lic"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Licenciatura"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_licenciatura2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/apellido1_licenciatura2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"/>
+                    <ImageView
+                        android:id="@+id/guardar_licenciatura2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_licenciatura2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/licenciatura2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_licenciatura2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_inst"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instPais2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/apellido2_instPais2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instPais2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instPais2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instPais2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_instPais2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_ano"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtecion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_anoObtencion2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoObtencion2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_anoObtencion2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoObtencion2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoObtencion2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoObtencion2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_ced"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_cedulaProf2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/cedulaProf2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_cedulaProf2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_cedulaProf2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/cedulaProf2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_cedulaProf2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_agregar_otraLic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/agregar_otraLic"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Agregar Otra Licenciatura"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:text="Seccion Especialidad"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Especialidad"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_especialidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/especialidad_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_especialidad"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/especialidad_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/especialidad"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_especialidad"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instEsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/instEsp_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instEsp_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instEsp"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoEsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoEsp_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoEsp_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoEsp_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduEsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduEsp_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduEsp_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduEsp"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduEsp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_esp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Especialidad"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_especialidad2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/especialidad2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_especialidad2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/especialidad2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/especialidad2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_especialidad2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_instEsp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instEsp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/instEsp2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instEsp_final2"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instEsp2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_anoesp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoEsp2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoEsp2_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoEsp2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoEsp2_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_ceduesp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduEsp2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduEsp2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduEsp_final2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduEsp2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduEsp2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_agregar_otraEsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/agregar_otraEsp"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Agregar otra Especcialidad"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:text="Seccion Maestria"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Maestria"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_maes"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/maes_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_maes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/maes_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/maes"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_maes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instMaes"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/instMaes_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instMaes_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instMaes"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoMaes"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoMaes_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoMaes_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoMaes_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduMaes"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduMaes_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduMaes_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduMaes"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduMaes"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_maes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Maestria"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_maes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/maes2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_maes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/maes2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/maes2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_maes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_instMaes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instMaes2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/instMaes2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instMaes2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instMaes2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_anoMaes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoMaes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoMaes2_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoMaes2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoMaes2_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_ceduMaes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduMaes2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduMaes2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduMaes2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduMaes2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduMaes2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_agregar_maes"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/agregar_otraMaes"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Agregar otra Maestria"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="center"
+                        android:text="Seccion Doctorado"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Doctorado"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_doc"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/doc_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_doc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/doc_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/doc"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_doc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/instDoc_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instDoc_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instDoc"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoDoc_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoDoc_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoDoc_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduDoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduDoc_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduDoc_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduDoc"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduDoc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_doc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Doctorado"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_doc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/doc2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        android:inputType="date"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_doc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/doc2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/doc2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_doc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_instdoc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Institucion y pais"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_instdoc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/instdoc2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/guardar_instdoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_instdoc2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/instdoc2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_instdoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_instdoc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Año de obtencion"
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_anoDoc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/anoDoc2_texto"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/guardar_anoDoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anoDoc2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/anoDoc2_vista"
+                        android:layout_width="200dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:id="@+id/cambiar_anoDoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_anuncio_ceduDoc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/blanco"
+                        android:gravity="left"
+                        android:text="Cedula Profesional "
+                        android:textColor="@color/negro"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_edit_ceduDoc2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ceduDoc2_texto"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:inputType="phone"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/guardar_ceduDoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caja_ceduDoc2_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/ceduDoc2"
+                        android:layout_width="250dp"
+                        android:layout_height="22dp"
+                        android:background="@color/blanco"
+                        android:gravity="bottom"
+                        android:text="nombre de usuario"
+                        android:textColorHint="@color/negro"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/cambiar_ceduDoc2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/palomita"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_agregar_doc"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/agregar_otraDoc"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Agregar otra Maestria"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caja_siguiente_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/regresar_datosBasic"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Regresar a datos basicos"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/ir_capDocente"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Ir a Capacitacion Docente"
+                        android:textColor="@color/negro"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
