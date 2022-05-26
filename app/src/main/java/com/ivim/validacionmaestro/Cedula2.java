@@ -16,19 +16,20 @@ import android.widget.TextView;
 
 public class Cedula2 extends AppCompatActivity {
 
-    private ScrollView formulario_datosBasicos,formulario_formaDocente;
+    private ScrollView formulario_datosBasicos,formulario_formaDocente,formulario_formaCapaDocente,formulario_actuaDisci;
     private LinearLayout caja_edit_numProfesor,caja_numProfesor_final,caja_edit_apellido1,
             caja_apellido1_final,caja_edit_apellido2,caja_apellido2_final,
             caja_fecha_de_nacimiento,caja_fecha_de_nacimiento_final,caja_edad,caja_nombramiento_actual,
-            caja_nombramiento_actual_final,caja_edit_antiguedad,caja_antiguedad_final,caja_siguiente_scroll;
+            caja_nombramiento_actual_final,caja_edit_antiguedad,caja_antiguedad_final,caja_siguiente_scroll,caja_siguiente_scroll2,caja_siguiente_scroll3,caja_agregar_otraLic,caja_cedulaProf2_final,
+            caja_edit_cedulaProf2,caja_anoObtencion2_final,caja_edit_instPais2,caja_licenciatura2_final,caja_edit_licenciatura2;
     private EditText numProfesor,apellido1_texto,apellido2_texto,fecha_de_nacimiento_texto,
             nombramiento_actual_texto,antiguedad_texto;
     private ImageView guardar_numProfesor,cambiar_numProfesor,guardar_apellido1,cambiar_apellido2,
             cambiar_fecha_de_nacimiento,guardar_fecha_de_nacimiento,
             cambiar_apellido1,guardar_apellido2,cambiar_nombramiento_actual,
-            guardar_nombramiento_actual,guardar_antiguedad,cambiar_antiguedad;
+            guardar_nombramiento_actual,guardar_antiguedad,cambiar_antiguedad,guardar_cedulaProf2,cambiar_cedulaProf2;
     private TextView numProfesor_final,apellido1,apellido2,edad,nombramiento_actual_vista,
-            antiguedad,fecha_de_nacimiento,ir_formAcademica,ir_capDocente,regresar_datosBasic;
+            antiguedad,fecha_de_nacimiento,ir_formAcademica,ir_capDocente,regresar_datosBasic,ir_actuaDisciplinar,regresar_datos_formDocente,regresar_datos_actuaDocente,ir_getsionActualizacion,agregar_otraLic,cedulaProf2;
 
 
     @Override
@@ -90,9 +91,30 @@ public class Cedula2 extends AppCompatActivity {
         ir_formAcademica = findViewById(R.id.ir_formAcademica);
         formulario_formaDocente = findViewById(R.id.formulario_formaDocente);
 
+        caja_agregar_otraLic = findViewById(R.id.caja_agregar_otraLic);
+        agregar_otraLic = findViewById(R.id.agregar_otraLic);
+        formulario_formaDocente = findViewById(R.id.formulario_formaDocente);
+        formulario_formaDocente = findViewById(R.id.formulario_formaDocente);
+        guardar_cedulaProf2 = findViewById(R.id.guardar_cedulaProf2);
+        caja_cedulaProf2_final = findViewById(R.id.caja_cedulaProf2_final);
+        cedulaProf2 = findViewById(R.id.cedulaProf2);
+        cambiar_cedulaProf2 = findViewById(R.id.cambiar_cedulaProf2);
+
         caja_siguiente_scroll = findViewById(R.id.caja_siguiente_scroll);
         regresar_datosBasic = findViewById(R.id.regresar_datosBasic);
         ir_capDocente = findViewById(R.id.ir_capDocente);
+
+
+        formulario_formaCapaDocente = findViewById(R.id.formulario_formaCapaDocente);
+        caja_siguiente_scroll2 = findViewById(R.id.caja_siguiente_scroll2);
+        regresar_datos_formDocente = findViewById(R.id.regresar_datos_formDocente);
+        ir_actuaDisciplinar = findViewById(R.id.ir_actuaDisciplinar);
+
+        formulario_actuaDisci = findViewById(R.id.formulario_actuaDisci);
+        regresar_datos_actuaDocente = findViewById(R.id.regresar_datos_actuaDocente);
+
+        caja_siguiente_scroll3 = findViewById(R.id.caja_siguiente_scroll3);
+
 
         ir_formAcademica.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +124,20 @@ public class Cedula2 extends AppCompatActivity {
             }
         });
 
+        agregar_otraLic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anoObtencion2_final.setVisibility(View.VISIBLE);
+                caja_edit_cedulaProf2.setVisibility(View.VISIBLE);
+                caja_edit_instPais2.setVisibility(View.VISIBLE);
+                caja_edit_licenciatura2.setVisibility(View.VISIBLE);
+
+
+
+            }
+        });
+
+
         regresar_datosBasic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,5 +145,36 @@ public class Cedula2 extends AppCompatActivity {
                 formulario_formaDocente.setVisibility(View.GONE);
             }
         });
+        ir_capDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                formulario_formaDocente.setVisibility(View.GONE);
+                formulario_formaCapaDocente.setVisibility(View.VISIBLE);
+            }
+        });
+        regresar_datos_formDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_formaDocente.setVisibility(View.VISIBLE);
+                formulario_formaCapaDocente.setVisibility(View.GONE);
+            }
+        });
+        ir_actuaDisciplinar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                formulario_formaCapaDocente.setVisibility(View.GONE);
+               formulario_actuaDisci.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        regresar_datos_actuaDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_formaCapaDocente.setVisibility(View.VISIBLE);
+                formulario_actuaDisci.setVisibility(View.GONE);
+            }
+        });
+
     }
 }
