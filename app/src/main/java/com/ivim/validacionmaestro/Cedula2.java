@@ -38,7 +38,12 @@ public class Cedula2 extends AppCompatActivity {
             caja_anuncio_horaActua2,caja_edit_anoActua2,caja_anuncio_anoActua2,caja_edit_instPaisActua2,
             caja_anuncio_actuaInts2,caja_edit_actua2,caja_anuncio_tipoActua2,caja_agregar_otraactua3
             ,caja_edit_horaactua3,caja_anuncio_horaactua3,caja_anoactua3,caja_anuncio_anoactua3,caja_edit_intactua3,
-            caja_anuncio_instActua3,caja_actua3,caja_anuncio_actua3;
+            caja_anuncio_instActua3,caja_actua3,caja_anuncio_actua3,caja_anuncio_actua4,caja_actua4,caja_anuncio_instactua4,
+            caja_edit_instactua4,caja_anuncio_anoactua4,caja_anuncio_horasactua4,caja_edit_horaactua4,caja_borrar_otraactua4,
+            caja_anoactua4,caja_borrar_otraGesAca4,caja_agregar_otraGesAca3,caja_edit_tiemGesAcaA4,caja_anuncio_tiemGesAcaA4,caja_edit_intGesAca4,
+            caja_agregar_otraGesAca2,caja_edit_tiemGesAcaA3,caja_anuncio_tiemGesAcaA3,caja_tiemGesAca3,caja_anuncio_tiemGesAca3,caja_edit_intGesAca3,caja_anuncio_intGesAca3,caja_actiPues3,
+            caja_anuncio_actiPues3,caja_agregar_otraGesAca,caja_edit_tiemGesAcaA2,caja_anuncio_tiemGesAcaA2,caja_anuncio_tiemGesAca2,caja_edit_intGesAca2,caja_anuncio_intGesAca2,
+            caja_edit_actiPues2,caja_anuncio_actiPues2,caja_edit_tiemGesAca2,caja_tiemGesAca4,caja_anuncio_tiemGesAca4,caja_anuncio_intGesAca4,caja_actiPues4,caja_anuncio_actiPues4;
 
     private EditText numProfesor,apellido1_texto,apellido2_texto,fecha_de_nacimiento_texto,
             nombramiento_actual_texto,antiguedad_texto;
@@ -53,7 +58,8 @@ public class Cedula2 extends AppCompatActivity {
             ir_expeDiseInge,regresar_expProfe,ir_logProfe,regresar_ExpDise,ir_partColeCam,regresar_logProfe,ir_premios,regresar_partColeCam,ir_aportaRele,
             finalizar_formulario,regresar_preDist,borrar_otraEsp,agregar_otraEsp,agregar_otraMaes,borrar_otraMaes,agregar_otraDoc,borrar_otraDoc,borrar_otraCapa,
             agregar_otraCapa,agregar_otraOtracapa2,borrar_otraCapa2,agregar_otraOtracapa3,borrar_otraCapa3
-            ,agregar_otraActua,borrar_otraActua,agregar_otraActua2,borrar_otraactua3,agregar_otraactua3;
+            ,agregar_otraActua,borrar_otraActua,agregar_otraActua2,borrar_otraactua3,agregar_otraactua3,borrar_otraactua4
+            ,borrar_otraGesAca4,agregar_otraGesAca3,borrar_otraGesAca3,agregar_otraGesAca2,borrar_otraGesAca2,agregar_otraGesAca;
 
 
     @Override
@@ -244,8 +250,18 @@ public class Cedula2 extends AppCompatActivity {
         caja_anuncio_horaactua3 = findViewById(R.id.caja_anuncio_horaactua3);
         caja_edit_horaactua3 = findViewById(R.id.caja_edit_horaactua3);
         caja_agregar_otraactua3 = findViewById(R.id.caja_agregar_otraactua3);
-        agregar_otraactua3 = findViewById(R.id.agregar_otraactua3);
         borrar_otraactua3 = findViewById(R.id.borrar_otraactua3);
+        agregar_otraactua3 = findViewById(R.id.agregar_otraactua3);
+        caja_anuncio_actua4 = findViewById(R.id.caja_anuncio_actua4);
+        caja_actua4 = findViewById(R.id.caja_actua4);
+        caja_anuncio_instactua4 = findViewById(R.id.caja_anuncio_instactua4);
+        caja_edit_instactua4 = findViewById(R.id.caja_edit_instactua4);
+        caja_anuncio_anoactua4 = findViewById(R.id.caja_anuncio_anoactua4);
+        caja_anoactua4 = findViewById(R.id.caja_anoactua4);
+        caja_anuncio_horasactua4 = findViewById(R.id.caja_anuncio_horasactua4);
+        caja_edit_horaactua4 = findViewById(R.id.caja_edit_horaactua4);
+        caja_borrar_otraactua4 = findViewById(R.id.caja_borrar_otraactua4);
+        borrar_otraactua4 = findViewById(R.id.borrar_otraactua4);
 
         formulario_formaCapaDocente = findViewById(R.id.formulario_formaCapaDocente);
         caja_siguiente_scroll2 = findViewById(R.id.caja_siguiente_scroll2);
@@ -255,8 +271,41 @@ public class Cedula2 extends AppCompatActivity {
         formulario_actuaDisci = findViewById(R.id.formulario_actuaDisci);
         regresar_datos_actuaDocente = findViewById(R.id.regresar_datos_actuaDocente);
         ir_getsionAcademica = findViewById(R.id.ir_getsionAcademica);
-
         caja_siguiente_scroll3 = findViewById(R.id.caja_siguiente_scroll3);
+        caja_agregar_otraGesAca = findViewById(R.id.caja_agregar_otraGesAca);
+        agregar_otraGesAca = findViewById(R.id.agregar_otraGesAca);
+        caja_anuncio_actiPues2 = findViewById(R.id.caja_anuncio_actiPues2);
+        caja_edit_actiPues2 = findViewById(R.id.caja_edit_actiPues2);
+        caja_anuncio_intGesAca2 = findViewById(R.id.caja_anuncio_intGesAca2);
+        caja_edit_intGesAca2 = findViewById(R.id.caja_edit_intGesAca2);
+        caja_anuncio_tiemGesAca2 = findViewById(R.id.caja_anuncio_tiemGesAca2);
+        caja_edit_tiemGesAca2 = findViewById(R.id.caja_edit_tiemGesAca2);
+        caja_anuncio_tiemGesAcaA2 = findViewById(R.id.caja_anuncio_tiemGesAcaA2);
+        caja_edit_tiemGesAcaA2 = findViewById(R.id.caja_edit_tiemGesAcaA2);
+        caja_agregar_otraGesAca2 = findViewById(R.id.caja_agregar_otraGesAca2);
+        agregar_otraGesAca2 = findViewById(R.id.agregar_otraGesAca2);
+        borrar_otraGesAca2 = findViewById(R.id.borrar_otraGesAca2);
+        caja_anuncio_actiPues3 = findViewById(R.id.caja_anuncio_actiPues3);
+        caja_actiPues3 = findViewById(R.id.caja_actiPues3);
+        caja_anuncio_intGesAca3 = findViewById(R.id.caja_anuncio_intGesAca3);
+        caja_edit_intGesAca3 = findViewById(R.id.caja_edit_intGesAca3);
+        caja_anuncio_tiemGesAca3 = findViewById(R.id.caja_anuncio_tiemGesAca3);
+        caja_tiemGesAca3 = findViewById(R.id.caja_tiemGesAca3);
+        caja_anuncio_tiemGesAcaA3 = findViewById(R.id.caja_anuncio_tiemGesAcaA3);
+        caja_edit_tiemGesAcaA3 = findViewById(R.id.caja_edit_tiemGesAcaA3);
+        caja_agregar_otraGesAca3 = findViewById(R.id.caja_agregar_otraGesAca3);
+        borrar_otraGesAca3 = findViewById(R.id.borrar_otraGesAca3);
+        agregar_otraGesAca3 = findViewById(R.id.agregar_otraGesAca3);
+        caja_anuncio_actiPues4 = findViewById(R.id.caja_anuncio_actiPues4);
+        caja_actiPues4 = findViewById(R.id.caja_actiPues4);
+        caja_anuncio_intGesAca4 = findViewById(R.id.caja_anuncio_intGesAca4);
+        caja_edit_intGesAca4 = findViewById(R.id.caja_edit_intGesAca4);
+        caja_anuncio_tiemGesAca4 = findViewById(R.id.caja_anuncio_tiemGesAca4);
+        caja_tiemGesAca4 = findViewById(R.id.caja_tiemGesAca4);
+        caja_anuncio_tiemGesAcaA4 = findViewById(R.id.caja_anuncio_tiemGesAcaA4);
+        caja_edit_tiemGesAcaA4 = findViewById(R.id.caja_edit_tiemGesAcaA4);
+        caja_borrar_otraGesAca4 = findViewById(R.id.caja_borrar_otraGesAca4);
+        borrar_otraGesAca4 = findViewById(R.id.borrar_otraGesAca4);
 
 
         formulario_gestioAcademica = findViewById(R.id.formulario_gestioAcademica);
@@ -722,6 +771,48 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
+        agregar_otraactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua4.setVisibility(View.VISIBLE);
+                caja_actua4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_instactua4.setVisibility(View.VISIBLE);
+                caja_edit_instactua4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_anoactua4.setVisibility(View.VISIBLE);
+                caja_anoactua4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_horasactua4.setVisibility(View.VISIBLE);
+                caja_edit_horaactua4.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraactua3.setVisibility(View.GONE);
+                caja_borrar_otraactua4.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraactua4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua4.setVisibility(View.GONE);
+                caja_actua4.setVisibility(View.GONE);
+
+                caja_anuncio_instactua4.setVisibility(View.GONE);
+                caja_edit_instactua4.setVisibility(View.GONE);
+
+                caja_anuncio_anoactua4.setVisibility(View.GONE);
+                caja_anoactua4.setVisibility(View.GONE);
+
+                caja_anuncio_horasactua4.setVisibility(View.GONE);
+                caja_edit_horaactua4.setVisibility(View.GONE);
+
+                caja_agregar_otraactua3.setVisibility(View.VISIBLE);
+                caja_borrar_otraactua4.setVisibility(View.GONE);
+
+
+            }
+        });
         regresar_datos_actuaDocente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -743,6 +834,132 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View v) {
                 formulario_actuaDisci.setVisibility(View.VISIBLE);
                 formulario_gestioAcademica.setVisibility(View.GONE);
+            }
+        });
+        agregar_otraGesAca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues2.setVisibility(View.VISIBLE);
+                caja_edit_actiPues2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_intGesAca2.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAca2.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAca2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAcaA2.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA2.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraGesAca.setVisibility(View.GONE);
+                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues2.setVisibility(View.GONE);
+                caja_edit_actiPues2.setVisibility(View.GONE);
+
+                caja_anuncio_intGesAca2.setVisibility(View.GONE);
+                caja_edit_intGesAca2.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAca2.setVisibility(View.GONE);
+                caja_edit_tiemGesAca2.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAcaA2.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
+
+                caja_agregar_otraGesAca.setVisibility(View.VISIBLE);
+                caja_agregar_otraGesAca2.setVisibility(View.GONE);
+
+
+            }
+        });
+        agregar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues3.setVisibility(View.VISIBLE);
+                caja_actiPues3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_intGesAca3.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAca3.setVisibility(View.VISIBLE);
+                caja_tiemGesAca3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAcaA3.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA3.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraGesAca2.setVisibility(View.GONE);
+                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues3.setVisibility(View.GONE);
+                caja_actiPues3.setVisibility(View.GONE);
+
+                caja_anuncio_intGesAca3.setVisibility(View.GONE);
+                caja_edit_intGesAca3.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAca3.setVisibility(View.GONE);
+                caja_tiemGesAca3.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAcaA3.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
+
+                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
+                caja_agregar_otraGesAca3.setVisibility(View.GONE);
+
+
+            }
+        });
+        agregar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues4.setVisibility(View.VISIBLE);
+                caja_actiPues4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_intGesAca4.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAca4.setVisibility(View.VISIBLE);
+                caja_tiemGesAca4.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAcaA4.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA4.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraGesAca3.setVisibility(View.GONE);
+                caja_borrar_otraGesAca4.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraGesAca4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actiPues4.setVisibility(View.GONE);
+                caja_actiPues4.setVisibility(View.GONE);
+
+                caja_anuncio_intGesAca4.setVisibility(View.GONE);
+                caja_edit_intGesAca4.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAca4.setVisibility(View.GONE);
+                caja_tiemGesAca4.setVisibility(View.GONE);
+
+                caja_anuncio_tiemGesAcaA4.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
+
+                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
+                caja_borrar_otraGesAca4.setVisibility(View.GONE);
+
+
             }
         });
 
