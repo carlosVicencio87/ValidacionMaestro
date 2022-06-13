@@ -74,7 +74,16 @@ public class Cedula2 extends AppCompatActivity {
             caja_maes2_final,caja_instMaes2_final,caja_anoMaes2_final,caja_ceduMaes2_final,
             caja_doc,doc_final,caja_edit_instDoc,caja_instDoc_final,caja_anoDoc,caja_anoDoc_final,
             caja_edit_ceduDoc,caja_ceduDoc_final,doc2_final,caja_instdoc2_final,caja_anoDoc2_final,
-            caja_ceduDoc2_final;
+            caja_ceduDoc2_final,caja_edit_actiPuesto,caja_actiPuesto_final,caja_edit_instGesAca,
+            caja_instGesAca_final,caja_edit_tiemGesAca,caja_tiemGesAca_final,caja_edit_tiemGesAcaA,
+            caja_tiemGesAcaA_final,caja_actiPues2_final,caja_intGesAca2_final,caja_tiemGesAca2_final,
+            caja_tiemGesAcaA2_final,caja_actiPues3_final,caja_intGesAca3_final,caja_tiemGesAca3_final,
+            caja_tiemGesAcaA3_final,caja_actiPues4_final,caja_intGesAca4_final,caja_tiemGesAca4_final,
+            caja_tiemGesAcaA4_final,caja_edit_tipoCapa,caja_tipoCapa_final,caja_edit_instPaisCapa,
+            caja_instPaisCapa_final,caja_edit_anoObtencionCapa,caja_anoObtencionCapa_final,caja_edit_horasCapa,
+            caja_horasCapa_final,caja_capa2_final,caja_intCapa2_final,caja_anoCapa2_final,caja_horaCapa2_final,
+            caja_capa3_final,caja_instcapa3_final,caja_anoCapa3_final,caja_horaCapa3_final,capa4_final,
+            caja_instcapa4_final,caja_anoCapa4_final,caja_horaCapa4_final;
 
     private EditText numProfesor,apellido1_texto,apellido2_texto,fecha_de_nacimiento_texto,
             nombramiento_actual_texto,antiguedad_texto,licenciatura_texto,instPaisLic_texto,
@@ -83,7 +92,14 @@ public class Cedula2 extends AppCompatActivity {
             especialidad_texto,ceduEsp2_texto,anoEsp2_texto,instEsp2_texto,especialidad2_texto,
             maes_texto,instMaes_texto,anoMaes_texto,ceduMaes_texto,maes2_texto,instMaes2_texto,
             anoMaes2_texto,ceduMaes2_texto,doc_texto,instDoc_texto,anoDoc_texto,ceduDoc_texto,
-            doc2_texto,instdoc2_texto,anoDoc2_texto,ceduDoc2_texto;
+            doc2_texto,instdoc2_texto,anoDoc2_texto,ceduDoc2_texto,actiPuesto_texto,
+            instGesAca_texto,tiemGesAca_texto,tiemGesAcaA_texto,actiPues2_texto,
+            intGesAca2_texto,tiemGesAca2_texto,tiemGesAcaA2_texto,actiPues3_texto,
+            intGesAca3_texto,tiemGesAca3_texto,tiemGesAcaA3_texto,actiPues4_texto,
+            intGesAca4_texto,tiemGesAca4_texto,tiemGesAcaA4_texto,tipoCapa_texto,
+            instPaisCapa_texto,anoObtencionCapa_texto,horasCapa_texto,capa2_texto,
+            intCapa2_texto,anoCapa2_texto,horaCapa2_texto,capa3_texto,instcapa3_texto,
+            anoCapa3_texto,horaCapa3_texto,capa4_texto,instcapa4_texto,anoCapa4_texto,horaCapa4_texto;
 
 
     private ImageView guardar_numProfesor,cambiar_numProfesor,guardar_apellido1,cambiar_apellido2,
@@ -102,7 +118,22 @@ public class Cedula2 extends AppCompatActivity {
             cambiar_maes2,guardar_instMaes2,cambiar_instMaes2,guardar_anoMaes2,cambiar_anoMaes2,
             guardar_ceduMaes2,cambiar_ceduMaes2,guardar_doc,cambiar_doc,guardar_instDoc,cambiar_instDoc,
             guardar_anoDoc,cambiar_anoDoc,guardar_ceduDoc,cambiar_ceduDoc,guardar_doc2,cambiar_doc2,
-            guardar_instdoc2,cambiar_instdoc2,guardar_anoDoc2,cambiar_anoDoc2,guardar_ceduDoc2,cambiar_ceduDoc2;
+            guardar_instdoc2,cambiar_instdoc2,guardar_anoDoc2,cambiar_anoDoc2,guardar_ceduDoc2,
+            cambiar_ceduDoc2,guardar_actiPuesto,cambiar_actiPuesto,guardar_instGesAca,
+            cambiar_instGesAca,guardar_tiemGesAca,cambiar_tiemGesAca,guardar_tiemGesAcaA,
+            cambiar_tiemGesAcaA,guardar_actiPues2,cambiar_actiPues2,guardar_intGesAca2,cambiar_intGesAca2,
+            guardar_tiemGesAca2,cambiar_tiemGesAca2,guardar_tiemGesAcaA2,cambiar_tiemGesAcaA2,
+            guardar_actiPues3,cambiar_actiPues3,guardar_intGesAca3,cambiar_intGesAca3,
+            guardar_tiemGesAca3,cambiar_tiemGesAca3,guardar_tiemGesAcaA3,cambiar_tiemGesAcaA3,
+            guardar_actiPues4,cambiar_actiPues4,guardar_intGesAca4,cambiar_intGesAca4,
+            guardar_tiemGesAca4,cambiar_tiemGesAca4,guardar_tiemGesAcaA4,cambiar_tiemGesAcaA4,
+            guardar_tipoCapa,cambiar_tipoCapa,guardar_instPaisCapa,cambiar_instPaisCapa,
+            guardar_anoObtencionCapa,cambiar_anoObtencionCapa,guardar_horasCapa,
+            cambiar_horasCapa,guardar_capa2,cambiar_capa2,guardar_intCapa2,cambiar_CapaIns2,
+            guardar_anoCapa2,cambiar_anoCapa2,guardar_horaCapa2,cambiar_horaCapa2,guardar_capa3,
+            cambiar_capa3,guardar_instcapa3,cambiar_instcapa3,guardar_anoCapa3,cambiar_anoCapa3,
+            guardar_horaCapa3,cambiar_horaCapa3,guardar_capa4,cambiar_capa4,guardar_instcapa4,
+            cambiar_instcapa4,guardar_anoCapa4,cambiar_anoCapa4,guardar_horaCapa4,cambiar_horaCapa4;
 
     private TextView numProfesor_final,apellido1,apellido2,edad,nombramiento_actual_vista,
             antiguedad,fecha_de_nacimiento,ir_formAcademica,ir_capDocente,regresar_datosBasic,ir_actuaDisciplinar,
@@ -120,14 +151,24 @@ public class Cedula2 extends AppCompatActivity {
             agregar_otraPart2,borrar_otraPart,agregar_otraPart,licenciatura,instPaisLic,anoObtencionLic,cedulaProfLic,
             licenciatura2,cedulaProfLic2,anoObtencionLic2,instPaisLic2,ceduEsp,anoEsp_vista,instEsp,especialidad,
             ceduEsp2,anoEsp2_vista,instEsp2,especialidad2,maes,instMaes,anoMaes_vista,ceduMaes,maes2,instMaes2,
-            anoMaes2_vista,ceduMaes2,doc,instDoc,anoDoc_vista,ceduDoc,doc2,instdoc2,anoDoc2_vista,ceduDoc2;
+            anoMaes2_vista,ceduMaes2,doc,instDoc,anoDoc_vista,ceduDoc,doc2,instdoc2,anoDoc2_vista,ceduDoc2,
+            actiPuesto,instGesAca,tiemGesAca,tiemGesAcaA,actiPues2,intGesAca2,tiemGesAca2,tiemGesAcaA2,actiPues3,
+            intGesAca3,tiemGesAca3_vista,tiemGesAcaA3,actiPues4,intGesAca4,tiemGesAca4_vista,tiemGesAcaA4,tipoCapa,
+            instPaisCapa,anoObtencionCapa,horasCapa,capa2,intCapa2,anoCapa2,horaCapa2,capa3,instcapa3,anoCapa3_vista,
+            horaCapa3,capa4,instcapa4,anoCapa4_vista,horaCapa4;
 
     private String nuevo_licenciatura,nuevo_instPaisLic,nuevo_anoObtencionLic,nuevo_cedulaProfLic,
             nuevo_licenciatura2,nuevo_cedulaProfLic2,nuevo_anoObtencion2Lic,nuevo_instPaisLic2,
             nuevo_ceduEsp,nuevo_anoEsp,nuevo_instEsp,nuevo_especialidad,nuevo_ceduEsp2,nuevo_anoEsp2,
             nuevo_instEsp2,nuevo_especialidad2,nuevo_maes,nuevo_instMaes,nuevo_anoMaes,nuevo_ceduMaes,
             nuevo_maes2,nuevo_instMaes2,nuevo_anoMaes2,nuevo_ceduMaes2,nuevo_doc,nuevo_instDoc,nuevo_anoDoc,
-            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2;
+            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2,nuevo_actiPuesto,
+            nuevo_instGesAca,nuevo_tiemGesAca,nuevo_tiemGesAcaA,nuevo_actiPues2,nuevo_intGesAca2,
+            nuevo_tiemGesAca2,nuevo_tiemGesAcaA2,nuevo_actiPues3,nuevo_intGesAca3,nuevo_tiemGesAca3,
+            nuevo_tiemGesAcaA3,nuevo_actiPues4,nuevo_intGesAca4,nuevo_tiemGesAca4,nuevo_tiemGesAcaA4,
+            nuevo_tipoCapa,nuevo_instPaisCapa,nuevo_anoObtencionCapa,nuevo_horasCapa,nuevo_capa2,
+            nuevo_intCapa2,nuevo_anoCapa2,nuevo_horaCapa2,nuevo_capa3,nuevo_instcapa3,nuevo_anoCapa3,
+            nuevo_horaCapa3,nuevo_capa4,nuevo_instcapa4,nuevo_anoCapa4,nuevo_horaCapa4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -496,6 +537,111 @@ public class Cedula2 extends AppCompatActivity {
         borrar_otraCapa3 = findViewById(R.id.borrar_otraCapa3);
 
 
+        guardar_tipoCapa= findViewById(R.id.guardar_tipoCapa);
+        tipoCapa_texto= findViewById(R.id.instGesAca_texto);
+        tipoCapa= findViewById(R.id.instGesAca);
+        caja_edit_tipoCapa= findViewById(R.id.caja_edit_tipoCapa);
+        caja_tipoCapa_final= findViewById(R.id.caja_tipoCapa_final);
+        cambiar_tipoCapa= findViewById(R.id.cambiar_tipoCapa);
+
+        guardar_instPaisCapa= findViewById(R.id.guardar_instPaisCapa);
+        instPaisCapa_texto= findViewById(R.id.instPaisCapa_texto);
+        instPaisCapa= findViewById(R.id.instPaisCapa);
+        caja_edit_instPaisCapa= findViewById(R.id.caja_edit_instPaisCapa);
+        caja_instPaisCapa_final = findViewById(R.id.caja_instPaisCapa_final);
+        cambiar_instPaisCapa = findViewById(R.id.cambiar_tiemGesAca);
+
+
+        guardar_anoObtencionCapa= findViewById(R.id.guardar_anoObtencionCapa);
+        anoObtencionCapa_texto= findViewById(R.id.anoObtencionCapa_texto);
+        anoObtencionCapa= findViewById(R.id.anoObtencionCapa);
+        caja_edit_anoObtencionCapa= findViewById(R.id.caja_edit_anoObtencionCapa);
+        caja_anoObtencionCapa_final= findViewById(R.id.caja_anoObtencionCapa_final);
+        cambiar_anoObtencionCapa = findViewById(R.id.cambiar_anoObtencionCapa);
+
+        guardar_horasCapa= findViewById(R.id.guardar_horasCapa);
+        horasCapa_texto= findViewById(R.id.horasCapa_texto);
+        horasCapa= findViewById(R.id.horasCapa);
+        caja_edit_horasCapa= findViewById(R.id.caja_edit_horasCapa);
+        caja_horasCapa_final= findViewById(R.id.caja_horasCapa_final);
+        cambiar_horasCapa= findViewById(R.id.cambiar_horasCapa);
+
+        guardar_capa2= findViewById(R.id.guardar_capa2);
+        capa2_texto= findViewById(R.id.capa2_texto);
+        capa2= findViewById(R.id.capa2);
+        caja_capa2_final = findViewById(R.id.caja_capa2_final);
+        cambiar_capa2= findViewById(R.id.cambiar_capa2);
+
+
+        guardar_intCapa2= findViewById(R.id.guardar_intCapa2);
+        intCapa2_texto = findViewById(R.id.intCapa2_texto);
+        intCapa2= findViewById(R.id.intCapa2);
+        caja_intCapa2_final= findViewById(R.id.caja_intCapa2_final);
+        cambiar_CapaIns2= findViewById(R.id.cambiar_CapaIns2);
+
+
+        guardar_anoCapa2= findViewById(R.id.guardar_anoCapa2);
+        anoCapa2_texto= findViewById(R.id.anoCapa2_texto);
+        anoCapa2 = findViewById(R.id.anoCapa2);
+        caja_anoCapa2_final = findViewById(R.id.caja_anoCapa2_final);
+        cambiar_anoCapa2= findViewById(R.id.cambiar_anoCapa2);
+
+        guardar_horaCapa2= findViewById(R.id.guardar_horaCapa2);
+        horaCapa2_texto= findViewById(R.id.horaCapa2_texto);
+        horaCapa2 = findViewById(R.id.horaCapa2);
+        caja_horaCapa2_final= findViewById(R.id.caja_horaCapa2_final);
+        cambiar_horaCapa2= findViewById(R.id.cambiar_horaCapa2);
+
+        guardar_capa3= findViewById(R.id.guardar_capa3);
+        capa3_texto= findViewById(R.id.capa3_texto);
+        capa3= findViewById(R.id.capa3);
+        caja_capa3_final = findViewById(R.id.caja_capa3_final);
+        cambiar_capa3= findViewById(R.id.cambiar_capa3);
+
+        guardar_instcapa3= findViewById(R.id.guardar_instcapa3);
+        instcapa3_texto= findViewById(R.id.instcapa3_texto);
+        instcapa3 = findViewById(R.id.instcapa3);
+        caja_instcapa3_final = findViewById(R.id.caja_instcapa3_final);
+        cambiar_instcapa3= findViewById(R.id.cambiar_instcapa3);
+
+        guardar_anoCapa3 = findViewById(R.id.guardar_anoCapa3);
+        anoCapa3_texto= findViewById(R.id.anoCapa3_texto);
+        anoCapa3_vista= findViewById(R.id.anoCapa3_vista);
+        caja_anoCapa3_final= findViewById(R.id.caja_anoCapa3_final);
+        cambiar_anoCapa3= findViewById(R.id.cambiar_anoCapa3);
+
+
+        guardar_horaCapa3 = findViewById(R.id.guardar_horaCapa3);
+        horaCapa3_texto = findViewById(R.id.horaCapa3_texto);
+        horaCapa3 = findViewById(R.id.horaCapa3);
+        caja_horaCapa3_final= findViewById(R.id.caja_horaCapa3_final);
+        cambiar_horaCapa3= findViewById(R.id.cambiar_horaCapa3);
+
+
+        guardar_capa4= findViewById(R.id.guardar_capa4);
+        capa4_texto = findViewById(R.id.capa4_texto);
+        capa4= findViewById(R.id.capa4);
+        capa4_final= findViewById(R.id.capa4_final);
+        cambiar_capa4 = findViewById(R.id.cambiar_capa4);
+
+        guardar_instcapa4= findViewById(R.id.guardar_instcapa4);
+        instcapa4_texto= findViewById(R.id.instcapa4_texto);
+        instcapa4= findViewById(R.id.instcapa4);
+        caja_instcapa4_final= findViewById(R.id.caja_instcapa4_final);
+        cambiar_instcapa4= findViewById(R.id.cambiar_instcapa4);
+
+        guardar_anoCapa4= findViewById(R.id.guardar_anoCapa4);
+        anoCapa4_texto= findViewById(R.id.anoCapa4_texto);
+        anoCapa4_vista = findViewById(R.id.anoCapa4_vista);
+        caja_anoCapa4_final= findViewById(R.id.caja_anoCapa4_final);
+        cambiar_anoCapa4= findViewById(R.id.cambiar_anoCapa4);
+
+        guardar_horaCapa4 = findViewById(R.id.guardar_horaCapa4);
+        horaCapa4_texto= findViewById(R.id.horaCapa4_texto);
+        horaCapa4= findViewById(R.id.horaCapa4);
+        caja_anoCapa4_final = findViewById(R.id.caja_anoCapa4_final);
+        cambiar_horaCapa4= findViewById(R.id.cambiar_horaCapa4);
+
 
         caja_siguiente_scroll = findViewById(R.id.caja_siguiente_scroll);
         regresar_datosBasic = findViewById(R.id.regresar_datosBasic);
@@ -536,12 +682,12 @@ public class Cedula2 extends AppCompatActivity {
         caja_borrar_otraactua4 = findViewById(R.id.caja_borrar_otraactua4);
         borrar_otraactua4 = findViewById(R.id.borrar_otraactua4);
 
-        guardar_actiPuesto= findViewById(R.id.guardar_doc);
+        guardar_actiPuesto= findViewById(R.id.guardar_actiPuesto);
         actiPuesto_texto = findViewById(R.id.actiPuesto_texto);
         actiPuesto = findViewById(R.id.actiPuesto);
         caja_edit_actiPuesto = findViewById(R.id.caja_edit_actiPuesto);
         caja_actiPuesto_final = findViewById(R.id.caja_actiPuesto_final);
-        cambiar_tiemGesAca = findViewById(R.id.cambiar_tiemGesAca);
+        cambiar_actiPuesto = findViewById(R.id.cambiar_actiPuesto);
 
         guardar_instGesAca = findViewById(R.id.guardar_instGesAca);
         instGesAca_texto = findViewById(R.id.instGesAca_texto);
@@ -550,45 +696,97 @@ public class Cedula2 extends AppCompatActivity {
         caja_instGesAca_final = findViewById(R.id.caja_instGesAca_final);
         cambiar_instGesAca = findViewById(R.id.cambiar_instGesAca);
 
+        guardar_tiemGesAca = findViewById(R.id.guardar_tiemGesAca);
+        tiemGesAca_texto = findViewById(R.id.tiemGesAca_texto);
+        tiemGesAca = findViewById(R.id.tiemGesAca);
+        caja_edit_tiemGesAca = findViewById(R.id.caja_edit_tiemGesAca);
+        caja_tiemGesAca_final = findViewById(R.id.caja_tiemGesAca_final);
+        cambiar_tiemGesAca = findViewById(R.id.cambiar_tiemGesAca);
+
+
+        guardar_tiemGesAcaA = findViewById(R.id.guardar_tiemGesAcaA);
+        tiemGesAcaA_texto = findViewById(R.id.tiemGesAcaA_texto);
+        tiemGesAcaA = findViewById(R.id.tiemGesAcaA);
+        caja_edit_tiemGesAcaA = findViewById(R.id.caja_edit_tiemGesAcaA);
+        caja_tiemGesAcaA_final = findViewById(R.id.caja_tiemGesAcaA_final);
+        cambiar_tiemGesAcaA = findViewById(R.id.cambiar_tiemGesAcaA);
+
+
         guardar_actiPues2 = findViewById(R.id.guardar_actiPues2);
         actiPues2_texto = findViewById(R.id.actiPues2_texto);
-        anoDoc_vista = findViewById(R.id.anoDoc_vista);
-        caja_anoDoc = findViewById(R.id.caja_anoDoc);
-        caja_anoDoc_final = findViewById(R.id.caja_anoDoc_final);
-        cambiar_anoDoc = findViewById(R.id.cambiar_anoDoc);
-
-        guardar_ceduDoc = findViewById(R.id.guardar_ceduDoc);
-        ceduDoc_texto = findViewById(R.id.ceduDoc_texto);
-        ceduDoc = findViewById(R.id.ceduDoc);
-        caja_edit_ceduDoc = findViewById(R.id.caja_edit_ceduDoc);
-        caja_ceduDoc_final = findViewById(R.id.caja_ceduDoc_final);
-        cambiar_ceduDoc = findViewById(R.id.cambiar_ceduDoc);
-
-        guardar_doc2 = findViewById(R.id.guardar_doc2);
-        doc2_texto = findViewById(R.id.doc2_texto);
-        doc2 = findViewById(R.id.doc2);
-        doc2_final = findViewById(R.id.doc2_final);
-        cambiar_doc2 = findViewById(R.id.cambiar_doc2);
-
-        guardar_instdoc2 = findViewById(R.id.guardar_instdoc2);
-        instdoc2_texto = findViewById(R.id.instdoc2_texto);
-        instdoc2 = findViewById(R.id.instdoc2);
-        caja_instdoc2_final = findViewById(R.id.caja_instdoc2_final);
-        cambiar_instdoc2 = findViewById(R.id.cambiar_instdoc2);
-
-        guardar_anoDoc2 = findViewById(R.id.guardar_anoDoc2);
-        anoDoc2_texto = findViewById(R.id.anoDoc2_texto);
-        anoDoc2_vista = findViewById(R.id.anoDoc2_vista);
-        caja_anoDoc2_final = findViewById(R.id.caja_anoDoc2_final);
-        cambiar_anoDoc2 = findViewById(R.id.cambiar_anoDoc2);
-
-        guardar_ceduDoc2 = findViewById(R.id.guardar_ceduDoc2);
-        ceduDoc2_texto = findViewById(R.id.ceduDoc2_texto);
-        ceduDoc2 = findViewById(R.id.ceduDoc2);
-        caja_ceduDoc2_final = findViewById(R.id.caja_ceduDoc2_final);
-        cambiar_ceduDoc2 = findViewById(R.id.cambiar_ceduDoc2);
+        actiPues2 = findViewById(R.id.actiPues2);
+        caja_actiPues2_final = findViewById(R.id.caja_actiPues2_final);
+        cambiar_actiPues2 = findViewById(R.id.cambiar_actiPues2);
 
 
+        guardar_intGesAca2 = findViewById(R.id.guardar_intGesAca2);
+        intGesAca2_texto = findViewById(R.id.intGesAca2_texto);
+        intGesAca2 = findViewById(R.id.intGesAca2);
+        caja_intGesAca2_final = findViewById(R.id.caja_intGesAca2_final);
+        cambiar_intGesAca2 = findViewById(R.id.cambiar_intGesAca2);
+
+
+        guardar_tiemGesAca2 = findViewById(R.id.guardar_tiemGesAca2);
+        tiemGesAca2_texto = findViewById(R.id.tiemGesAca2_texto);
+        tiemGesAca2 = findViewById(R.id.tiemGesAca2);
+        caja_tiemGesAca2_final = findViewById(R.id.caja_tiemGesAca2_final);
+        cambiar_tiemGesAca2 = findViewById(R.id.cambiar_tiemGesAca2);
+
+        guardar_tiemGesAcaA2 = findViewById(R.id.guardar_tiemGesAcaA2);
+        tiemGesAcaA2_texto = findViewById(R.id.tiemGesAcaA2_texto);
+        tiemGesAcaA2 = findViewById(R.id.tiemGesAcaA2);
+        caja_tiemGesAcaA2_final = findViewById(R.id.caja_tiemGesAcaA2_final);
+        cambiar_tiemGesAcaA2 = findViewById(R.id.cambiar_tiemGesAcaA2);
+
+        guardar_actiPues3 = findViewById(R.id.guardar_actiPues3);
+        actiPues3_texto = findViewById(R.id.actiPues3_texto);
+        actiPues3 = findViewById(R.id.actiPues3);
+        caja_actiPues3_final = findViewById(R.id.caja_actiPues3_final);
+        cambiar_actiPues3 = findViewById(R.id.cambiar_actiPues3);
+
+        guardar_intGesAca3 = findViewById(R.id.guardar_intGesAca3);
+        intGesAca3_texto = findViewById(R.id.intGesAca3_texto);
+        intGesAca3 = findViewById(R.id.intGesAca3);
+        caja_intGesAca3_final = findViewById(R.id.caja_intGesAca3_final);
+        cambiar_intGesAca3 = findViewById(R.id.cambiar_intGesAca3);
+
+        guardar_tiemGesAca3 = findViewById(R.id.guardar_tiemGesAca3);
+        tiemGesAca3_texto = findViewById(R.id.tiemGesAca3_texto);
+        tiemGesAca3_vista = findViewById(R.id.tiemGesAca3_vista);
+        caja_tiemGesAca3_final = findViewById(R.id.caja_tiemGesAca3_final);
+        cambiar_tiemGesAca3 = findViewById(R.id.cambiar_tiemGesAca3);
+
+
+        guardar_tiemGesAcaA3 = findViewById(R.id.guardar_tiemGesAcaA3);
+        tiemGesAcaA3_texto = findViewById(R.id.tiemGesAcaA3_texto);
+        tiemGesAcaA3 = findViewById(R.id.tiemGesAcaA3);
+        caja_tiemGesAcaA3_final = findViewById(R.id.caja_tiemGesAcaA3_final);
+        cambiar_tiemGesAcaA3 = findViewById(R.id.cambiar_tiemGesAcaA3);
+
+
+        guardar_actiPues4 = findViewById(R.id.guardar_actiPues4);
+        actiPues4_texto = findViewById(R.id.actiPues4_texto);
+        actiPues4 = findViewById(R.id.actiPues4);
+        caja_actiPues4_final = findViewById(R.id.caja_actiPues4_final);
+        cambiar_actiPues4 = findViewById(R.id.cambiar_actiPues4);
+
+        guardar_intGesAca4 = findViewById(R.id.guardar_intGesAca4);
+        intGesAca4_texto = findViewById(R.id.intGesAca4_texto);
+        intGesAca4 = findViewById(R.id.intGesAca4);
+        caja_intGesAca4_final = findViewById(R.id.caja_intGesAca4_final);
+        cambiar_intGesAca4 = findViewById(R.id.cambiar_intGesAca4);
+
+        guardar_tiemGesAca4 = findViewById(R.id.guardar_tiemGesAca4);
+        tiemGesAca4_texto = findViewById(R.id.tiemGesAca4_texto);
+        tiemGesAca4_vista = findViewById(R.id.tiemGesAca4_vista);
+        caja_tiemGesAca4_final = findViewById(R.id.caja_tiemGesAca4_final);
+        cambiar_tiemGesAca4 = findViewById(R.id.cambiar_tiemGesAca4);
+
+        guardar_tiemGesAcaA4 = findViewById(R.id.guardar_tiemGesAcaA4);
+        tiemGesAcaA4_texto = findViewById(R.id.tiemGesAcaA4_texto);
+        tiemGesAcaA4 = findViewById(R.id.tiemGesAcaA4);
+        caja_tiemGesAcaA4_final = findViewById(R.id.caja_tiemGesAcaA4_final);
+        cambiar_tiemGesAcaA4 = findViewById(R.id.cambiar_tiemGesAcaA4);
 
         formulario_formaCapaDocente = findViewById(R.id.formulario_formaCapaDocente);
         caja_siguiente_scroll2 = findViewById(R.id.caja_siguiente_scroll2);
@@ -1880,22 +2078,120 @@ public class Cedula2 extends AppCompatActivity {
             }
         });
 
+        guardar_tipoCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                nuevo_tipoCapa = tipoCapa_texto.getText().toString();
+                tipoCapa.setText(nuevo_tipoCapa);
+                if (!nuevo_tipoCapa.trim().equals("")) {
+                    caja_edit_tipoCapa.setVisibility(View.GONE);
+                    caja_tipoCapa_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tipoCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tipoCapa.setVisibility(View.VISIBLE);
+                caja_tipoCapa_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instPaisCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instPaisCapa = instPaisCapa_texto.getText().toString();
+                instPaisCapa.setText(nuevo_instPaisCapa);
+                if (!nuevo_instPaisCapa.trim().equals("")) {
+                    caja_edit_instPaisCapa.setVisibility(View.GONE);
+                    caja_instPaisCapa_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instPaisCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_instPaisCapa.setVisibility(View.VISIBLE);
+                caja_instPaisCapa_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoObtencionCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoObtencionCapa = anoObtencionCapa_texto.getText().toString();
+                anoObtencionCapa.setText(nuevo_anoObtencionCapa);
+                if (!nuevo_anoObtencionCapa.trim().equals("")) {
+                    caja_edit_anoObtencionCapa.setVisibility(View.GONE);
+                    caja_anoObtencionCapa_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoObtencionCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_anoObtencionCapa.setVisibility(View.VISIBLE);
+                caja_anoObtencionCapa_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horasCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horasCapa = horasCapa_texto.getText().toString();
+                horasCapa.setText(nuevo_horasCapa);
+                if (!nuevo_horasCapa.trim().equals("")) {
+                    caja_edit_horasCapa.setVisibility(View.GONE);
+                    caja_horasCapa_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de la capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horasCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horasCapa.setVisibility(View.VISIBLE);
+                caja_horasCapa_final.setVisibility(View.GONE);
+
+            }
+        });
         agregar_otraCapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_capa2.setVisibility(View.VISIBLE);
                 caja_edit_capa2.setVisibility(View.VISIBLE);
-
+                capa2_texto.setText("");
 
                 caja_anuncio_instActua2.setVisibility(View.VISIBLE);
                 caja_edit_intCapa2.setVisibility(View.VISIBLE);
+                intCapa2_texto.setText("");
 
                 caja_anuncio_anoCapa2.setVisibility(View.VISIBLE);
                 caja_edit_anoCapa2.setVisibility(View.VISIBLE);
+                anoCapa2_texto.setText("");
 
                 caja_anuncio_horaCapa2.setVisibility(View.VISIBLE);
                 caja_edit_horaCapa2.setVisibility(View.VISIBLE);
+                horaCapa2_texto.setText("");
 
                 caja_agregar_otraCapa.setVisibility(View.GONE);
                 caja_borrar_otraCapa.setVisibility(View.VISIBLE);
@@ -1908,15 +2204,19 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_capa2.setVisibility(View.GONE);
                 caja_edit_capa2.setVisibility(View.GONE);
+                caja_capa2_final.setVisibility(View.GONE);
 
                 caja_anuncio_instActua2.setVisibility(View.GONE);
                 caja_edit_intCapa2.setVisibility(View.GONE);
+                caja_intCapa2_final.setVisibility(View.GONE);
 
                 caja_anuncio_anoCapa2.setVisibility(View.GONE);
                 caja_edit_anoCapa2.setVisibility(View.GONE);
+                caja_anoCapa2_final.setVisibility(View.GONE);
 
                 caja_anuncio_horaCapa2.setVisibility(View.GONE);
                 caja_edit_horaCapa2.setVisibility(View.GONE);
+                caja_horaCapa2_final.setVisibility(View.GONE);
 
                 caja_agregar_otraCapa.setVisibility(View.VISIBLE);
                 caja_borrar_otraCapa.setVisibility(View.GONE);
@@ -1924,21 +2224,122 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
+        guardar_capa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_capa2 = capa2_texto.getText().toString();
+                capa2.setText(nuevo_capa2);
+                if (!nuevo_capa2.trim().equals("")) {
+                    caja_edit_capa2.setVisibility(View.GONE);
+                    caja_capa2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_capa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_capa2.setVisibility(View.VISIBLE);
+                caja_capa2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_intCapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_intCapa2= intCapa2_texto.getText().toString();
+                intCapa2.setText(nuevo_intCapa2);
+                if (!nuevo_intCapa2.trim().equals("")) {
+                    caja_edit_intCapa2.setVisibility(View.GONE);
+                    caja_intCapa2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_CapaIns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_intCapa2.setVisibility(View.VISIBLE);
+                caja_intCapa2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoCapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoCapa2 = anoCapa2_texto.getText().toString();
+                anoCapa2.setText(nuevo_anoCapa2);
+                if (!nuevo_anoCapa2.trim().equals("")) {
+                    caja_edit_anoCapa2.setVisibility(View.GONE);
+                    caja_anoCapa2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoCapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_anoCapa2.setVisibility(View.VISIBLE);
+                caja_anoCapa2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horaCapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horaCapa2 = horaCapa2_texto.getText().toString();
+                horaCapa2.setText(nuevo_horaCapa2);
+                if (!nuevo_horaCapa2.trim().equals("")) {
+                    caja_edit_horaCapa2.setVisibility(View.GONE);
+                    caja_horaCapa2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horaCapa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horaCapa2.setVisibility(View.VISIBLE);
+                caja_horaCapa2_final.setVisibility(View.GONE);
+
+            }
+        });
+
 
         agregar_otraOtracapa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_capa3.setVisibility(View.VISIBLE);
                 caja_capa3.setVisibility(View.VISIBLE);
+                capa3_texto.setText("");
 
                 caja_anuncio_instcapa3.setVisibility(View.VISIBLE);
                 caja_edit_instcapa3.setVisibility(View.VISIBLE);
+                instcapa3_texto.setText("");
 
                 caja_anuncio_anoCapa3.setVisibility(View.VISIBLE);
                 caja_anoCapa3.setVisibility(View.VISIBLE);
+                anoCapa3_texto.setText("");
 
                 caja_anuncio_horaCapa3.setVisibility(View.VISIBLE);
                 caja_edit_horaCapa3.setVisibility(View.VISIBLE);
+                horaCapa3_texto.setText("");
 
                 caja_borrar_otraCapa.setVisibility(View.GONE);
                 caja_borrar_otraCapa2.setVisibility(View.VISIBLE);
@@ -1951,15 +2352,19 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_capa3.setVisibility(View.GONE);
                 caja_capa3.setVisibility(View.GONE);
+                caja_capa3_final.setVisibility(View.GONE);
 
                 caja_anuncio_instcapa3.setVisibility(View.GONE);
                 caja_edit_instcapa3.setVisibility(View.GONE);
+                caja_instcapa3_final.setVisibility(View.GONE);
 
                 caja_anuncio_anoCapa3.setVisibility(View.GONE);
                 caja_anoCapa3.setVisibility(View.GONE);
+                caja_anoCapa3_final.setVisibility(View.GONE);
 
                 caja_anuncio_horaCapa3.setVisibility(View.GONE);
                 caja_edit_horaCapa3.setVisibility(View.GONE);
+                caja_horaCapa3_final.setVisibility(View.GONE);
 
                 caja_borrar_otraCapa.setVisibility(View.VISIBLE);
                 caja_borrar_otraCapa2.setVisibility(View.GONE);
@@ -1967,21 +2372,122 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
+        guardar_capa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_capa3= capa3_texto.getText().toString();
+                capa3.setText(nuevo_capa3);
+                if (!nuevo_capa3.trim().equals("")) {
+                    caja_capa3.setVisibility(View.GONE);
+                    caja_capa3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_capa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_capa3.setVisibility(View.VISIBLE);
+                caja_capa3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instcapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instcapa3= instcapa3_texto.getText().toString();
+                instcapa3.setText(nuevo_instcapa3);
+                if (!nuevo_instcapa3.trim().equals("")) {
+                    caja_edit_instcapa3.setVisibility(View.GONE);
+                    caja_instcapa3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instcapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_instcapa3.setVisibility(View.VISIBLE);
+                caja_instcapa3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoCapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoCapa3 = anoCapa3_texto.getText().toString();
+                anoCapa3_vista.setText(nuevo_anoCapa3);
+                if (!nuevo_anoCapa3.trim().equals("")) {
+                    caja_anoCapa3.setVisibility(View.GONE);
+                    caja_anoCapa3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoCapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_anoCapa3.setVisibility(View.VISIBLE);
+                caja_anoCapa3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horaCapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horaCapa3 = horaCapa3_texto.getText().toString();
+                horaCapa3.setText(nuevo_horaCapa3);
+                if (!nuevo_horaCapa3.trim().equals("")) {
+                    caja_edit_horaCapa3.setVisibility(View.GONE);
+                    caja_horaCapa3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de la capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horaCapa3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horaCapa3.setVisibility(View.VISIBLE);
+                caja_horaCapa3_final.setVisibility(View.GONE);
+
+            }
+        });
+
 
         agregar_otraOtracapa3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_capa4.setVisibility(View.VISIBLE);
                 caja_capa4.setVisibility(View.VISIBLE);
+                capa4_texto.setText("");
 
                 caja_anuncio_instcapa4.setVisibility(View.VISIBLE);
                 caja_edit_instcapa4.setVisibility(View.VISIBLE);
+                instcapa4_texto.setText("");
 
                 caja_anuncio_anoCapa4.setVisibility(View.VISIBLE);
                 caja_anoCapa4.setVisibility(View.VISIBLE);
+                anoCapa4_texto.setText("");
 
                 caja_anuncio_horaCapa4.setVisibility(View.VISIBLE);
                 caja_edit_horaCapa4.setVisibility(View.VISIBLE);
+                horaCapa4_texto.setText("");
 
                 caja_borrar_otraCapa2.setVisibility(View.GONE);
                 caja_borrar_otraCapa3.setVisibility(View.VISIBLE);
@@ -1994,15 +2500,19 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_capa4.setVisibility(View.GONE);
                 caja_capa4.setVisibility(View.GONE);
+                capa4_final.setVisibility(View.GONE);
 
                 caja_anuncio_instcapa4.setVisibility(View.GONE);
                 caja_edit_instcapa4.setVisibility(View.GONE);
+                caja_instcapa4_final.setVisibility(View.GONE);
 
                 caja_anuncio_anoCapa4.setVisibility(View.GONE);
                 caja_anoCapa4.setVisibility(View.GONE);
+                caja_anoCapa4_final.setVisibility(View.GONE);
 
                 caja_anuncio_horaCapa4.setVisibility(View.GONE);
                 caja_edit_horaCapa4.setVisibility(View.GONE);
+                caja_horaCapa4_final.setVisibility(View.GONE);
 
                 caja_borrar_otraCapa2.setVisibility(View.VISIBLE);
                 caja_borrar_otraCapa3.setVisibility(View.GONE);
@@ -2010,6 +2520,103 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
+        guardar_capa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_capa4= capa4_texto.getText().toString();
+                capa4.setText(nuevo_capa4);
+                if (!nuevo_capa4.trim().equals("")) {
+                    caja_capa4.setVisibility(View.GONE);
+                    capa4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tipo de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_capa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_capa4.setVisibility(View.VISIBLE);
+                capa4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instcapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instcapa4= instcapa4_texto.getText().toString();
+                instcapa4.setText(nuevo_instcapa4);
+                if (!nuevo_instcapa4.trim().equals("")) {
+                    caja_edit_instcapa4.setVisibility(View.GONE);
+                    caja_instcapa4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instcapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_instcapa4.setVisibility(View.VISIBLE);
+                caja_instcapa4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoCapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoCapa4 = anoCapa4_texto.getText().toString();
+                anoCapa4_vista.setText(nuevo_anoCapa4);
+                if (!nuevo_anoCapa3.trim().equals("")) {
+                    caja_anoCapa4.setVisibility(View.GONE);
+                    caja_anoCapa4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+            }
+            }
+        });
+        cambiar_anoCapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_anoCapa4.setVisibility(View.VISIBLE);
+                caja_anoCapa4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horaCapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horaCapa4 = horaCapa4_texto.getText().toString();
+                horaCapa4.setText(nuevo_horaCapa4);
+                if (!nuevo_horaCapa4.trim().equals("")) {
+                    caja_edit_horaCapa4.setVisibility(View.GONE);
+                    caja_horaCapa4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de capacitacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horaCapa4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horaCapa4.setVisibility(View.VISIBLE);
+                caja_horaCapa4_final.setVisibility(View.GONE);
+
+            }
+        });
+
 
         ir_actuaDisciplinar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -2018,6 +2625,461 @@ public class Cedula2 extends AppCompatActivity {
                formulario_actuaDisci.setVisibility(View.VISIBLE);
 
 
+            }
+        });
+        guardar_tipoActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_tipoActua = tipoActua_texto.getText().toString();
+                tipoActua.setText(nuevo_tipoActua);
+                if (!nuevo_tipoActua.trim().equals("")) {
+                    caja_edit_tipoActua.setVisibility(View.GONE);
+                    caja_tipoActua_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tipoActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tipoActua.setVisibility(View.VISIBLE);
+                caja_tipoActua_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instPaisActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instPaisActua = instPaisActua_texto.getText().toString();
+                instPaisActua.setText(nuevo_instPaisActua);
+                if (!nuevo_instPaisActua.trim().equals("")) {
+                    caja_edit_instPaisActua.setVisibility(View.GONE);
+                    caja_instPaisActua_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instPaisActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_instPaisActua.setVisibility(View.VISIBLE);
+                caja_instPaisActua_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoObtencionActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoObtencionActua = anoObtencionActua_texto.getText().toString();
+                anoObtencionActua.setText(nuevo_anoObtencionActua);
+                if (!nuevo_anoObtencionActua.trim().equals("")) {
+                    caja_edit_anoObtencionActua.setVisibility(View.GONE);
+                    caja_anoObtencionActua_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoObtencionActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_anoObtencionActua.setVisibility(View.VISIBLE);
+                caja_anoObtencionActua_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horasActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horasActua = horasActua_texto.getText().toString();
+                horasActua.setText(nuevo_horasActua);
+                if (!nuevo_horasActua.trim().equals("")) {
+                    caja_edit_horasActua.setVisibility(View.GONE);
+                    caja_horasActua_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de la actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horasActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horasActua.setVisibility(View.VISIBLE);
+                caja_horasActua_final.setVisibility(View.GONE);
+
+            }
+        });
+
+        agregar_otraActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_tipoActua2.setVisibility(View.VISIBLE);
+                caja_edit_actua2.setVisibility(View.VISIBLE);
+
+
+                caja_anuncio_actuaInts2.setVisibility(View.VISIBLE);
+                caja_edit_instPaisActua2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_anoActua2.setVisibility(View.VISIBLE);
+                caja_edit_anoActua2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_horaActua2.setVisibility(View.VISIBLE);
+                caja_edit_horaActua2.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraActua.setVisibility(View.GONE);
+                caja_borrar_otraActua.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraActua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_tipoActua2.setVisibility(View.GONE);
+                caja_edit_actua2.setVisibility(View.GONE);
+
+                caja_anuncio_actuaInts2.setVisibility(View.GONE);
+                caja_edit_instPaisActua2.setVisibility(View.GONE);
+
+
+                caja_anuncio_anoActua2.setVisibility(View.GONE);
+                caja_edit_anoActua2.setVisibility(View.GONE);
+
+
+                caja_anuncio_horaActua2.setVisibility(View.GONE);
+                caja_edit_horaActua2.setVisibility(View.GONE);
+
+
+                caja_agregar_otraActua.setVisibility(View.VISIBLE);
+                caja_borrar_otraActua.setVisibility(View.GONE);
+
+
+            }
+        });
+        guardar_actua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_actua2 = actua2_texto.getText().toString();
+                actua2.setText(nuevo_actua2);
+                if (!nuevo_actua2.trim().equals("")) {
+                    caja_edit_actua2.setVisibility(View.GONE);
+                    caja_actua2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_actua2.setVisibility(View.VISIBLE);
+                caja_actua2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instPaisActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instPaisActua2= instPaisActua2_texto.getText().toString();
+                instPaisActua2.setText(nuevo_instPaisActua2);
+                if (!nuevo_instPaisActua2.trim().equals("")) {
+                    caja_edit_instPaisActua2.setVisibility(View.GONE);
+                    caja_instPaisActua2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instPaisActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_instPaisActua2.setVisibility(View.VISIBLE);
+                caja_instPaisActua2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoActua2 = anoActua2_texto.getText().toString();
+                anoActua2.setText(nuevo_anoActua2);
+                if (!nuevo_anoActua2.trim().equals("")) {
+                    caja_edit_anoActua2.setVisibility(View.GONE);
+                    caja_anoActua2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_anoActua2.setVisibility(View.VISIBLE);
+                caja_anoActua2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horaActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horaActua2 = horaActua2_texto.getText().toString();
+                horaActua2.setText(nuevo_horaActua2);
+                if (!nuevo_horaActua2.trim().equals("")) {
+                    caja_edit_horaActua2.setVisibility(View.GONE);
+                    caja_horaActua2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horaActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horaActua2.setVisibility(View.VISIBLE);
+                caja_horaActua2_final.setVisibility(View.GONE);
+
+            }
+        });
+
+        agregar_otraActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua3.setVisibility(View.VISIBLE);
+                caja_actua3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_instActua3.setVisibility(View.VISIBLE);
+                caja_edit_intactua3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_anoactua3.setVisibility(View.VISIBLE);
+                caja_anoactua3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_horaactua3.setVisibility(View.VISIBLE);
+                caja_edit_horaactua3.setVisibility(View.VISIBLE);
+
+                caja_borrar_otraActua.setVisibility(View.GONE);
+                caja_agregar_otraactua3.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        borrar_otraactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua3.setVisibility(View.GONE);
+                caja_actua3.setVisibility(View.GONE);
+
+                caja_anuncio_instActua3.setVisibility(View.GONE);
+                caja_edit_intactua3.setVisibility(View.GONE);
+
+
+                caja_anuncio_anoactua3.setVisibility(View.GONE);
+                caja_anoactua3.setVisibility(View.GONE);
+
+
+                caja_anuncio_horaactua3.setVisibility(View.GONE);
+                caja_edit_horaactua3.setVisibility(View.GONE);
+
+
+                caja_borrar_otraActua.setVisibility(View.VISIBLE);
+                caja_agregar_otraactua3.setVisibility(View.GONE);
+
+
+            }
+        });
+        guardar_actua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_actua3 = actua3_texto.getText().toString();
+                actua3.setText(nuevo_actua3);
+                if (!nuevo_actua3.trim().equals("")) {
+                    caja_actua3.setVisibility(View.GONE);
+                    caja_actua3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre de la actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_actua3.setVisibility(View.VISIBLE);
+                caja_actua3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_instactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_instactua3= instactua3_texto.getText().toString();
+                instactua3.setText(nuevo_instactua3);
+                if (!nuevo_instactua3.trim().equals("")) {
+                    caja_edit_intactua3.setVisibility(View.GONE);
+                    caja_instactua3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El instituto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_instactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_intactua3.setVisibility(View.VISIBLE);
+                caja_instactua3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_anoactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_anoactua3 = anoactua3_texto.getText().toString();
+                anoActua2.setText(nuevo_anoactua3);
+                if (!nuevo_anoactua3.trim().equals("")) {
+                    caja_anoactua3.setVisibility(View.GONE);
+                    caja_anoactua3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El año de actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_anoActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_anoActua2.setVisibility(View.VISIBLE);
+                caja_anoActua2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_horaActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_horaActua2 = horaActua2_texto.getText().toString();
+                horaActua2.setText(nuevo_horaActua2);
+                if (!nuevo_horaActua2.trim().equals("")) {
+                    caja_edit_horaActua2.setVisibility(View.GONE);
+                    caja_horaActua2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de actualizacion es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_horaActua2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_horaActua2.setVisibility(View.VISIBLE);
+                caja_horaActua2_final.setVisibility(View.GONE);
+
+            }
+        });
+        agregar_otraactua3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua4.setVisibility(View.VISIBLE);
+                caja_actua4.setVisibility(View.VISIBLE);
+
+
+                caja_anuncio_instactua4.setVisibility(View.VISIBLE);
+                caja_edit_instactua4.setVisibility(View.VISIBLE);
+
+
+                caja_anuncio_anoactua4.setVisibility(View.VISIBLE);
+                caja_anoactua4.setVisibility(View.VISIBLE);
+
+
+                caja_anuncio_horasactua4.setVisibility(View.VISIBLE);
+                caja_edit_horaactua4.setVisibility(View.VISIBLE);
+
+
+                caja_agregar_otraactua3.setVisibility(View.GONE);
+                caja_borrar_otraactua4.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
+        borrar_otraactua4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                caja_anuncio_actua4.setVisibility(View.GONE);
+                caja_actua4.setVisibility(View.GONE);
+
+                caja_anuncio_instactua4.setVisibility(View.GONE);
+                caja_edit_instactua4.setVisibility(View.GONE);
+
+
+                caja_anuncio_anoactua4.setVisibility(View.GONE);
+                caja_anoactua4.setVisibility(View.GONE);
+
+
+                caja_anuncio_horasactua4.setVisibility(View.GONE);
+                caja_edit_horaactua4.setVisibility(View.GONE);
+
+
+                caja_agregar_otraactua3.setVisibility(View.VISIBLE);
+                caja_borrar_otraactua4.setVisibility(View.GONE);
+
+
+            }
+        });
+
+        regresar_datos_actuaDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_formaCapaDocente.setVisibility(View.VISIBLE);
+                formulario_actuaDisci.setVisibility(View.GONE);
+            }
+        });
+        ir_getsionAcademica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                formulario_actuaDisci.setVisibility(View.GONE);
+                formulario_gestioAcademica.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        regresar_actualizacionDisc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formulario_actuaDisci.setVisibility(View.VISIBLE);
+                formulario_gestioAcademica.setVisibility(View.GONE);
             }
         });
         guardar_actiPuesto.setOnClickListener(new View.OnClickListener() {
@@ -2030,7 +3092,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_actiPuesto.setVisibility(View.GONE);
                     caja_actiPuesto_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la lic es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2078,7 +3140,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAca.setVisibility(View.GONE);
                     caja_tiemGesAca_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El ano de obtecion es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo de inicio es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2102,7 +3164,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAcaA.setVisibility(View.GONE);
                     caja_tiemGesAcaA_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2116,53 +3178,56 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
-        agregar_otraActua.setOnClickListener(new View.OnClickListener() {
+        agregar_otraGesAca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_tipoActua2.setVisibility(View.VISIBLE);
-                caja_edit_actua2.setVisibility(View.VISIBLE);
+                caja_anuncio_actiPues2.setVisibility(View.VISIBLE);
+                caja_edit_actiPues2.setVisibility(View.VISIBLE);
                 actiPues2_texto.setText("");
-                caja_anuncio_actuaInts2.setVisibility(View.VISIBLE);
-                caja_edit_instPaisActua2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_intGesAca2.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca2.setVisibility(View.VISIBLE);
                 intGesAca2_texto.setText("");
-                caja_anuncio_anoActua2.setVisibility(View.VISIBLE);
-                caja_edit_anoActua2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAca2.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAca2.setVisibility(View.VISIBLE);
                 tiemGesAca2_texto.setText("");
-                caja_anuncio_horaActua2.setVisibility(View.VISIBLE);
-                caja_edit_horaActua2.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAcaA2.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA2.setVisibility(View.VISIBLE);
                 tiemGesAcaA2_texto.setText("");
-                caja_agregar_otraActua.setVisibility(View.GONE);
-                caja_borrar_otraActua.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraGesAca.setVisibility(View.GONE);
+                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
 
 
             }
         });
-        borrar_otraActua.setOnClickListener(new View.OnClickListener() {
+        borrar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_tipoActua2.setVisibility(View.GONE);
-                caja_edit_actua2.setVisibility(View.GONE);
+                caja_anuncio_actiPues2.setVisibility(View.GONE);
+                caja_edit_actiPues2.setVisibility(View.GONE);
                 caja_actiPues2_final.setVisibility(View.GONE);
 
-                caja_anuncio_actuaInts2.setVisibility(View.GONE);
-                caja_edit_instPaisActua2.setVisibility(View.GONE);
+                caja_anuncio_intGesAca2.setVisibility(View.GONE);
+                caja_edit_intGesAca2.setVisibility(View.GONE);
                 caja_intGesAca2_final.setVisibility(View.GONE);
 
-                caja_anuncio_anoActua2.setVisibility(View.GONE);
-                caja_edit_anoActua2.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAca2.setVisibility(View.GONE);
+                caja_edit_tiemGesAca2.setVisibility(View.GONE);
                 caja_tiemGesAca2_final.setVisibility(View.GONE);
 
-                caja_anuncio_horaActua2.setVisibility(View.GONE);
-                caja_edit_horaActua2.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAcaA2.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
                 caja_tiemGesAcaA2_final.setVisibility(View.GONE);
 
-                caja_agregar_otraActua.setVisibility(View.VISIBLE);
-                caja_borrar_otraActua.setVisibility(View.GONE);
+                caja_agregar_otraGesAca.setVisibility(View.VISIBLE);
+                caja_agregar_otraGesAca2.setVisibility(View.GONE);
 
 
             }
         });
-
         guardar_actiPues2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -2173,7 +3238,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_actiPues2.setVisibility(View.GONE);
                     caja_actiPues2_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la lic es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2221,7 +3286,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAca2.setVisibility(View.GONE);
                     caja_tiemGesAca2_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El ano de obtecion es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo de inicio es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2245,7 +3310,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
                     caja_tiemGesAcaA2_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2259,49 +3324,54 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
-        agregar_otraActua2.setOnClickListener(new View.OnClickListener() {
+
+
+        agregar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_actua3.setVisibility(View.VISIBLE);
-                caja_actua3.setVisibility(View.VISIBLE);
+                caja_anuncio_actiPues3.setVisibility(View.VISIBLE);
+                caja_actiPues3.setVisibility(View.VISIBLE);
                 actiPues3_texto.setText("");
 
-                caja_anuncio_instActua3.setVisibility(View.VISIBLE);
-                caja_edit_intactua3.setVisibility(View.VISIBLE);
+                caja_anuncio_intGesAca3.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca3.setVisibility(View.VISIBLE);
                 intGesAca3_texto.setText("");
-                caja_anuncio_anoactua3.setVisibility(View.VISIBLE);
-                caja_anoactua3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAca3.setVisibility(View.VISIBLE);
+                caja_tiemGesAca3.setVisibility(View.VISIBLE);
                 tiemGesAca3_texto.setText("");
-                caja_anuncio_horaactua3.setVisibility(View.VISIBLE);
-                caja_edit_horaactua3.setVisibility(View.VISIBLE);
+
+                caja_anuncio_tiemGesAcaA3.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA3.setVisibility(View.VISIBLE);
                 tiemGesAcaA3_texto.setText("");
-                caja_borrar_otraActua.setVisibility(View.GONE);
-                caja_agregar_otraactua3.setVisibility(View.VISIBLE);
+
+                caja_agregar_otraGesAca2.setVisibility(View.GONE);
+                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
 
 
             }
         });
-        borrar_otraactua3.setOnClickListener(new View.OnClickListener() {
+        borrar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_actua3.setVisibility(View.GONE);
-                caja_actua3.setVisibility(View.GONE);
+                caja_anuncio_actiPues3.setVisibility(View.GONE);
+                caja_actiPues3.setVisibility(View.GONE);
                 caja_actiPues3_final.setVisibility(View.GONE);
 
-                caja_anuncio_instActua3.setVisibility(View.GONE);
-                caja_edit_intactua3.setVisibility(View.GONE);
+                caja_anuncio_intGesAca3.setVisibility(View.GONE);
+                caja_edit_intGesAca3.setVisibility(View.GONE);
                 caja_intGesAca3_final.setVisibility(View.GONE);
 
-                caja_anuncio_anoactua3.setVisibility(View.GONE);
-                caja_anoactua3.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAca3.setVisibility(View.GONE);
+                caja_tiemGesAca3.setVisibility(View.GONE);
                 caja_tiemGesAca3_final.setVisibility(View.GONE);
 
-                caja_anuncio_horaactua3.setVisibility(View.GONE);
-                caja_edit_horaactua3.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAcaA3.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
                 caja_tiemGesAcaA3_final.setVisibility(View.GONE);
 
-                caja_borrar_otraActua.setVisibility(View.VISIBLE);
-                caja_agregar_otraactua3.setVisibility(View.GONE);
+                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
+                caja_agregar_otraGesAca3.setVisibility(View.GONE);
 
 
             }
@@ -2316,7 +3386,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_actiPues3.setVisibility(View.GONE);
                     caja_actiPues3_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la lic es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2364,7 +3434,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_tiemGesAca3.setVisibility(View.GONE);
                     caja_tiemGesAca3_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El ano de obtecion es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo de inicio es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2388,7 +3458,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
                     caja_tiemGesAcaA3_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2402,52 +3472,52 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
-        agregar_otraactua3.setOnClickListener(new View.OnClickListener() {
+        agregar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_actua4.setVisibility(View.VISIBLE);
-                caja_actua4.setVisibility(View.VISIBLE);
+                caja_anuncio_actiPues4.setVisibility(View.VISIBLE);
+                caja_actiPues4.setVisibility(View.VISIBLE);
                 actiPues4_texto.setText("");
 
-                caja_anuncio_instactua4.setVisibility(View.VISIBLE);
-                caja_edit_instactua4.setVisibility(View.VISIBLE);
+                caja_anuncio_intGesAca4.setVisibility(View.VISIBLE);
+                caja_edit_intGesAca4.setVisibility(View.VISIBLE);
                 intGesAca4_texto.setText("");
 
-                caja_anuncio_anoactua4.setVisibility(View.VISIBLE);
-                caja_anoactua4.setVisibility(View.VISIBLE);
+                caja_anuncio_tiemGesAca4.setVisibility(View.VISIBLE);
+                caja_tiemGesAca4.setVisibility(View.VISIBLE);
                 tiemGesAca4_texto.setText("");
 
-                caja_anuncio_horasactua4.setVisibility(View.VISIBLE);
-                caja_edit_horaactua4.setVisibility(View.VISIBLE);
+                caja_anuncio_tiemGesAcaA4.setVisibility(View.VISIBLE);
+                caja_edit_tiemGesAcaA4.setVisibility(View.VISIBLE);
                 tiemGesAcaA4_texto.setText("");
-
-                caja_agregar_otraactua3.setVisibility(View.GONE);
-                caja_borrar_otraactua4.setVisibility(View.VISIBLE);
+                caja_agregar_otraGesAca3.setVisibility(View.GONE);
+                caja_borrar_otraGesAca4.setVisibility(View.VISIBLE);
 
 
             }
         });
-        borrar_otraactua4.setOnClickListener(new View.OnClickListener() {
+
+        borrar_otraGesAca4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                caja_anuncio_actua4.setVisibility(View.GONE);
-                caja_actua4.setVisibility(View.GONE);
+                caja_anuncio_actiPues4.setVisibility(View.GONE);
+                caja_actiPues4.setVisibility(View.GONE);
                 caja_actiPues4_final.setVisibility(View.GONE);
 
-                caja_anuncio_instactua4.setVisibility(View.GONE);
-                caja_edit_instactua4.setVisibility(View.GONE);
+                caja_anuncio_intGesAca4.setVisibility(View.GONE);
+                caja_edit_intGesAca4.setVisibility(View.GONE);
                 caja_intGesAca4_final.setVisibility(View.GONE);
 
-                caja_anuncio_anoactua4.setVisibility(View.GONE);
-                caja_anoactua4.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAca4.setVisibility(View.GONE);
+                caja_tiemGesAca4.setVisibility(View.GONE);
                 caja_tiemGesAca4_final.setVisibility(View.GONE);
 
-                caja_anuncio_horasactua4.setVisibility(View.GONE);
-                caja_edit_horaactua4.setVisibility(View.GONE);
+                caja_anuncio_tiemGesAcaA4.setVisibility(View.GONE);
+                caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
                 caja_tiemGesAcaA4_final.setVisibility(View.GONE);
 
-                caja_agregar_otraactua3.setVisibility(View.VISIBLE);
-                caja_borrar_otraactua4.setVisibility(View.GONE);
+                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
+                caja_borrar_otraGesAca4.setVisibility(View.GONE);
 
 
             }
@@ -2462,7 +3532,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_actiPues4.setVisibility(View.GONE);
                     caja_actiPues4_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la lic es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto  es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2510,7 +3580,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_tiemGesAca4.setVisibility(View.GONE);
                     caja_tiemGesAca4_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "El ano de obtecion es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo de incio es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2534,7 +3604,7 @@ public class Cedula2 extends AppCompatActivity {
                     caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
                     caja_tiemGesAcaA4_final.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -2545,155 +3615,6 @@ public class Cedula2 extends AppCompatActivity {
 
                 caja_edit_tiemGesAcaA4.setVisibility(View.VISIBLE);
                 caja_tiemGesAcaA4_final.setVisibility(View.GONE);
-
-            }
-        });
-        regresar_datos_actuaDocente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                formulario_formaCapaDocente.setVisibility(View.VISIBLE);
-                formulario_actuaDisci.setVisibility(View.GONE);
-            }
-        });
-        ir_getsionAcademica.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                formulario_actuaDisci.setVisibility(View.GONE);
-                formulario_gestioAcademica.setVisibility(View.VISIBLE);
-
-
-            }
-        });
-        regresar_actualizacionDisc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                formulario_actuaDisci.setVisibility(View.VISIBLE);
-                formulario_gestioAcademica.setVisibility(View.GONE);
-            }
-        });
-        agregar_otraGesAca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues2.setVisibility(View.VISIBLE);
-                caja_edit_actiPues2.setVisibility(View.VISIBLE);
-
-                caja_anuncio_intGesAca2.setVisibility(View.VISIBLE);
-                caja_edit_intGesAca2.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAca2.setVisibility(View.VISIBLE);
-                caja_edit_tiemGesAca2.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAcaA2.setVisibility(View.VISIBLE);
-                caja_edit_tiemGesAcaA2.setVisibility(View.VISIBLE);
-
-                caja_agregar_otraGesAca.setVisibility(View.GONE);
-                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
-
-
-            }
-        });
-        borrar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues2.setVisibility(View.GONE);
-                caja_edit_actiPues2.setVisibility(View.GONE);
-
-                caja_anuncio_intGesAca2.setVisibility(View.GONE);
-                caja_edit_intGesAca2.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAca2.setVisibility(View.GONE);
-                caja_edit_tiemGesAca2.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAcaA2.setVisibility(View.GONE);
-                caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
-
-                caja_agregar_otraGesAca.setVisibility(View.VISIBLE);
-                caja_agregar_otraGesAca2.setVisibility(View.GONE);
-
-
-            }
-        });
-        agregar_otraGesAca2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues3.setVisibility(View.VISIBLE);
-                caja_actiPues3.setVisibility(View.VISIBLE);
-
-                caja_anuncio_intGesAca3.setVisibility(View.VISIBLE);
-                caja_edit_intGesAca3.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAca3.setVisibility(View.VISIBLE);
-                caja_tiemGesAca3.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAcaA3.setVisibility(View.VISIBLE);
-                caja_edit_tiemGesAcaA3.setVisibility(View.VISIBLE);
-
-                caja_agregar_otraGesAca2.setVisibility(View.GONE);
-                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
-
-
-            }
-        });
-        borrar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues3.setVisibility(View.GONE);
-                caja_actiPues3.setVisibility(View.GONE);
-
-                caja_anuncio_intGesAca3.setVisibility(View.GONE);
-                caja_edit_intGesAca3.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAca3.setVisibility(View.GONE);
-                caja_tiemGesAca3.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAcaA3.setVisibility(View.GONE);
-                caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
-
-                caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
-                caja_agregar_otraGesAca3.setVisibility(View.GONE);
-
-
-            }
-        });
-        agregar_otraGesAca3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues4.setVisibility(View.VISIBLE);
-                caja_actiPues4.setVisibility(View.VISIBLE);
-
-                caja_anuncio_intGesAca4.setVisibility(View.VISIBLE);
-                caja_edit_intGesAca4.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAca4.setVisibility(View.VISIBLE);
-                caja_tiemGesAca4.setVisibility(View.VISIBLE);
-
-                caja_anuncio_tiemGesAcaA4.setVisibility(View.VISIBLE);
-                caja_edit_tiemGesAcaA4.setVisibility(View.VISIBLE);
-
-                caja_agregar_otraGesAca3.setVisibility(View.GONE);
-                caja_borrar_otraGesAca4.setVisibility(View.VISIBLE);
-
-
-            }
-        });
-        borrar_otraGesAca4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                caja_anuncio_actiPues4.setVisibility(View.GONE);
-                caja_actiPues4.setVisibility(View.GONE);
-
-                caja_anuncio_intGesAca4.setVisibility(View.GONE);
-                caja_edit_intGesAca4.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAca4.setVisibility(View.GONE);
-                caja_tiemGesAca4.setVisibility(View.GONE);
-
-                caja_anuncio_tiemGesAcaA4.setVisibility(View.GONE);
-                caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
-
-                caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
-                caja_borrar_otraGesAca4.setVisibility(View.GONE);
-
 
             }
         });

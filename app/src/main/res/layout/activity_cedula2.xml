@@ -3514,6 +3514,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="20dp"
+                    android:inputType="number"
                     />
                 <ImageView
                     android:id="@+id/guardar_anoObtencionCapa"
@@ -3766,7 +3767,7 @@
                     android:textSize="20dp" />
 
                 <ImageView
-                    android:id="@+id/cambiar_Capa2"
+                    android:id="@+id/cambiar_CapaIns2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_margin="15dp"
@@ -4161,6 +4162,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="20dp"
+                    android:inputType="number"
                     />
                 <ImageView
                     android:id="@+id/guardar_anoCapa3"
@@ -4494,6 +4496,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="20dp"
+                    android:inputType="number"
                     />
                 <ImageView
                     android:id="@+id/guardar_anoCapa4"
@@ -4802,7 +4805,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/apellido2_instPaisActua"
+                android:id="@+id/instPaisActua_texto"
                 android:layout_width="250dp"
                 android:layout_height="22dp"
                 android:background="@color/blanco"
@@ -5539,7 +5542,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/caja_anoactua3_final"
+            android:id="@+id/ "
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_margin="10dp"
