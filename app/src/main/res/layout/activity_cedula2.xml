@@ -5542,7 +5542,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ "
+            android:id="@+id/caja_anoactua3_final"
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_margin="10dp"
@@ -5726,7 +5726,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/actua4_final"
+            android:id="@+id/caja_actua4_final"
             android:layout_width="match_parent"
             android:layout_height="27dp"
             android:layout_margin="10dp"
@@ -7978,7 +7978,7 @@
                 android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/desProdAca8_texto"
