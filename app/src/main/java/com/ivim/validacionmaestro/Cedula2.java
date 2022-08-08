@@ -93,7 +93,14 @@ public class Cedula2 extends AppCompatActivity {
             caja_desProdAca2_final,caja_edit_desProdAca3,caja_desProdAca3_final,caja_edit_desProdAca4,
             caja_desProdAca4_final,caja_edit_desProdAca5,caja_desProdAca5_final,caja_edit_desProdAca6,
             caja_desProdAca6_final,caja_edit_desProdAca7,caja_desProdAca7_final,caja_edit_desProdAca8,
-            caja_desProdAca8_final;
+            caja_desProdAca8_final,caja_edit_actiPuestoProfe,caja_actiPuestoProfe_final,caja_edit_OrgaEmp,
+            caja_OrgaEmp_final,caja_edit_tiemProfe,caja_tiemProfe_final,caja_edit_tiemProfeA,caja_tiemProfeA_final,
+            caja_actiPuestoProfe2_final,caja_OrgaEmp2_final,caja_tiemProfe2_final,caja_tiemProfeA2_final,
+            caja_actiPuesProfe3_final,caja_OrgaEmp3_final,caja_tiemProfe3_final,caja_tiemProfeA3_final,
+            caja_actiPuesProfe4_final,caja_OrgaEmp4_final,caja_tiemProfe4_final,caja_tiemProfeA4_final,
+            caja_edit_organismo,caja_organismo_final,caja_edit_periodo,caja_periodo_final,caja_nivelExp_final,
+            caja_edit_nivelExp,caja_organismo2_final,caja_periodo2_final,caja_nivelExp2_final,caja_organismo3_final,
+            caja_periodo3_final,caja_nivelExp3_final,caja_organismo4_final,caja_periodo4_final,caja_nivelExp4_final;
 
     private EditText numProfesor,apellido1_texto,apellido2_texto,fecha_de_nacimiento_texto,
             nombramiento_actual_texto,antiguedad_texto,licenciatura_texto,instPaisLic_texto,
@@ -115,7 +122,12 @@ public class Cedula2 extends AppCompatActivity {
             actua3_texto,instactua3_texto,anoactua3_texto,horaactua3_texto,actua4_texto,
             instactua4_texto,anoactua4_texto,horaactua4_texto,desProdAca_texto,desProdAca2_texto,
             desProdAca3_texto,desProdAca4_texto,desProdAca5_texto,desProdAca6_texto,desProdAca7_texto,
-            desProdAca8_texto;
+            desProdAca8_texto,actiPuestoProfe_texto,OrgaEmp_texto,tiemProfe_texto,tiemProfeA_texto,
+            actiPuestoProfe2_texto,OrgaEmp2_texto,tiemProfe2_texto,tiemProfeA2_texto,actiPuesProfe3_texto,
+            OrgaEmp3_texto,tiemProfe3_texto,tiemProfeA3_texto,actiPuesProfe4_texto,OrgaEmp4_texto,
+            tiemProfe4_texto,tiemProfeA4_texto,organismo_texto,periodo_texto,nivelExp_texto,organismo2_texto,
+            periodo2_texto,nivelExp2_texto,organismo3_texto,periodo3_texto,nivelExp3_texto,organismo4_texto,
+            periodo4_texto,nivelExp4_texto;
 
 
     private ImageView guardar_numProfesor,cambiar_numProfesor,guardar_apellido1,cambiar_apellido2,
@@ -160,7 +172,18 @@ public class Cedula2 extends AppCompatActivity {
             cambiar_desProdAca,guardar_desProdAca2,cambiar_desProdAca2,guardar_desProdAca3,
             cambiar_desProdAca3,guardar_desProdAca4,cambiar_desProdAca4,guardar_desProdAca5,
             cambiar_desProdAca5,guardar_desProdAca6,cambiar_desProdAca6,guardar_desProdAca7,
-            cambiar_desProdAca7,guardar_desProdAca8,cambiar_desProdAca8;
+            cambiar_desProdAca7,guardar_desProdAca8,cambiar_desProdAca8,guardar_actiPuestoProfe,
+            cambiar_actiPuestoProfe,guardar_OrgaEmp,cambiar_OrgaEmp,guardar_tiemProfe,cambiar_tiemProfe,
+            guardar_tiemProfeA,cambiar_tiemProfeA,guardar_actiPuestoProfe2,cambiar_actiPuestoProfe2,guardar_OrgaEmp2,
+            cambiar_OrgaEmp2,guardar_tiemProfe2,cambiar_tiemProfe2,guardar_tiemProfeA2,cambiar_tiemProfeA2,
+            guardar_actiPuesProfe3,cambiar_actiPuesProfe3,guardar_OrgaEmp3,cambiar_OrgaEmp3,guardar_tiemProfe3,
+            cambiar_tiemProfe3,guardar_tiemProfeA3,cambiar_tiemProfeA3,guardar_actiPuesProfe4,cambiar_actiPuesProfe4,
+            guardar_OrgaEmp4,cambiar_OrgaEmp4,guardar_tiemProfe4,cambiar_tiemProfe4,guardar_tiemProfeA4,
+            cambiar_tiemProfeA4,guardar_organismo,cambiar_organismo,guardar_periodo,cambiar_periodo,guardar_nivelExp,
+            cambiar_nivelExp,guardar_organismo2,cambiar_organismo2,guardar_periodo2,cambiar_periodo2,
+            guardar_nivelExp2,cambiar_nivelExp2,guardar_organismo3,cambiar_organismo3,guardar_periodo3,
+            cambiar_periodo3,guardar_nivelExp3,cambiar_nivelExp3,guardar_organismo4,cambiar_organismo4,
+            guardar_periodo4,cambiar_periodo4,guardar_nivelExp4,cambiar_nivelExp4;
 
     private TextView numProfesor_final,apellido1,apellido2,edad,nombramiento_actual_vista,
             antiguedad,fecha_de_nacimiento,ir_formAcademica,ir_capDocente,regresar_datosBasic,ir_actuaDisciplinar,
@@ -185,7 +208,10 @@ public class Cedula2 extends AppCompatActivity {
             horaCapa3,capa4,instcapa4,anoCapa4_vista,horaCapa4,tipoActua,instPaisActua,anoObtencionActua,horasActua,
             actua2,instPaisActua2,anoActua2,horaActua2,actua3,instactua3,anoactua3_vista,horaactua3,actua4,
             instactua4,anoactua4_vista,horaactua4,desProdAca,desProdAca2,desProdAca3,desProdAca4,desProdAca5,
-            desProdAca6,desProdAca7,desProdAca8;
+            desProdAca6,desProdAca7,desProdAca8,actiPuestoProfe,OrgaEmp,tiemProfe,tiemProfeA,actiPuestoProfe2,
+            OrgaEmp2,tiemProfe2,tiemProfeA2,actiPuesProfe3,OrgaEmp3,tiemProfe3_vista,tiemProfeA3,actiPuesProfe4,
+            OrgaEmp4,tiemProfe4_vista,tiemProfeA4,organismo,periodo,nivelExp,organismo2,periodo2,nivelExp2,
+            organismo3,periodo3,nivelExp3_vista,organismo4,periodo4,nivelExp4_vista;
 
     private String nuevo_licenciatura,nuevo_instPaisLic,nuevo_anoObtencionLic,nuevo_cedulaProfLic,
             nuevo_licenciatura2,nuevo_cedulaProfLic2,nuevo_anoObtencion2Lic,nuevo_instPaisLic2,
@@ -202,7 +228,12 @@ public class Cedula2 extends AppCompatActivity {
             nuevo_instPaisActua,nuevo_anoObtencionActua,nuevo_horasActua,nuevo_actua2,nuevo_instPaisActua2,
             nuevo_anoActua2,nuevo_horaActua2,nuevo_actua3,nuevo_instactua3,nuevo_anoactua3,nuevo_horaactua3,
             nuevo_actua4,nuevo_instactua4,nuevo_anoactua4,nuevo_horaactua4,nuevo_desProdAca,nuevo_desProdAca2,
-            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8;
+            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8,
+            nuevo_actiPuestoProfe,nuevo_OrgaEmp,nuevo_tiemProfe,nuevo_tiemProfeA,nuevo_actiPuestoProfe2,
+            nuevo_OrgaEmp2,nuevo_tiemProfe2,nuevo_tiemProfeA2,nuevo_actiPuesProfe3,nuevo_OrgaEmp3,nuevo_tiemProfe3,
+            nuevo_tiemProfeA3,nuevo_actiPuesProfe4,nuevo_OrgaEmp4,nuevo_tiemProfe4,nuevo_tiemProfeA4,nuevo_organismo,
+            nuevo_periodo,nuevo_nivelExp,nuevo_organismo2,nuevo_periodo2,nuevo_nivelExp2,nuevo_nivelExp3,nuevo_periodo3,
+            nuevo_organismo3,nuevo_nivelExp4,nuevo_periodo4,nuevo_organismo4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -1080,9 +1111,116 @@ public class Cedula2 extends AppCompatActivity {
         caja_borrar_otraExpProfe3 = findViewById(R.id.caja_borrar_otraExpProfe3);
          borrar_otraExpProfe3 = findViewById(R.id.borrar_otraExpProfe3);
 
+        guardar_actiPuestoProfe= findViewById(R.id.guardar_actiPuestoProfe);
+        actiPuestoProfe_texto = findViewById(R.id.actiPuestoProfe_texto);
+        actiPuestoProfe= findViewById(R.id.actiPuestoProfe);
+        caja_edit_actiPuestoProfe= findViewById(R.id.caja_edit_actiPuestoProfe);
+        caja_actiPuestoProfe_final= findViewById(R.id.caja_actiPuestoProfe_final);
+        cambiar_actiPuestoProfe = findViewById(R.id.cambiar_actiPuestoProfe);
+
+        guardar_OrgaEmp= findViewById(R.id.guardar_OrgaEmp);
+        OrgaEmp_texto= findViewById(R.id.OrgaEmp_texto);
+        OrgaEmp= findViewById(R.id.OrgaEmp);
+        caja_edit_OrgaEmp = findViewById(R.id.caja_edit_OrgaEmp);
+        caja_OrgaEmp_final= findViewById(R.id.caja_OrgaEmp_final);
+        cambiar_OrgaEmp = findViewById(R.id.cambiar_OrgaEmp);
+
+        guardar_tiemProfe = findViewById(R.id.guardar_tiemProfe);
+        tiemProfe_texto= findViewById(R.id.tiemProfe_texto);
+        tiemProfe= findViewById(R.id.tiemProfe);
+        caja_edit_tiemProfe = findViewById(R.id.caja_edit_tiemProfe);
+        caja_tiemProfe_final= findViewById(R.id.caja_tiemProfe_final);
+        cambiar_tiemProfe= findViewById(R.id.cambiar_tiemProfe);
+
+
+        guardar_tiemProfeA = findViewById(R.id.guardar_tiemProfeA);
+        tiemProfeA_texto= findViewById(R.id.tiemProfeA_texto);
+        tiemProfeA= findViewById(R.id.tiemProfeA);
+        caja_edit_tiemProfeA= findViewById(R.id.caja_edit_tiemProfeA);
+        caja_tiemProfeA_final = findViewById(R.id.caja_tiemProfeA_final);
+        cambiar_tiemProfeA = findViewById(R.id.cambiar_tiemProfeA);
+
+
+        guardar_actiPuestoProfe2= findViewById(R.id.guardar_actiPuestoProfe2);
+        actiPuestoProfe2_texto= findViewById(R.id.actiPuestoProfe2_texto);
+        actiPuestoProfe2= findViewById(R.id.actiPuestoProfe2);
+        caja_actiPuestoProfe2_final= findViewById(R.id.caja_actiPuestoProfe2_final);
+        cambiar_actiPuestoProfe2 = findViewById(R.id.cambiar_actiPuestoProfe2);
+
+
+        guardar_OrgaEmp2 = findViewById(R.id.guardar_OrgaEmp2);
+        OrgaEmp2_texto= findViewById(R.id.OrgaEmp2_texto);
+        OrgaEmp2 = findViewById(R.id.OrgaEmp2);
+        caja_OrgaEmp2_final = findViewById(R.id.caja_OrgaEmp2_final);
+        cambiar_OrgaEmp2 = findViewById(R.id.cambiar_OrgaEmp2);
+
+
+        guardar_tiemProfe2= findViewById(R.id.guardar_tiemProfe2);
+        tiemProfe2_texto= findViewById(R.id.tiemProfe2_texto);
+        tiemProfe2= findViewById(R.id.tiemProfe2);
+        caja_tiemProfe2_final= findViewById(R.id.caja_tiemProfe2_final);
+        cambiar_tiemProfe2 = findViewById(R.id.cambiar_tiemProfe2);
+
+        guardar_tiemProfeA2 = findViewById(R.id.guardar_tiemProfeA2);
+        tiemProfeA2_texto= findViewById(R.id.tiemProfeA2_texto);
+        tiemProfeA2= findViewById(R.id.tiemProfeA2);
+        caja_tiemProfeA2_final = findViewById(R.id.caja_tiemProfeA2_final);
+        cambiar_tiemProfeA2= findViewById(R.id.cambiar_tiemProfeA2);
+
+        guardar_actiPuesProfe3= findViewById(R.id.guardar_actiPuesProfe3);
+        actiPuesProfe3_texto = findViewById(R.id.actiPuesProfe3_texto);
+        actiPuesProfe3= findViewById(R.id.actiPuesProfe3);
+        caja_actiPuesProfe3_final= findViewById(R.id.caja_actiPuesProfe3_final);
+        cambiar_actiPuesProfe3= findViewById(R.id.cambiar_actiPuesProfe3);
+
+        guardar_OrgaEmp3= findViewById(R.id.guardar_OrgaEmp3);
+        OrgaEmp3_texto= findViewById(R.id.OrgaEmp3_texto);
+        OrgaEmp3= findViewById(R.id.OrgaEmp3);
+        caja_OrgaEmp3_final= findViewById(R.id.caja_OrgaEmp3_final);
+        cambiar_OrgaEmp3= findViewById(R.id.cambiar_OrgaEmp3);
+
+        guardar_tiemProfe3= findViewById(R.id.guardar_tiemProfe3);
+        tiemProfe3_texto= findViewById(R.id.tiemProfe3_texto);
+        tiemProfe3_vista= findViewById(R.id.tiemProfe3_vista);
+        caja_tiemProfe3_final= findViewById(R.id.caja_tiemProfe3_final);
+        cambiar_tiemProfe3= findViewById(R.id.cambiar_tiemProfe3);
+
+
+        guardar_tiemProfeA3= findViewById(R.id.guardar_tiemProfeA3);
+        tiemProfeA3_texto= findViewById(R.id.tiemProfeA3_texto);
+        tiemProfeA3= findViewById(R.id.tiemProfeA3);
+        caja_tiemProfeA3_final= findViewById(R.id.caja_tiemProfeA3_final);
+        cambiar_tiemProfeA3= findViewById(R.id.cambiar_tiemProfeA3);
+
+
+        guardar_actiPuesProfe4= findViewById(R.id.guardar_actiPuesProfe4);
+        actiPuesProfe4_texto = findViewById(R.id.actiPuesProfe4_texto);
+        actiPuesProfe4= findViewById(R.id.actiPuesProfe4);
+        caja_actiPuesProfe4_final= findViewById(R.id.caja_actiPuesProfe4_final);
+        cambiar_actiPuesProfe4= findViewById(R.id.cambiar_actiPuesProfe4);
+
+        guardar_OrgaEmp4= findViewById(R.id.guardar_OrgaEmp4);
+        OrgaEmp4_texto= findViewById(R.id.OrgaEmp4_texto);
+        OrgaEmp4= findViewById(R.id.OrgaEmp4);
+        caja_OrgaEmp4_final= findViewById(R.id.caja_OrgaEmp4_final);
+        cambiar_OrgaEmp4= findViewById(R.id.cambiar_OrgaEmp4);
+
+        guardar_tiemProfe4 = findViewById(R.id.guardar_tiemProfe4);
+        tiemProfe4_texto= findViewById(R.id.tiemProfe4_texto);
+        tiemProfe4_vista= findViewById(R.id.tiemProfe4_vista);
+        caja_tiemProfe4_final= findViewById(R.id.caja_tiemProfe4_final);
+        cambiar_tiemProfe4= findViewById(R.id.cambiar_tiemProfe4);
+
+        guardar_tiemProfeA4= findViewById(R.id.guardar_tiemProfeA4);
+        tiemProfeA4_texto = findViewById(R.id.tiemProfeA4_texto);
+        tiemProfeA4= findViewById(R.id.tiemProfeA4);
+        caja_tiemProfeA4_final= findViewById(R.id.caja_tiemProfeA4_final);
+        cambiar_tiemProfeA4= findViewById(R.id.cambiar_tiemProfeA4);
+
         formulario_expDiseñoIng = findViewById(R.id.formulario_expDiseñoIng);
         caja_siguiente_scroll7 = findViewById(R.id.caja_siguiente_scroll7);
         regresar_expProfe = findViewById(R.id.regresar_expProfe);
+
         ir_logProfe = findViewById(R.id.ir_logProfe);
 
         formulario_expProfeNoAcade = findViewById(R.id.formulario_expProfeNoAcade);
@@ -1119,6 +1257,90 @@ public class Cedula2 extends AppCompatActivity {
         caja_nivelExp4 = findViewById(R.id.caja_nivelExp4);
         borrar_otraExpInge3 = findViewById(R.id.borrar_otraExpInge3);
         caja_borrar_otraExpInge3 = findViewById(R.id.caja_borrar_otraExpInge3);
+
+        guardar_organismo= findViewById(R.id.guardar_organismo);
+        organismo_texto= findViewById(R.id.organismo_texto);
+        organismo= findViewById(R.id.organismo);
+        caja_edit_organismo= findViewById(R.id.caja_edit_organismo);
+        caja_organismo_final = findViewById(R.id.caja_organismo_final);
+        cambiar_organismo= findViewById(R.id.cambiar_organismo);
+
+        guardar_periodo= findViewById(R.id.guardar_periodo);
+        periodo_texto= findViewById(R.id.periodo_texto);
+        periodo= findViewById(R.id.periodo);
+        caja_edit_periodo= findViewById(R.id.caja_edit_periodo);
+        caja_periodo_final= findViewById(R.id.caja_periodo_final);
+        cambiar_periodo= findViewById(R.id.cambiar_periodo);
+
+        guardar_nivelExp = findViewById(R.id.guardar_nivelExp);
+        nivelExp_texto = findViewById(R.id.nivelExp_texto);
+        nivelExp= findViewById(R.id.nivelExp);
+        caja_edit_nivelExp = findViewById(R.id.caja_edit_nivelExp);
+        caja_nivelExp_final= findViewById(R.id.caja_nivelExp_final);
+        cambiar_nivelExp= findViewById(R.id.cambiar_nivelExp);
+
+
+        guardar_organismo2= findViewById(R.id.guardar_organismo2);
+        organismo2_texto= findViewById(R.id.organismo2_texto);
+        organismo2 = findViewById(R.id.organismo2);
+        caja_organismo2_final = findViewById(R.id.caja_organismo2_final);
+        cambiar_organismo2= findViewById(R.id.cambiar_organismo2);
+
+
+
+        guardar_periodo2= findViewById(R.id.guardar_periodo2);
+        periodo2_texto= findViewById(R.id.periodo2_texto);
+        periodo2 = findViewById(R.id.periodo2);
+        caja_periodo2_final= findViewById(R.id.caja_periodo2_final);
+        cambiar_periodo2= findViewById(R.id.cambiar_periodo2);
+
+
+        guardar_nivelExp2= findViewById(R.id.guardar_nivelExp2);
+        nivelExp2_texto= findViewById(R.id.nivelExp2_texto);
+        nivelExp2= findViewById(R.id.nivelExp2);
+        caja_nivelExp2_final= findViewById(R.id.caja_nivelExp2_final);
+        cambiar_nivelExp2= findViewById(R.id.cambiar_nivelExp2);
+
+
+        guardar_organismo3= findViewById(R.id.guardar_organismo3);
+        organismo3_texto= findViewById(R.id.organismo3_texto);
+        organismo3= findViewById(R.id.organismo3);
+        caja_organismo3_final= findViewById(R.id.caja_organismo3_final);
+        cambiar_organismo3= findViewById(R.id.cambiar_organismo3);
+
+        guardar_periodo3= findViewById(R.id.guardar_periodo3);
+        periodo3_texto= findViewById(R.id.periodo3_texto);
+        periodo3= findViewById(R.id.periodo3);
+        caja_periodo3_final = findViewById(R.id.caja_periodo3_final);
+        cambiar_periodo3= findViewById(R.id.cambiar_periodo3);
+
+        guardar_nivelExp3 = findViewById(R.id.guardar_nivelExp3);
+        nivelExp3_texto = findViewById(R.id.nivelExp3_texto);
+        nivelExp3_vista= findViewById(R.id.nivelExp3_vista);
+        caja_nivelExp3_final = findViewById(R.id.caja_nivelExp3_final);
+        cambiar_nivelExp3 = findViewById(R.id.cambiar_nivelExp3);
+
+        guardar_organismo4= findViewById(R.id.guardar_organismo4);
+        organismo4_texto= findViewById(R.id.organismo4_texto);
+        organismo4= findViewById(R.id.organismo4);
+        caja_organismo4_final = findViewById(R.id.caja_organismo4_final);
+        cambiar_organismo4 = findViewById(R.id.cambiar_organismo4);
+
+        guardar_periodo4 = findViewById(R.id.guardar_periodo4);
+        periodo4_texto = findViewById(R.id.periodo4_texto);
+        periodo4 = findViewById(R.id.periodo4);
+        caja_periodo4_final= findViewById(R.id.caja_periodo4_final);
+        cambiar_periodo4= findViewById(R.id.cambiar_periodo4);
+
+
+        guardar_nivelExp4 = findViewById(R.id.guardar_nivelExp4);
+        nivelExp4_texto= findViewById(R.id.nivelExp4_texto);
+        nivelExp4_vista= findViewById(R.id.nivelExp4_vista);
+        caja_nivelExp4_final = findViewById(R.id.caja_nivelExp4_final);
+        cambiar_nivelExp4= findViewById(R.id.cambiar_nivelExp4);
+
+
+
 
 
         formulario_logrosProfeNoAca = findViewById(R.id.formulario_logrosProfeNoAca);
@@ -4138,20 +4360,120 @@ public class Cedula2 extends AppCompatActivity {
                 formulario_productosAcademicos.setVisibility(View.GONE);
             }
         });
+        guardar_actiPuestoProfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_actiPuestoProfe=actiPuestoProfe_texto.getText().toString();
+                actiPuestoProfe.setText(nuevo_actiPuestoProfe);
+                if (!nuevo_actiPuestoProfe.trim().equals("")) {
+                    caja_edit_actiPuestoProfe.setVisibility(View.GONE);
+                    caja_actiPuestoProfe_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actiPuestoProfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_actiPuestoProfe.setVisibility(View.VISIBLE);
+                caja_actiPuestoProfe_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_OrgaEmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_OrgaEmp= OrgaEmp_texto.getText().toString();
+                 OrgaEmp.setText(nuevo_OrgaEmp);
+                if (!nuevo_OrgaEmp.trim().equals("")) {
+                    caja_edit_OrgaEmp.setVisibility(View.GONE);
+                    caja_OrgaEmp_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "La organizacion o empresa es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_OrgaEmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_OrgaEmp.setVisibility(View.VISIBLE);
+                caja_OrgaEmp_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_tiemProfe= tiemProfe_texto.getText().toString();
+                tiemProfe.setText(nuevo_tiemProfe);
+                if (!nuevo_tiemProfe.trim().equals("")) {
+                    caja_edit_tiemProfe.setVisibility(View.GONE);
+                    caja_tiemProfe_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de inicio es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfe.setVisibility(View.VISIBLE);
+                caja_tiemProfe_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfeA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+             nuevo_tiemProfeA= tiemProfeA_texto.getText().toString();
+             tiemProfeA.setText(nuevo_tiemProfeA);
+                if (!nuevo_tiemProfeA.trim().equals("")) {
+                    caja_edit_tiemProfeA.setVisibility(View.GONE);
+                    caja_tiemProfeA_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfeA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfeA.setVisibility(View.VISIBLE);
+                caja_tiemProfeA_final.setVisibility(View.GONE);
+
+            }
+        });
         agregar_otraExpProfe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe2.setVisibility(View.VISIBLE);
                 caja_edit_actiPuestoProfe2.setVisibility(View.VISIBLE);
+                actiPuestoProfe2_texto.setText("");
 
                 caja_anuncio_OrgaEmp2.setVisibility(View.VISIBLE);
                 caja_edit_OrgaEmp2.setVisibility(View.VISIBLE);
+                OrgaEmp2_texto.setText("");
 
                 caja_anuncio_tiemProfe2.setVisibility(View.VISIBLE);
                 caja_edit_tiemProfe2.setVisibility(View.VISIBLE);
+                tiemProfe2_texto.setText("");
 
                 caja_anuncio_tiemProfeA2.setVisibility(View.VISIBLE);
                 caja_edit_tiemProfeA2.setVisibility(View.VISIBLE);
+                tiemProfeA2_texto.setText("");
 
                 caja_agregar_otraExpProfe.setVisibility(View.GONE);
                 caja_agregar_otraExpProfe2.setVisibility(View.VISIBLE);
@@ -4164,19 +4486,119 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe2.setVisibility(View.GONE);
                 caja_edit_actiPuestoProfe2.setVisibility(View.GONE);
+                caja_actiPuestoProfe2_final.setVisibility(View.GONE);
 
                 caja_anuncio_OrgaEmp2.setVisibility(View.GONE);
                 caja_edit_OrgaEmp2.setVisibility(View.GONE);
+                caja_OrgaEmp2_final .setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfe2.setVisibility(View.GONE);
                 caja_edit_tiemProfe2.setVisibility(View.GONE);
+                caja_tiemProfe2_final.setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfeA2.setVisibility(View.GONE);
                 caja_edit_tiemProfeA2.setVisibility(View.GONE);
+                caja_tiemProfeA2_final.setVisibility(View.GONE);
 
                 caja_agregar_otraExpProfe.setVisibility(View.VISIBLE);
                 caja_agregar_otraExpProfe2.setVisibility(View.GONE);
 
+
+            }
+        });
+        guardar_actiPuestoProfe2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_actiPuestoProfe2= actiPuestoProfe2_texto.getText().toString();
+                actiPuestoProfe2.setText(nuevo_actiPuestoProfe2);
+                if (!nuevo_actiPuestoProfe2.trim().equals("")) {
+                    caja_edit_actiPuestoProfe2.setVisibility(View.GONE);
+                    caja_actiPuestoProfe2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actiPuestoProfe2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_actiPuestoProfe2.setVisibility(View.VISIBLE);
+                caja_actiPuestoProfe2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_OrgaEmp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_OrgaEmp2= OrgaEmp2_texto.getText().toString();
+                 OrgaEmp2.setText(nuevo_OrgaEmp2);
+                if (!nuevo_OrgaEmp2.trim().equals("")) {
+                    caja_edit_OrgaEmp2.setVisibility(View.GONE);
+                    caja_OrgaEmp2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "La organizacion o empresa es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_OrgaEmp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_OrgaEmp2.setVisibility(View.VISIBLE);
+                caja_OrgaEmp2_final .setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfe2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_tiemProfe2= tiemProfe2_texto.getText().toString();
+                tiemProfe2.setText(nuevo_tiemProfe2);
+                if (!nuevo_tiemProfe2.trim().equals("")) {
+                    caja_edit_tiemProfe2.setVisibility(View.GONE);
+                    caja_tiemProfe2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de incio es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfe2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfe2.setVisibility(View.VISIBLE);
+                caja_tiemProfe2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfeA2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_tiemProfeA2= tiemProfeA2_texto.getText().toString();
+                tiemProfeA2.setText(nuevo_tiemProfeA2);
+                if (!nuevo_tiemProfeA2.trim().equals("")) {
+                    caja_edit_tiemProfeA2.setVisibility(View.GONE);
+                    caja_tiemProfeA2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfeA2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfeA2.setVisibility(View.VISIBLE);
+                caja_tiemProfeA2_final.setVisibility(View.GONE);
 
             }
         });
@@ -4185,15 +4607,19 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe3.setVisibility(View.VISIBLE);
                 caja_actiPuesProfe3.setVisibility(View.VISIBLE);
+                actiPuesProfe3_texto.setText("");
 
                 caja_anuncio_OrgaEmp3.setVisibility(View.VISIBLE);
                 caja_edit_OrgaEmp3.setVisibility(View.VISIBLE);
+                OrgaEmp3_texto.setText("");
 
                 caja_anuncio_tiemProfe3.setVisibility(View.VISIBLE);
                 caja_tiemProfe3.setVisibility(View.VISIBLE);
+                tiemProfe3_texto.setText("");
 
                 caja_anuncio_tiemProfeA3.setVisibility(View.VISIBLE);
                 caja_edit_tiemProfeA3.setVisibility(View.VISIBLE);
+                tiemProfeA3_texto.setText("");
 
                 caja_agregar_otraExpProfe2.setVisibility(View.GONE);
                 caja_agregar_otraExpProfe3.setVisibility(View.VISIBLE);
@@ -4206,19 +4632,119 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe3.setVisibility(View.GONE);
                 caja_actiPuesProfe3.setVisibility(View.GONE);
+                caja_actiPuesProfe3_final.setVisibility(View.GONE);
 
                 caja_anuncio_OrgaEmp3.setVisibility(View.GONE);
                 caja_edit_OrgaEmp3.setVisibility(View.GONE);
+                caja_OrgaEmp3_final.setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfe3.setVisibility(View.GONE);
                 caja_tiemProfe3.setVisibility(View.GONE);
+                caja_tiemProfe3_final.setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfeA3.setVisibility(View.GONE);
                 caja_edit_tiemProfeA3.setVisibility(View.GONE);
+                caja_tiemProfeA3_final.setVisibility(View.GONE);
 
                 caja_agregar_otraExpProfe2.setVisibility(View.VISIBLE);
                 caja_agregar_otraExpProfe3.setVisibility(View.GONE);
 
+
+            }
+        });
+        guardar_actiPuesProfe3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_actiPuesProfe3= actiPuesProfe3_texto.getText().toString();
+                actiPuesProfe3.setText(nuevo_actiPuesProfe3);
+                if (!nuevo_actiPuesProfe3.trim().equals("")) {
+                    caja_actiPuesProfe3.setVisibility(View.GONE);
+                    caja_actiPuesProfe3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actiPuesProfe3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_actiPuesProfe3.setVisibility(View.VISIBLE);
+                caja_actiPuesProfe3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_OrgaEmp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+             nuevo_OrgaEmp3= OrgaEmp3_texto.getText().toString();
+             OrgaEmp3.setText(nuevo_OrgaEmp3);
+                if (!nuevo_OrgaEmp3.trim().equals("")) {
+                    caja_edit_OrgaEmp3.setVisibility(View.GONE);
+                    caja_OrgaEmp3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "La organizacion o empresa es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_OrgaEmp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_OrgaEmp3.setVisibility(View.VISIBLE);
+                caja_OrgaEmp3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfe3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            nuevo_tiemProfe3= tiemProfe3_texto.getText().toString();
+            tiemProfe3_vista.setText(nuevo_tiemProfe3);
+                if (!nuevo_tiemProfe3.trim().equals("")) {
+                    caja_tiemProfe3.setVisibility(View.GONE);
+                    caja_tiemProfe3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de incio es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfe3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_tiemProfe3.setVisibility(View.VISIBLE);
+                caja_tiemProfe3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfeA3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_tiemProfeA3= tiemProfeA3_texto.getText().toString();
+                tiemProfeA3.setText(nuevo_tiemProfeA3);
+                if (!nuevo_tiemProfeA3.trim().equals("")) {
+                    caja_edit_tiemProfeA3.setVisibility(View.GONE);
+                    caja_tiemProfeA3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfeA3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfeA3.setVisibility(View.VISIBLE);
+                caja_tiemProfeA3_final.setVisibility(View.GONE);
 
             }
         });
@@ -4227,15 +4753,19 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe4.setVisibility(View.VISIBLE);
                 caja_actiPuesProfe4.setVisibility(View.VISIBLE);
+                actiPuesProfe4_texto.setText("");
 
                 caja_anuncio_OrgaEmp4.setVisibility(View.VISIBLE);
                 caja_edit_OrgaEmp4.setVisibility(View.VISIBLE);
+                OrgaEmp4_texto.setText("");
 
                 caja_anuncio_tiemProfe4.setVisibility(View.VISIBLE);
                 caja_tiemProfe4.setVisibility(View.VISIBLE);
+                tiemProfe4_texto.setText("");
 
                 caja_anuncio_tiemProfeA4.setVisibility(View.VISIBLE);
                 caja_edit_tiemProfeA4.setVisibility(View.VISIBLE);
+                tiemProfeA4_texto.setText("");
 
                 caja_agregar_otraExpProfe3.setVisibility(View.GONE);
                 caja_borrar_otraExpProfe3.setVisibility(View.VISIBLE);
@@ -4248,19 +4778,119 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_actiPuesProfe4.setVisibility(View.GONE);
                 caja_actiPuesProfe4.setVisibility(View.GONE);
+                caja_actiPuesProfe4_final.setVisibility(View.GONE);
 
                 caja_anuncio_OrgaEmp4.setVisibility(View.GONE);
                 caja_edit_OrgaEmp4.setVisibility(View.GONE);
+                caja_OrgaEmp4_final.setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfe4.setVisibility(View.GONE);
                 caja_tiemProfe4.setVisibility(View.GONE);
+                caja_tiemProfe4_final.setVisibility(View.GONE);
 
                 caja_anuncio_tiemProfeA4.setVisibility(View.GONE);
                 caja_edit_tiemProfeA4.setVisibility(View.GONE);
+                caja_tiemProfeA4_final.setVisibility(View.GONE);
 
                 caja_agregar_otraExpProfe3.setVisibility(View.VISIBLE);
                 caja_borrar_otraExpProfe3.setVisibility(View.GONE);
 
+
+            }
+        });
+        guardar_actiPuesProfe4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_actiPuesProfe4= actiPuesProfe4_texto.getText().toString();
+                actiPuesProfe4.setText(nuevo_actiPuesProfe4);
+                if (!nuevo_actiPuesProfe4.trim().equals("")) {
+                    caja_actiPuesProfe4.setVisibility(View.GONE);
+                    caja_actiPuesProfe4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del puesto  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_actiPuesProfe4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_actiPuesProfe4.setVisibility(View.VISIBLE);
+                caja_actiPuesProfe4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_OrgaEmp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_OrgaEmp4= OrgaEmp4_texto.getText().toString();
+                OrgaEmp4.setText(nuevo_OrgaEmp4);
+                if (!nuevo_OrgaEmp4.trim().equals("")) {
+                    caja_edit_OrgaEmp4.setVisibility(View.GONE);
+                    caja_OrgaEmp4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "La organizacion o empresa es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_OrgaEmp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_OrgaEmp4.setVisibility(View.VISIBLE);
+                caja_OrgaEmp4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfe4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 nuevo_tiemProfe4= tiemProfe4_texto.getText().toString();
+                tiemProfe4_vista.setText(nuevo_tiemProfe4);
+                if (!nuevo_tiemProfe4.trim().equals("")) {
+                    caja_tiemProfe4.setVisibility(View.GONE);
+                    caja_tiemProfe4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo de incio es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfe4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_tiemProfe4.setVisibility(View.VISIBLE);
+                caja_tiemProfe4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_tiemProfeA4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_tiemProfeA4= tiemProfeA4_texto.getText().toString();
+                tiemProfeA4.setText(nuevo_tiemProfeA4);
+                if (!nuevo_tiemProfeA4.trim().equals("")) {
+                    caja_edit_tiemProfeA4.setVisibility(View.GONE);
+                    caja_tiemProfeA4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El tiempo final es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_tiemProfeA4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_tiemProfeA4.setVisibility(View.VISIBLE);
+                caja_tiemProfeA4_final.setVisibility(View.GONE);
 
             }
         });
@@ -4278,17 +4908,92 @@ public class Cedula2 extends AppCompatActivity {
                 formulario_expDiseñoIng.setVisibility(View.VISIBLE);
             }
         });
+        guardar_organismo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_organismo=organismo_texto.getText().toString();
+                organismo.setText(nuevo_organismo);
+                if (!nuevo_organismo.trim().equals("")) {
+                    caja_edit_organismo.setVisibility(View.GONE);
+                    caja_organismo_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del organismo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_organismo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_organismo.setVisibility(View.VISIBLE);
+                caja_organismo_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_periodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_periodo= periodo_texto.getText().toString();
+                periodo.setText(nuevo_periodo);
+                if (!nuevo_periodo.trim().equals("")) {
+                    caja_edit_periodo.setVisibility(View.GONE);
+                    caja_periodo_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El periodo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_periodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_periodo.setVisibility(View.VISIBLE);
+                caja_periodo_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_nivelExp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_nivelExp= nivelExp_texto.getText().toString();
+                nivelExp.setText(nuevo_nivelExp);
+                if (!nuevo_nivelExp.trim().equals("")) {
+                    caja_edit_nivelExp.setVisibility(View.GONE);
+                    caja_nivelExp_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nivel de experiencia  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_nivelExp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_nivelExp.setVisibility(View.VISIBLE);
+                caja_nivelExp_final.setVisibility(View.GONE);
+
+            }
+        });
         agregar_otraExpInge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_organismo2.setVisibility(View.VISIBLE);
                 caja_edit_organismo2.setVisibility(View.VISIBLE);
+                organismo2_texto.setText("");
 
                 caja_anuncio_periodo2.setVisibility(View.VISIBLE);
                 caja_edit_periodo2.setVisibility(View.VISIBLE);
+                periodo2_texto.setText("");
 
                 caja_anuncio_nivelExp2.setVisibility(View.VISIBLE);
                 caja_edit_nivelExp2.setVisibility(View.VISIBLE);
+                nivelExp2_texto.setText("");
 
 
 
@@ -4303,12 +5008,17 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_organismo2.setVisibility(View.GONE);
                 caja_edit_organismo2.setVisibility(View.GONE);
+                caja_organismo2_final.setVisibility(View.GONE);
 
                 caja_anuncio_periodo2.setVisibility(View.GONE);
                 caja_edit_periodo2.setVisibility(View.GONE);
+                caja_periodo2_final.setVisibility(View.GONE);
+
 
                 caja_anuncio_nivelExp2.setVisibility(View.GONE);
                 caja_edit_nivelExp2.setVisibility(View.GONE);
+                caja_nivelExp2_final.setVisibility(View.GONE);
+
 
 
                 caja_agregar_otraExpInge.setVisibility(View.VISIBLE);
@@ -4317,17 +5027,93 @@ public class Cedula2 extends AppCompatActivity {
 
             }
         });
+        guardar_organismo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_organismo2=organismo2_texto.getText().toString();
+                organismo2.setText(nuevo_organismo2);
+                if (!nuevo_organismo2.trim().equals("")) {
+                    caja_edit_organismo2.setVisibility(View.GONE);
+                    caja_organismo2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del organismo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_organismo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_organismo2.setVisibility(View.VISIBLE);
+                caja_organismo2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_periodo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_periodo2= periodo2_texto.getText().toString();
+                periodo2.setText(nuevo_periodo2);
+                if (!nuevo_periodo2.trim().equals("")) {
+                    caja_edit_periodo2.setVisibility(View.GONE);
+                    caja_periodo2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El periodo  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_periodo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_periodo2.setVisibility(View.VISIBLE);
+                caja_periodo2_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_nivelExp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_nivelExp2= nivelExp2_texto.getText().toString();
+                nivelExp2.setText(nuevo_nivelExp2);
+                if (!nuevo_nivelExp2.trim().equals("")) {
+                    caja_edit_nivelExp2.setVisibility(View.GONE);
+                    caja_nivelExp2_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nivel de experiencia es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_nivelExp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_nivelExp2.setVisibility(View.VISIBLE);
+                caja_nivelExp2_final.setVisibility(View.GONE);
+
+            }
+        });
         agregar_otraExpInge2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 caja_anuncio_organismo3.setVisibility(View.VISIBLE);
                 caja_organismo3.setVisibility(View.VISIBLE);
+                organismo3_texto.setText("");
+
 
                 caja_anuncio_periodo3.setVisibility(View.VISIBLE);
                 caja_edit_periodo3.setVisibility(View.VISIBLE);
+                periodo3_texto.setText("");
 
                 caja_anuncio_nivelExp3.setVisibility(View.VISIBLE);
                 caja_nivelExp3.setVisibility(View.VISIBLE);
+                nivelExp3_texto.setText("");
 
 
 
@@ -4342,16 +5128,94 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_organismo3.setVisibility(View.GONE);
                 caja_organismo3.setVisibility(View.GONE);
+                caja_organismo3_final.setVisibility(View.GONE);
+
 
                 caja_anuncio_periodo3.setVisibility(View.GONE);
                 caja_edit_periodo3.setVisibility(View.GONE);
+                caja_periodo3_final.setVisibility(View.GONE);
+
 
                 caja_anuncio_nivelExp3.setVisibility(View.GONE);
                 caja_nivelExp3.setVisibility(View.GONE);
+                caja_nivelExp3_final.setVisibility(View.GONE);
+
 
                 caja_agregar_otraExpInge2.setVisibility(View.VISIBLE);
                 caja_agregar_otraExpInge3.setVisibility(View.GONE);
 
+
+            }
+        });
+        guardar_organismo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_organismo3=organismo3_texto.getText().toString();
+                organismo3.setText(nuevo_organismo3);
+                if (!nuevo_organismo3.trim().equals("")) {
+                    caja_organismo3.setVisibility(View.GONE);
+                    caja_organismo3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del organismo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_organismo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_organismo3.setVisibility(View.VISIBLE);
+                caja_organismo3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_periodo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_periodo3= periodo3_texto.getText().toString();
+                periodo3.setText(nuevo_periodo3);
+                if (!nuevo_periodo3.trim().equals("")) {
+                    caja_edit_periodo3.setVisibility(View.GONE);
+                    caja_periodo3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El periodo  es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_periodo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_periodo3.setVisibility(View.VISIBLE);
+                caja_periodo3_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_nivelExp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_nivelExp3= nivelExp3_texto.getText().toString();
+                nivelExp3_vista.setText(nuevo_nivelExp3);
+                if (!nuevo_nivelExp3.trim().equals("")) {
+                    caja_nivelExp3.setVisibility(View.GONE);
+                    caja_nivelExp3_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nivel de experiencia es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_nivelExp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_nivelExp3.setVisibility(View.VISIBLE);
+                caja_nivelExp3_final.setVisibility(View.GONE);
 
             }
         });
@@ -4360,12 +5224,16 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_organismo4.setVisibility(View.VISIBLE);
                 caja_organismo4.setVisibility(View.VISIBLE);
+                organismo4_texto.setText("");
 
                 caja_anuncio_periodo4.setVisibility(View.VISIBLE);
                 caja_edit_periodo4.setVisibility(View.VISIBLE);
+                periodo4_texto.setText("");
+
 
                 caja_anuncio_nivelExp4.setVisibility(View.VISIBLE);
                 caja_nivelExp4.setVisibility(View.VISIBLE);
+                nivelExp4_texto.setText("");
 
 
 
@@ -4380,18 +5248,95 @@ public class Cedula2 extends AppCompatActivity {
             public void onClick(View view) {
                 caja_anuncio_organismo4.setVisibility(View.GONE);
                 caja_organismo4.setVisibility(View.GONE);
+                caja_organismo4_final.setVisibility(View.GONE);
+
 
                 caja_anuncio_periodo4.setVisibility(View.GONE);
                 caja_edit_periodo4.setVisibility(View.GONE);
+                caja_periodo4_final.setVisibility(View.GONE);
+
 
                 caja_anuncio_nivelExp4.setVisibility(View.GONE);
                 caja_nivelExp4.setVisibility(View.GONE);
+                caja_nivelExp4_final.setVisibility(View.GONE);
 
 
 
                 caja_agregar_otraExpInge3.setVisibility(View.VISIBLE);
                 caja_borrar_otraExpInge3.setVisibility(View.GONE);
 
+
+            }
+        });
+        guardar_organismo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_organismo4=organismo4_texto.getText().toString();
+                organismo4.setText(nuevo_organismo4);
+                if (!nuevo_organismo4.trim().equals("")) {
+                    caja_organismo4.setVisibility(View.GONE);
+                    caja_organismo4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nombre del organismo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_organismo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_organismo4.setVisibility(View.VISIBLE);
+                caja_organismo4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_periodo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_periodo4= periodo4_texto.getText().toString();
+                periodo4.setText(nuevo_periodo4);
+                if (!nuevo_periodo4.trim().equals("")) {
+                    caja_edit_periodo4.setVisibility(View.GONE);
+                    caja_periodo4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El periodo es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_periodo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_edit_periodo4.setVisibility(View.VISIBLE);
+                caja_periodo4_final.setVisibility(View.GONE);
+
+            }
+        });
+        guardar_nivelExp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                nuevo_nivelExp4= nivelExp4_texto.getText().toString();
+                nivelExp4_vista.setText(nuevo_nivelExp4);
+                if (!nuevo_nivelExp4.trim().equals("")) {
+                    caja_nivelExp4.setVisibility(View.GONE);
+                    caja_nivelExp4_final.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "El nivel de experiencia es necesario.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        cambiar_nivelExp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                caja_nivelExp4.setVisibility(View.VISIBLE);
+                caja_nivelExp4_final.setVisibility(View.GONE);
 
             }
         });

@@ -8593,6 +8593,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="date"
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemProfe2"
@@ -8667,6 +8668,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="date"
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemProfeA2"
@@ -8774,7 +8776,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_actiPuesProfe3"
@@ -9000,7 +9002,7 @@
                     android:layout_height="22dp"
                     android:background="@color/blanco"
                     android:gravity="bottom"
-                    android:inputType="phone"
+                    android:inputType="date"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp" />
 
@@ -9108,7 +9110,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="20dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_actiPuesProfe4"
@@ -9500,7 +9502,8 @@
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="17dp"
+                    android:inputType="text"/>
                 <ImageView
                     android:id="@+id/guardar_organismo"
                     android:layout_width="20dp"
@@ -9573,6 +9576,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_periodo"
@@ -9646,7 +9650,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_nivelExp"
@@ -9742,7 +9746,8 @@
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="17dp"
+                    android:inputType="text"/>
                 <ImageView
                     android:id="@+id/guardar_organismo2"
                     android:layout_width="20dp"
@@ -9818,6 +9823,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_periodo2"
@@ -9894,6 +9900,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_nivelExp2"
@@ -10002,7 +10009,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_organismo3"
@@ -10078,6 +10085,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_periodo3"
@@ -10152,7 +10160,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_nivelExp3"
@@ -10261,7 +10269,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_organismo4"
@@ -10337,6 +10345,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_periodo4"
@@ -10411,7 +10420,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_nivelExp4"
