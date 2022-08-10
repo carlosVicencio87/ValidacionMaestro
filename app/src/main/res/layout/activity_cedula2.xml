@@ -10733,7 +10733,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_desLogAca3"
@@ -10805,7 +10805,7 @@
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_desLogAca4"
@@ -12058,7 +12058,7 @@
                     android:gravity="center"
                     android:text="Premios, distinciones o reconocimientos validos"
                     android:textColor="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     />
             </LinearLayout>
 
@@ -12493,7 +12493,7 @@
                     android:gravity="center"
                     android:text="Aportaciones relevantes a la mejora del PE"
                     android:textColor="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     />
             </LinearLayout>
 
