@@ -3,11 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/border.xml" value="0.3405128205128205" />
+        <entry key="app/src/main/res/drawable/border_azul.xml" value="0.3405128205128205" />
+        <entry key="app/src/main/res/drawable/border_circulo.xml" value="0.3405128205128205" />
+        <entry key="app/src/main/res/drawable/border_error.xml" value="0.3405128205128205" />
+        <entry key="app/src/main/res/layout/activity_actualizacion_disciplinar.xml" value="0.17864583333333334" />
+        <entry key="app/src/main/res/layout/activity_capacitacion_docente.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/activity_cedula.xml" value="0.3296875" />
         <entry key="app/src/main/res/layout/activity_cedula2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_formacion_docente.xml" value="0.296195652173913" />
+        <entry key="app/src/main/res/layout/activity_gestion_academica.xml" value="0.16458333333333333" />
+        <entry key="app/src/main/res/layout/activity_partes_formulario.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_productos_academicos.xml" value="0.17864583333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

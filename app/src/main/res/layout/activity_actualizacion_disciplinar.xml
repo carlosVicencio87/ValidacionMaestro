@@ -1,0 +1,1374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actualizacion_disciplinar">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/formulario_actuaDisci"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blanco"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:text="Actualizacion disciplinar"
+                    android:textColor="@color/negro"
+                    android:textSize="25dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de Actualizacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_tipoActua"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tipoActua_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"/>
+                <ImageView
+                    android:id="@+id/guardar_tipoActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_tipoActua_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tipoActua"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_tipoActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instPaisActua"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/instPaisActua_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instPaisActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instPaisActua_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instPaisActua"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_instPaisActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtecion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_anoObtencionActua"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoObtencionActua_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoObtencionActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoObtencionActua_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoObtencionActua"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoObtencionActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horasActua"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horasActua_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_horasActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horasActua_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horasActua"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_horasActua"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_tipoActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de Actualizacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_actua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/actua2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"/>
+                <ImageView
+                    android:id="@+id/guardar_actua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_actua2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/actua2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_actua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_actuaInts2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instPaisActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/instPaisActua2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instPaisActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instPaisActua2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instPaisActua2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_instPaisActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtecion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_anoActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoActua2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoActua2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoActua2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horaActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaActua2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/horaActua2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_horaActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaActua2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaActua2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_horaActua2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_agregar_otraActua"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/agregar_otraActua"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar Otra Actualizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_borrar_otraActua"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/agregar_otraActua2"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar otra Actualizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/borrar_otraActua"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar Otra Actuaizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_actua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Actualizacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_actua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/actua3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    android:inputType="date"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_actua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_actua3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/actua3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_actua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_instActua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_intactua3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/instactua3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instactua3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instactua3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_instactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoactua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtencion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anoactua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoactua3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoactua3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoactua3_vista"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horaactua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaactua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horaactua3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/guardar_horaactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaactua3_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaactua3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_horaactua3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_agregar_otraactua3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/agregar_otraactua3"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar otra Actualizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/borrar_otraactua3"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar actualizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_actua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de Actualizacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_actua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/actua4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    android:inputType="date"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_actua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_actua4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/actua4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_actua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_instactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instactua4"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/instactua4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instactua4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instactua4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_instactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtencion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anoactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoactua4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoactua4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoactua4_vista"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horasactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas "
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horaactua4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/guardar_horaactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaactua4_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaactua4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_horaactua4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_borrar_otraactua4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/borrar_otraactua4"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar otra Actualizacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_siguiente_scroll3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/regresar_datos_actuaDocente"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Regresar a formacion docente"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/ir_getsionAcademica"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Ir a Gestion Academica"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

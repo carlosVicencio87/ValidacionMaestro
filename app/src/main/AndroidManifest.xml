@@ -14,15 +14,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Cedula2">
-
+        <activity
+            android:name=".ProductosAcademicos"
+            android:exported="true" />
+        <activity
+            android:name=".Gestion_academica"
+            android:exported="true" />
+        <activity
+            android:name=".Actualizacion_disciplinar"
+            android:exported="true" />
+        <activity
+            android:name=".Capacitacion_docente"
+            android:exported="true" />
+        <activity
+            android:name=".Partes_formulario"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cedula"></activity>
+        <activity
+            android:name=".Formacion_docente"
+            android:exported="true" />
+        <activity android:name=".Cedula2" />
+        <activity android:name=".Cedula" />
         <activity android:name=".MainActivity" />
     </application>
 

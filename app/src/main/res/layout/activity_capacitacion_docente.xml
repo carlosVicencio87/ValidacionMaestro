@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Capacitacion_docente">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/formulario_formaCapaDocente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blanco"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@color/blanco"
+                    android:gravity="center"
+                    android:text="Capacitacion docente"
+                    android:textColor="@color/negro"
+                    android:textSize="30dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de Capacitacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_tipoCapa"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tipoCapa_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"/>
+                <ImageView
+                    android:id="@+id/guardar_tipoCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_tipoCapa_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tipoCapa"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_tipoCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instPaisCapa"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/instPaisCapa_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instPaisCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instPaisCapa_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instPaisCapa"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_instPaisCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtecion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_anoObtencionCapa"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoObtencionCapa_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="number"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoObtencionCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoObtencionCapa_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoObtencionCapa"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoObtencionCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horasCapa"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horasCapa_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_horasCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horasCapa_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horasCapa"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_horasCapa"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_capa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de Capacitacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_capa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/capa2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"/>
+                <ImageView
+                    android:id="@+id/guardar_capa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_capa2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/capa2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_capa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_instActua2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_intCapa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/intCapa2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_intCapa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_intCapa2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/intCapa2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_CapaIns2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoCapa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtecion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_anoCapa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoCapa2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoCapa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoCapa2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoCapa2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoCapa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horaCapa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaCapa2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/horaCapa2_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_horaCapa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaCapa2_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaCapa2"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_horaCapa2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_agregar_otraCapa"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/agregar_otraCapa"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar Otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_borrar_otraCapa"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/borrar_otraCapa"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar Otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/agregar_otraOtracapa2"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_capa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de capacitacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_capa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/capa3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="date"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_capa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_capa3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/capa3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_capa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_instcapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instcapa3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/instcapa3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instcapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instcapa3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instcapa3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_instcapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoCapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtencion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anoCapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoCapa3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="number"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoCapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoCapa3_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoCapa3_vista"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoCapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horaCapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaCapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horaCapa3_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/guardar_horaCapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaCapa3_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaCapa3"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_horaCapa3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_borrar_otraCapa2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/borrar_otraCapa2"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar Otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/agregar_otraOtracapa3"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Agregar otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_capa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Tipo de capacitacion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_capa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/capa4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="date"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_capa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/capa4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/capa4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_capa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_instcapa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Institucion y pais"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_instcapa4"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/instcapa4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_instcapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_instcapa4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/instcapa4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_instcapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anuncio_anoCapa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Año de obtencion"
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_anoCapa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/anoCapa4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp"
+                    android:inputType="number"
+                    />
+                <ImageView
+                    android:id="@+id/guardar_anoCapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_anoCapa4_final"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/anoCapa4_vista"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:id="@+id/cambiar_anoCapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caja_anuncio_horaCapa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/blanco"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blanco"
+                    android:gravity="left"
+                    android:text="Horas "
+                    android:textColor="@color/negro"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_edit_horaCapa4"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/horaCapa4_texto"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:inputType="phone"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/guardar_horaCapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_horaCapa4_final"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/horaCapa4"
+                    android:layout_width="250dp"
+                    android:layout_height="22dp"
+                    android:background="@color/blanco"
+                    android:gravity="bottom"
+                    android:text="nombre de usuario"
+                    android:textColorHint="@color/negro"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/cambiar_horaCapa4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/palomita"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/caja_borrar_otraCapa3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/borrar_otraCapa3"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Borrar Otra Capacitacion"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caja_siguiente_scroll2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/regresar_datos_formDocente"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Regresar a formacion docente"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/ir_actuaDisciplinar"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Ir a Actualizacion disciplinar"
+                    android:textColor="@color/negro"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
