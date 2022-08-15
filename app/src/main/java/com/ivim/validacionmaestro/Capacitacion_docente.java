@@ -100,8 +100,8 @@ public class Capacitacion_docente extends AppCompatActivity {
 
 
         guardar_tipoCapa= findViewById(R.id.guardar_tipoCapa);
-        tipoCapa_texto= findViewById(R.id.instGesAca_texto);
-        tipoCapa= findViewById(R.id.instGesAca);
+        tipoCapa_texto= findViewById(R.id.tipoCapa_texto);
+        tipoCapa= findViewById(R.id.tipoCapa);
         caja_edit_tipoCapa= findViewById(R.id.caja_edit_tipoCapa);
         caja_tipoCapa_final= findViewById(R.id.caja_tipoCapa_final);
         cambiar_tipoCapa= findViewById(R.id.cambiar_tipoCapa);

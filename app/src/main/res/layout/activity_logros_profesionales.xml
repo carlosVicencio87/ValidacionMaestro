@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductosAcademicos">
+    tools:context=".LogrosProfesionales">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/formulario_productosAcademicos"
+        android:id="@+id/formulario_logrosProfeNoAca"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -39,9 +39,9 @@
                     android:layout_height="30dp"
                     android:background="@color/blanco"
                     android:gravity="center"
-                    android:text="Productos Academicos Relevantes"
+                    android:text="Logros profesionales no academicos"
                     android:textColor="@color/negro"
-                    android:textSize="25dp"
+                    android:textSize="17dp"
                     />
             </LinearLayout>
 
@@ -58,13 +58,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/blanco"
                     android:gravity="left"
-                    android:text="Descripcion del producto academico"
+                    android:text="Descripcion del logro Academico"
                     android:textColor="@color/negro"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_edit_desProdAca"
+                android:id="@+id/caja_edit_desLogAca"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -73,7 +73,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desProdAca_texto"
+                    android:id="@+id/desLogAca_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -81,16 +81,16 @@
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"/>
                 <ImageView
-                    android:id="@+id/guardar_desProdAca"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/guardar_desLogAca"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_desProdAca_final"
+                android:id="@+id/caja_desLogAca_final"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_margin="10dp"
@@ -100,7 +100,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/desProdAca"
+                    android:id="@+id/desLogAca"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -110,9 +110,9 @@
                     android:textSize="17dp" />
 
                 <ImageView
-                    android:id="@+id/cambiar_desProdAca"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/cambiar_desLogAca"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita"/>
@@ -130,13 +130,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/blanco"
                     android:gravity="left"
-                    android:text="Descpricion del producto academico"
+                    android:text="Descpricion del logro academico"
                     android:textColor="@color/negro"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_edit_desProdAca2"
+                android:id="@+id/caja_edit_desLogAca2"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -145,7 +145,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desProdAca2_texto"
+                    android:id="@+id/desLogAca2_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -154,16 +154,16 @@
                     android:textSize="17dp"
                     />
                 <ImageView
-                    android:id="@+id/guardar_desProdAca2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/guardar_desLogAca2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_desProdAca2_final"
+                android:id="@+id/caja_desLogAca2_final"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_margin="10dp"
@@ -173,7 +173,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/desProdAca2"
+                    android:id="@+id/desLogAca2"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -183,9 +183,9 @@
                     android:textSize="17dp" />
 
                 <ImageView
-                    android:id="@+id/cambiar_desProdAca2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/cambiar_desLogAca2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita"/>
@@ -203,13 +203,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/blanco"
                     android:gravity="left"
-                    android:text="Descripcion de producto academico"
+                    android:text="Descripcion de logro academico"
                     android:textColor="@color/negro"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_edit_desProdAca3"
+                android:id="@+id/caja_edit_desLogAca3"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -218,28 +218,28 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desProdAca3_texto"
+                    android:id="@+id/desLogAca3_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
-                    android:id="@+id/guardar_desProdAca3"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/guardar_desLogAca3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_desProdAca3_final"
+                android:id="@+id/caja_desLogAca3_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="35dp"
                 android:layout_margin="10dp"
                 android:background="@color/blanco"
                 android:gravity="center"
@@ -247,7 +247,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/desProdAca3"
+                    android:id="@+id/desLogAca3"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -256,16 +256,16 @@
                     android:textColorHint="@color/negro"
                     android:textSize="17dp" />
                 <ImageView
-                    android:id="@+id/cambiar_desProdAca3"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/cambiar_desLogAca3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="35dp"
                 android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
@@ -275,13 +275,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/blanco"
                     android:gravity="left"
-                    android:text="Descripcion del producto academico"
+                    android:text="Descripcion del logro Academico"
                     android:textColor="@color/negro"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_edit_desProdAca4"
+                android:id="@+id/caja_edit_desLogAca4"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
@@ -290,26 +290,26 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desProdAca4_texto"
+                    android:id="@+id/desLogAca4_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     />
                 <ImageView
-                    android:id="@+id/guardar_desProdAca4"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/guardar_desLogAca4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_desProdAca4_final"
+                android:id="@+id/caja_desLogAca4_final"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_margin="10dp"
@@ -319,7 +319,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/desProdAca4"
+                    android:id="@+id/desLogAca4"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -328,9 +328,9 @@
                     android:textColorHint="@color/negro"
                     android:textSize="17dp" />
                 <ImageView
-                    android:id="@+id/cambiar_desProdAca4"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/cambiar_desLogAca4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita"/>
@@ -349,13 +349,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@color/blanco"
                     android:gravity="left"
-                    android:text="Descripcion del producto academico"
+                    android:text="Descripcion del logro Academico"
                     android:textColor="@color/negro"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_edit_desProdAca5"
+                android:id="@+id/caja_edit_desLogAca5"
 
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
@@ -365,7 +365,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desProdAca5_texto"
+                    android:id="@+id/desLogAca5_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -373,16 +373,16 @@
                     android:textColorHint="@color/negro"
                     android:textSize="17dp"/>
                 <ImageView
-                    android:id="@+id/guardar_desProdAca5"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/guardar_desLogAca5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/caja_desProdAca5_final"
+                android:id="@+id/caja_desLogAca5_final"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_margin="10dp"
@@ -392,7 +392,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/desProdAca5"
+                    android:id="@+id/desLogAca5"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
                     android:background="@color/blanco"
@@ -402,237 +402,17 @@
                     android:textSize="17dp" />
 
                 <ImageView
-                    android:id="@+id/cambiar_desProdAca5"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita"/>
-            </LinearLayout>
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
-                android:gravity="left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="22dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
-                    android:gravity="left"
-                    android:text="Descricion de producto academico"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_edit_desProdAca6"
-
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/desProdAca6_texto"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    />
-                <ImageView
-                    android:id="@+id/guardar_desProdAca6"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_desProdAca6_final"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/desProdAca6"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:text="nombre de usuario"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
-
-                <ImageView
-                    android:id="@+id/cambiar_desProdAca6"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita"/>
-            </LinearLayout>
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
-                android:gravity="left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="22dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
-                    android:gravity="left"
-                    android:text="Descripcion del producto academico"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_edit_desProdAca7"
-
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/desProdAca7_texto"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    />
-                <ImageView
-                    android:id="@+id/guardar_desProdAca7"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_desProdAca7_final"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/desProdAca7"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:text="nombre de usuario"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
-                <ImageView
-                    android:id="@+id/cambiar_desProdAca7"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
-                android:gravity="left"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="22dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
-                    android:gravity="left"
-                    android:text="Deescripcion del producto academico"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_edit_desProdAca8"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="visible">
-
-                <EditText
-                    android:id="@+id/desProdAca8_texto"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    />
-                <ImageView
-                    android:id="@+id/guardar_desProdAca8"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/caja_desProdAca8_final"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_margin="10dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/desProdAca8"
-                    android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:text="nombre de usuario"
-                    android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
-                <ImageView
-                    android:id="@+id/cambiar_desProdAca8"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/cambiar_desLogAca5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/palomita"/>
             </LinearLayout>
 
+
             <LinearLayout
-                android:id="@+id/caja_siguiente_scroll5"
+                android:id="@+id/caja_siguiente_scroll8"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
@@ -640,7 +420,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/regresar_gestionAcademica"
+                    android:id="@+id/regresar_ExpDise"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
@@ -649,12 +429,12 @@
                     android:textColor="@color/negro"
                     android:gravity="center"/>
                 <TextView
-                    android:id="@+id/ir_expeProfe"
+                    android:id="@+id/ir_partColeCam"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
-                    android:text="Ir a Experiencia Profesional"
+                    android:text="Ir a participacion en organismos profesional"
                     android:textColor="@color/negro"
                     android:gravity="center"/>
             </LinearLayout>
