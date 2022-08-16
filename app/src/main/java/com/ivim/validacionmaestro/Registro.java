@@ -549,7 +549,7 @@ public class Registro extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.e("respuesta4:",response + "sal");
                         if(response.equals("success")){
-                            Intent intent = new Intent(Registro.this,Partes_formulario.class);
+                            Intent intent = new Intent(Registro.this,Partes_formulario .class);
                             startActivity(intent);
                         }
                     }

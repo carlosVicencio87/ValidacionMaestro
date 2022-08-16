@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Registro">
+        <activity android:name=".Registro"></activity>
+        <activity android:name=".Login" >
+
 
 
             <intent-filter>
@@ -25,8 +27,8 @@
             </intent-filter>
 
 
+
         </activity>
-        <activity android:name=".Login" />
         <activity android:name=".AportacionesPe" />
         <activity android:name=".PremiosDisticiones" />
         <activity android:name=".ParticipacionColCam" />

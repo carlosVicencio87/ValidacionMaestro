@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".Partes_formulario">
+    tools:context=".Partes_formulario"
+    android:background="@drawable/border_azul">
 
     <ScrollView
         android:id="@+id/formulario_lista"
@@ -16,19 +17,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/blanco">
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/ir_formacion_docente"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:gravity="center"
                     android:textColor="@color/blanco"
                     android:text="Formacion Docente"
@@ -36,19 +35,22 @@
                     android:textSize="21dp"
                     android:padding="7dp" />
             </LinearLayout>
-
+             <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blanco"
+            android:layout_margin="2dp">
+             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_capa_docente"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -58,16 +60,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_actualizacion_disciplinar"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -77,16 +83,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_gestion_disciplinar"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -96,16 +106,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_productosAca"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -114,17 +128,21 @@
                     android:gravity="center"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:background="@color/blanco"
             android:gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/ir_expeProfe"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="@drawable/border_azul"
                 android:textColor="@color/blanco"
                 android:textAlignment="center"
                 android:textSize="21dp"
@@ -132,18 +150,22 @@
                 android:text="Experiencia profesional"
                 android:gravity="center"/>
         </LinearLayout>
+         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+         </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_expeDiseInge"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -153,16 +175,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_logrosProfe"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -172,16 +198,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_partColeCam"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -189,19 +219,22 @@
                     android:text="Participacion en colegios,camaras y asociaciones cientificas"
                     android:gravity="center"/>
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_premiosDist"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -211,16 +244,20 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/ir_aportaRele"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="@drawable/border_azul"
                     android:textColor="@color/blanco"
                     android:textAlignment="center"
                     android:textSize="21dp"
@@ -228,7 +265,12 @@
                     android:text="Aportacions relevantes a la mejora del pe"
                     android:gravity="center"/>
             </LinearLayout>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:layout_margin="2dp">
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_cerrarSesion"
                 android:layout_width="match_parent"
