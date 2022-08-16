@@ -543,7 +543,7 @@ public class Registro extends AppCompatActivity {
     public void registrarProfe()
     {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"registro_profesor.php",
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"registro_maestro.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
