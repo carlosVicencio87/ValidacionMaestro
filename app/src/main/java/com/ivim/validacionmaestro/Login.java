@@ -153,17 +153,9 @@ public class Login extends AppCompatActivity {
                         }
                         else
                         {
-                            try {
+                            Intent intent = new Intent(Login.this, Partes_formulario.class);
+                            startActivity(intent);
 
-                                json_datos_usuario=new JSONArray(response);
-                                Log.e("lala",""+json_datos_usuario);
-
-                                Intent intent = new Intent(Login.this, Partes_formulario.class);
-                                startActivity(intent);
-                            }
-                            catch (JSONException e) {
-                                Log.e("errorRespuesta", String.valueOf(e));
-                            }
                         }
                     }
                 }, new Response.ErrorListener() {

@@ -20,31 +20,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blanco"
             android:gravity="center"
+            android:background="@color/azul"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_margin="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="@color/blanco"
                     android:gravity="center"
                     android:text="Formacion Academica"
-                    android:textColor="@color/negro"
-                    android:textSize="25dp"
-                    />
+                    android:textColor="@color/blanco"
+                    android:textSize="25dp"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/blanco"
+                android:layout_marginBottom="35dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/blanco"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_margin="20dp">
@@ -52,47 +61,43 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
-                    android:background="@color/blanco"
                     android:gravity="center"
                     android:text="Seccion Licenciatura"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="20dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Licenciatura"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_licenciatura"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/licenciatura_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/guardar_licenciatura"
                     android:layout_width="20dp"
@@ -105,9 +110,9 @@
             <LinearLayout
                 android:id="@+id/caja_licenciatura_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -115,12 +120,12 @@
                 <TextView
                     android:id="@+id/licenciatura"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:layout_gravity="center"/>
 
                 <ImageView
                     android:id="@+id/cambiar_licenciatura"
@@ -133,7 +138,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -141,30 +145,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/caja_edit_instPais"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/instPaisLic_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
                     />
                 <ImageView
                     android:id="@+id/guardar_instPaisLic"
@@ -178,9 +180,9 @@
             <LinearLayout
                 android:id="@+id/caja_instPais_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -188,12 +190,13 @@
                 <TextView
                     android:id="@+id/instPaisLic"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
+                    android:layout_height="35dp"
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
 
                 <ImageView
                     android:id="@+id/cambiar_instPaisLic"
@@ -206,7 +209,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -214,30 +216,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Año de obtecion"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_anoObtencionLic"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/anoObtencionLic_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
+                    android:layout_height="35dp"
                     android:background="@color/blanco"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
                     android:inputType="number"
                     />
                 <ImageView
@@ -252,9 +254,9 @@
             <LinearLayout
                 android:id="@+id/caja_anoObtencionLic_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -262,12 +264,12 @@
                 <TextView
                     android:id="@+id/anoObtencionLic"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/cambiar_anoObtencionLic"
                     android:layout_width="20dp"
@@ -279,37 +281,35 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Cedula Profesional"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_cedulaProfLic"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/cedulaProfLic_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="21dp"
+                    android:layout_gravity="center"
                     />
                 <ImageView
                     android:id="@+id/guardar_cedulaProfLic"
@@ -323,9 +323,9 @@
             <LinearLayout
                 android:id="@+id/caja_cedulaProfLic_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -333,12 +333,12 @@
                 <TextView
                     android:id="@+id/cedulaProfLic"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/cambiar_cedulaProfLic"
                     android:layout_width="20dp"
@@ -352,7 +352,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -360,10 +359,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Licenciatura"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
@@ -371,20 +369,20 @@
                 android:id="@+id/caja_edit_licenciatura2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/licenciatura2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/guardar_licenciatura2"
                     android:layout_width="20dp"
@@ -397,9 +395,9 @@
             <LinearLayout
                 android:id="@+id/caja_licenciatura2_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -407,12 +405,12 @@
                 <TextView
                     android:id="@+id/licenciatura2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
 
                 <ImageView
                     android:id="@+id/cambiar_licenciatura2"
@@ -427,7 +425,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -435,10 +432,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
@@ -446,20 +442,20 @@
                 android:id="@+id/caja_edit_instPais2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/instPaisLic2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="20dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
                     />
                 <ImageView
                     android:id="@+id/guardar_instPaisLic2"
@@ -473,9 +469,9 @@
             <LinearLayout
                 android:id="@+id/caja_instPais2_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -483,12 +479,11 @@
                 <TextView
                     android:id="@+id/instPaisLic2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/cambiar_instPais2Lic"
@@ -503,7 +498,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -511,10 +505,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Año de obtecion"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
@@ -522,21 +515,21 @@
                 android:id="@+id/caja_edit_anoObtencion2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/anoObtencion2Lic_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     android:inputType="number"
+                    android:layout_gravity="center"
                     />
                 <ImageView
                     android:id="@+id/guardar_anoObtencionLic2"
@@ -550,9 +543,9 @@
             <LinearLayout
                 android:id="@+id/caja_anoObtencionLic2_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -560,12 +553,12 @@
                 <TextView
                     android:id="@+id/anoObtencionLic2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/cambiar_anoObtencionLic2"
                     android:layout_width="20dp"
@@ -579,26 +572,24 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Cedula Profesional"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_cedulaProf2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
+                android:background="@drawable/border_blanco"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -606,11 +597,11 @@
                 <EditText
                     android:id="@+id/cedulaProfLic2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
                     />
                 <ImageView
                     android:id="@+id/guardar_cedulaProfLic2"
@@ -624,9 +615,9 @@
             <LinearLayout
                 android:id="@+id/caja_cedulaProfLic2_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -634,12 +625,12 @@
                 <TextView
                     android:id="@+id/cedulaProfLic2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="20dp" />
+                    android:textSize="14dp"
+                    android:layout_gravity="center"/>
                 <ImageView
                     android:id="@+id/cambiar_cedulaProfLic2"
                     android:layout_width="20dp"
@@ -653,7 +644,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -664,8 +654,9 @@
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:text="Agregar Otra Licenciatura"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    android:textColor="@color/blanco"
+                    android:gravity="center"
+                    android:background="@drawable/border"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_borrar_otraLic"
@@ -673,7 +664,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -684,14 +674,22 @@
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:text="Borrar Otra Licenciatura"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/border"
                     android:gravity="center"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/blanco"
+                android:layout_marginBottom="35dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_margin="20dp">
@@ -699,16 +697,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
-                    android:background="@color/blanco"
                     android:gravity="center"
                     android:text="Seccion Especialidad"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="20dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -716,31 +712,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Especialidad"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_especialidad"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/especialidad_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
-                    android:gravity="bottom"
+                    android:layout_height="35dp"
+                    android:gravity="center"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-
+                    android:textSize="14dp"
                     />
                 <ImageView
                     android:id="@+id/guardar_especialidad"
@@ -754,9 +747,9 @@
             <LinearLayout
                 android:id="@+id/caja_especialidad_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -764,12 +757,11 @@
                 <TextView
                     android:id="@+id/especialidad"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/cambiar_especialidad"
@@ -782,26 +774,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_instEsp"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="visible">
@@ -810,9 +800,8 @@
                     android:id="@+id/instEsp_texto"
                     android:layout_width="250dp"
                     android:layout_height="22dp"
-                    android:background="@color/blanco"
                     android:gravity="bottom"
-                    android:textColorHint="@color/negro"
+                    android:textColorHint="@color/blanco"
                     android:textSize="17dp"
                     />
                 <ImageView
@@ -827,7 +816,7 @@
             <LinearLayout
                 android:id="@+id/caja_instEsp_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
                 android:background="@color/blanco"
                 android:gravity="center"
@@ -837,12 +826,11 @@
                 <TextView
                     android:id="@+id/instEsp"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
                 <ImageView
                     android:id="@+id/cambiar_instEsp"
                     android:layout_width="20dp"
@@ -854,7 +842,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -862,18 +849,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Año de obtencion"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_anoEsp"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="visible">
@@ -881,11 +867,10 @@
                 <EditText
                     android:id="@+id/anoEsp_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     android:inputType="number"
                     />
                 <ImageView
@@ -900,9 +885,9 @@
             <LinearLayout
                 android:id="@+id/caja_anoEsp_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -910,12 +895,11 @@
                 <TextView
                     android:id="@+id/anoEsp_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
                 <ImageView
                     android:id="@+id/cambiar_anoEsp"
                     android:layout_width="20dp"
@@ -929,7 +913,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -937,30 +920,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Cedula Profesional "
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_ceduEsp"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/ceduEsp_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/guardar_ceduEsp"
@@ -974,9 +955,9 @@
             <LinearLayout
                 android:id="@+id/caja_ceduEsp_final"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -984,12 +965,11 @@
                 <TextView
                     android:id="@+id/ceduEsp"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/cambiar_ceduEsp"
@@ -1004,7 +984,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -1012,10 +991,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Especialidad"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
@@ -1023,20 +1001,19 @@
                 android:id="@+id/caja_especialidad2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/especialidad2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"/>
                 <ImageView
                     android:id="@+id/guardar_especialidad2"
                     android:layout_width="20dp"
@@ -1049,9 +1026,9 @@
             <LinearLayout
                 android:id="@+id/caja_especialidad2_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1059,12 +1036,11 @@
                 <TextView
                     android:id="@+id/especialidad2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/cambiar_especialidad2"
@@ -1079,26 +1055,24 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_instEsp2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1106,11 +1080,10 @@
                 <EditText
                     android:id="@+id/instEsp2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     />
                 <ImageView
                     android:id="@+id/guardar_instEsp2"
@@ -1124,9 +1097,9 @@
             <LinearLayout
                 android:id="@+id/caja_instEsp_final2"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1134,12 +1107,11 @@
                 <TextView
                     android:id="@+id/instEsp2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="20dp" />
+                    android:textSize="14dp" />
                 <ImageView
                     android:id="@+id/cambiar_instEsp2"
                     android:layout_width="20dp"
@@ -1153,7 +1125,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -1161,18 +1132,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Año de obtencion"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_anoEsp2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1180,11 +1150,10 @@
                 <EditText
                     android:id="@+id/anoEsp2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
                     android:inputType="number"
                     />
                 <ImageView
@@ -1199,9 +1168,9 @@
             <LinearLayout
                 android:id="@+id/caja_anoEsp2_final"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1209,12 +1178,11 @@
                 <TextView
                     android:id="@+id/anoEsp2_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
                 <ImageView
                     android:id="@+id/cambiar_anoEsp2"
                     android:layout_width="20dp"
@@ -1229,7 +1197,6 @@
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
                 android:orientation="vertical">
 
@@ -1237,10 +1204,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="Cedula Profesional "
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
@@ -1248,20 +1214,19 @@
                 android:id="@+id/caja_edit_ceduEsp2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/ceduEsp2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/guardar_ceduEsp2"
@@ -1275,9 +1240,9 @@
             <LinearLayout
                 android:id="@+id/caja_ceduEsp_final2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone">
@@ -1285,12 +1250,11 @@
                 <TextView
                     android:id="@+id/ceduEsp2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/cambiar_ceduEsp2"
@@ -1305,7 +1269,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -1316,7 +1279,8 @@
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:text="Agregar otra Especcialidad"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/border"
                     android:gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -1325,7 +1289,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -1336,9 +1299,18 @@
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
                     android:text="Borrar otra Especcialidad"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/border"
                     android:gravity="center"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/blanco"
+                android:layout_marginBottom="35dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
