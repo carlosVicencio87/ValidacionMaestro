@@ -171,7 +171,7 @@ public class Formacion_docente extends AppCompatActivity {
         instEsp = findViewById(R.id.instEsp);
         caja_edit_instEsp = findViewById(R.id.caja_edit_instEsp);
         caja_instEsp_final = findViewById(R.id.caja_instEsp_final);
-        cambiar_instEsp = findViewById(R.id.cambiar_instPais2Lic);
+        cambiar_instEsp = findViewById(R.id.cambiar_instEsp);
 
         guardar_anoEsp = findViewById(R.id.guardar_anoEsp);
         anoEsp_texto = findViewById(R.id.anoEsp_texto);

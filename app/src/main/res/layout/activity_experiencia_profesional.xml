@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ExperienciaProfesional">
     <ScrollView
+        android:background="@color/azul"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/formulario_expProfeNoAcade"
@@ -20,63 +22,78 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blanco"
+            android:background="@color/azul"
+
             android:gravity="center"
             android:orientation="vertical">
 
 
 
             <LinearLayout
+                android:background="@color/azul"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
+                android:layout_height="27dp"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_margin="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="@color/blanco"
                     android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="25dp"
                     android:text="Experiencia profesional no academica"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp"
+
                     />
             </LinearLayout>
             <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="35dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o Puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_edit_actiPuestoProfe"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPuestoProfe_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/actiPuestoProfe_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_actiPuestoProfe"
                     android:layout_width="20dp"
@@ -88,23 +105,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPuestoProfe_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPuestoProfe"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPuestoProfe"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPuestoProfe"
@@ -115,40 +134,41 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Organizacion o empresa"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_OrgaEmp"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/OrgaEmp_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/OrgaEmp_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_OrgaEmp"
@@ -161,23 +181,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_OrgaEmp_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/OrgaEmp"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/OrgaEmp"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_OrgaEmp"
@@ -188,40 +210,40 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:background="@color/blanco"
+                android:layout_height="35dp"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfe"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfe_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfe_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -235,23 +257,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfe_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfe"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfe"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfe"
                     android:layout_width="20dp"
@@ -261,39 +285,40 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfeA"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfeA_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfeA_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -307,23 +332,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfeA_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfeA"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfeA"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfeA"
                     android:layout_width="20dp"
@@ -334,64 +361,66 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_agregar_otraExpProfe"
-
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/agregar_otraExpProfe"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
-                    android:text="Agregar otra Experiencia Profesional "
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/agregar_otraExpProfe"
+                    android:text="Agregar otra experiencia profesional"
+
+                    />
             </LinearLayout>
 
 
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPuesProfe2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_actiPuestoProfe2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPuestoProfe2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/actiPuestoProfe2_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_actiPuestoProfe2"
                     android:layout_width="20dp"
@@ -403,23 +432,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPuestoProfe2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPuestoProfe2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPuestoProfe2"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPuestoProfe2"
@@ -432,41 +463,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_OrgaEmp2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Organizacion o empresa"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_OrgaEmp2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/OrgaEmp2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/OrgaEmp2_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_OrgaEmp2"
@@ -479,24 +511,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_OrgaEmp2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/OrgaEmp2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
-
+                    android:textSize="21dp"
+                    android:id="@+id/OrgaEmp2"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_OrgaEmp2"
                     android:layout_width="20dp"
@@ -508,41 +541,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfe2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfe2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfe2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfe2_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -556,23 +589,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfe2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfe2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfe2"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfe2"
                     android:layout_width="20dp"
@@ -584,40 +619,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfeA2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfeA2"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfeA2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfeA2_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -631,23 +667,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfeA2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfeA2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfeA2"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfeA2"
                     android:layout_width="20dp"
@@ -662,28 +700,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
                     android:id="@+id/agregar_otraExpProfe2"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
                     android:text="Agregar otra Experiencia Profesional "
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    />
+
                 <TextView
-                    android:id="@+id/borrar_otraExpProfe"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraExpProfe"
                     android:text="Borrar otra Experiencia Profesional "
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    />
             </LinearLayout>
 
 
@@ -691,41 +733,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPuesProfe3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_actiPuesProfe3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPuesProfe3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/actiPuesProfe3_texto"
                     android:inputType="text"
                     />
                 <ImageView
@@ -739,23 +781,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPuesProfe3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPuesProfe3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPuesProfe3"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPuesProfe3"
@@ -768,40 +812,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_OrgaEmp3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Organizacion y Empresa"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_OrgaEmp3"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/OrgaEmp3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/OrgaEmp3_texto"
                     />
                 <ImageView
                     android:id="@+id/guardar_OrgaEmp3"
@@ -814,23 +859,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_OrgaEmp3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/OrgaEmp3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/OrgaEmp3"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_OrgaEmp3"
                     android:layout_width="20dp"
@@ -842,40 +889,40 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfe3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De (mes y ano)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_tiemProfe3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfe3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfe3_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -889,23 +936,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfe3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfe3_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfe3_vista"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfe3"
                     android:layout_width="20dp"
@@ -919,42 +968,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfeA3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfeA3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfeA3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:inputType="date"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfeA3_texto"
+                    />
 
                 <ImageView
                     android:id="@+id/guardar_tiemProfeA3"
@@ -967,23 +1016,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfeA3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfeA3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfeA3"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_tiemProfeA3"
@@ -999,67 +1050,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
                     android:id="@+id/agregar_otraExpProfe3"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
                     android:text="Agregar otra experiencia profesional"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
+
                 <TextView
-                    android:id="@+id/borrar_otraExpProfe2"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraExpProfe2"
                     android:text="Borrar Experiencia Profesional "
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPuesProfe4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o Puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_actiPuesProfe4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPuesProfe4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="20dp"
+                    android:textSize="14dp"
+                    android:id="@+id/actiPuesProfe4_texto"
                     android:inputType="text"
                     />
                 <ImageView
@@ -1073,23 +1129,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPuesProfe4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPuesProfe4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPuesProfe4"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPuesProfe4"
@@ -1102,40 +1160,43 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_OrgaEmp4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Organizacion o empresa"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_OrgaEmp4"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/OrgaEmp4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+
+                    android:id="@+id/OrgaEmp4_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_OrgaEmp4"
@@ -1148,23 +1209,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_OrgaEmp4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/OrgaEmp4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/OrgaEmp4"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_OrgaEmp4"
                     android:layout_width="20dp"
@@ -1176,40 +1239,40 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfe4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De (mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_tiemProfe4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfe4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfe4_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -1223,23 +1286,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfe4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfe4_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfe4_vista"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemProfe4"
                     android:layout_width="20dp"
@@ -1254,42 +1319,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemProfeA4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A: (mes y ano)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemProfeA4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemProfeA4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:inputType="date"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemProfeA4_texto"
+
                     />
 
                 <ImageView
@@ -1303,23 +1368,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemProfeA4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemProfeA4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemProfeA4"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_tiemProfeA4"
@@ -1335,20 +1402,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-
                 <TextView
-                    android:id="@+id/borrar_otraExpProfe3"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraExpProfe3"
                     android:text="Borrar Experiencia Profesional "
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    />
             </LinearLayout>
 
 
@@ -1357,27 +1424,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:id="@+id/regresar_produAca"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
-                    android:text="Regresar a productos academicos"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/ir_expeDiseInge"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Ir a Experiencia en diseno Ingieneril"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:text="Actualizar seccion"
+                    />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

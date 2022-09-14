@@ -10,8 +10,9 @@
         <entry key="app/src/main/res/layout/activity_actualizacion_disciplinar.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/layout/activity_capacitacion_docente.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/activity_cedula.xml" value="0.3296875" />
-        <entry key="app/src/main/res/layout/activity_cedula2.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_formacion_docente.xml" value="0.296195652173913" />
+        <entry key="app/src/main/res/layout/activity_cedula2.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_experiencia_profesional.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/activity_formacion_docente.xml" value="0.18210693488618315" />
         <entry key="app/src/main/res/layout/activity_gestion_academica.xml" value="0.16458333333333333" />
         <entry key="app/src/main/res/layout/activity_partes_formulario.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_productos_academicos.xml" value="0.17864583333333334" />

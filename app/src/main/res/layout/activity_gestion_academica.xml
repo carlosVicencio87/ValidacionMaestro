@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Gestion_academica">
     <ScrollView
+        android:background="@color/azul"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/formulario_gestioAcademica"
@@ -20,66 +22,80 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blanco"
+            android:background="@color/azul"
             android:gravity="center"
             android:orientation="vertical">
 
 
 
             <LinearLayout
+                android:background="@color/azul"
+
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
+                android:layout_height="27dp"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_margin="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@color/blanco"
-                    android:gravity="center"
-                    android:text="Gestion Academica"
-                    android:textColor="@color/negro"
-                    android:textSize="25dp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
-                android:gravity="left"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="25dp"
+                    android:text="Gestion Academica"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="35dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad y puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_actiPuesto"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPuesto_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/actiPuesto_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_actiPuesto"
                     android:layout_width="20dp"
@@ -91,23 +107,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPuesto_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPuesto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPuesto"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPuesto"
@@ -118,40 +136,41 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Institucion"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_instGesAca"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/instGesAca_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/instGesAca_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_instGesAca"
@@ -164,23 +183,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_instGesAca_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/instGesAca"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/instGesAca"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_instGesAca"
@@ -191,40 +212,40 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAca"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAca_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAca_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -238,23 +259,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAca"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAca"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAca"
                     android:layout_width="20dp"
@@ -264,39 +287,40 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
                     android:text="A:(mes y año)"
-                    android:textColor="@color/negro"
+                    android:textColor="@color/blanco"
                     android:textSize="17dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAcaA"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAcaA_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAcaA_texto"
                     android:inputType="date"
                     />
                 <ImageView
@@ -310,23 +334,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAcaA_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAcaA"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAcaA"
+                        />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAcaA"
                     android:layout_width="20dp"
@@ -338,41 +364,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPues2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_actiPues2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPues2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/actiPues2_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_actiPues2"
                     android:layout_width="20dp"
@@ -384,23 +411,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPues2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPues2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPues2"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPues2"
@@ -413,41 +442,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_intGesAca2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_intGesAca2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/intGesAca2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/intGesAca2_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_intGesAca2"
@@ -460,23 +490,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_intGesAca2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/intGesAca2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/intGesAca2"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_intGesAca2"
@@ -489,41 +521,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAca2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAca2"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAca2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAca2_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemGesAca2"
@@ -536,23 +569,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAca2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAca2"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAca2"
                     android:layout_width="20dp"
@@ -564,40 +599,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAcaA2"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A:(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAcaA2"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAcaA2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAcaA2_texto"
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemGesAcaA2"
@@ -610,23 +646,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAcaA2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAcaA2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAcaA2"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAcaA2"
                     android:layout_width="20dp"
@@ -641,28 +679,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
                     android:id="@+id/agregar_otraGesAca2"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
                     android:text="Agregar otra Gestion Acadmica"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
+
                 <TextView
-                    android:id="@+id/borrar_otraGesAca2"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraGesAca2"
                     android:text="Borrar Otra Actuaizacion"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
 
             </LinearLayout>
             <LinearLayout
@@ -670,61 +714,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/agregar_otraGesAca"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/agregar_otraGesAca"
                     android:text="Agregar Otra Gestion Academica"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
             </LinearLayout>
 
 
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPues3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_actiPues3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPues3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    android:inputType="date"
+                    android:textSize="14dp"
+                    android:id="@+id/actiPues3_texto"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_actiPues3"
@@ -737,23 +783,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPues3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPues3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPues3"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPues3"
@@ -766,40 +814,40 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_intGesAca3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_intGesAca3"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
+                android:orientation="horizontal">
                 <EditText
-                    android:id="@+id/intGesAca3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/intGesAca3_texto"
                     />
                 <ImageView
                     android:id="@+id/guardar_intGesAca3"
@@ -812,23 +860,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_intGesAca3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/intGesAca3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/intGesAca3"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_intGesAca3"
                     android:layout_width="20dp"
@@ -840,40 +890,41 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAca3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De (mes y ano)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAca3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAca3_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemGesAca3"
@@ -886,23 +937,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAca3_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAca3_vista"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAca3"
                     android:layout_width="20dp"
@@ -915,42 +968,43 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAcaA3"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A(mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAcaA3"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAcaA3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:inputType="phone"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="14dp"
+
+                    android:id="@+id/tiemGesAcaA3_texto"
+                    />
 
                 <ImageView
                     android:id="@+id/guardar_tiemGesAcaA3"
@@ -963,23 +1017,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAcaA3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAcaA3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAcaA3"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAcaA3"
@@ -995,68 +1051,73 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
                     android:id="@+id/agregar_otraGesAca3"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
                     android:text="Agregar otra Gestion"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
                 <TextView
-                    android:id="@+id/borrar_otraGesAca3"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraGesAca3"
                     android:text="Borrar Otra Gestion"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_anuncio_actiPues4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:background="@color/blanco"
+                android:layout_height="35dp"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Actividad o Puesto"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_actiPues4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/actiPues4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    android:inputType="date"
+                    android:textSize="14dp"
+                    android:id="@+id/actiPues4_texto"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_actiPues4"
@@ -1069,23 +1130,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_actiPues4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/actiPues4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/actiPues4"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_actiPues4"
@@ -1098,40 +1161,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_intGesAca4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Institucion y pais"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_intGesAca4"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/intGesAca4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/intGesAca4_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_intGesAca4"
@@ -1144,23 +1209,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_intGesAca4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/intGesAca4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/intGesAca4"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_intGesAca4"
                     android:layout_width="20dp"
@@ -1172,40 +1239,40 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAca4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="De (mes y año)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAca4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAca4_texto"
                     />
                 <ImageView
                     android:id="@+id/guardar_tiemGesAca4"
@@ -1218,23 +1285,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAca4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAca4_vista"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAca4_vista"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAca4"
                     android:layout_width="20dp"
@@ -1247,42 +1316,42 @@
             <LinearLayout
                 android:id="@+id/caja_anuncio_tiemGesAcaA4"
                 android:visibility="gone"
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="A: (mes y ano)"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_tiemGesAcaA4"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/tiemGesAcaA4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:inputType="date"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/tiemGesAcaA4_texto"
+
                     />
 
                 <ImageView
@@ -1296,23 +1365,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_tiemGesAcaA4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/tiemGesAcaA4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/tiemGesAcaA4"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_tiemGesAcaA4"
@@ -1328,20 +1399,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-
                 <TextView
-                    android:id="@+id/borrar_otraGesAca4"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:id="@+id/borrar_otraGesAca4"
                     android:text="Borrar Otra Gestion"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -1349,27 +1421,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:id="@+id/regresar_actualizacionDisc"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
-                    android:text="Regresar a actualizacion disciplinar"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
-                <TextView
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:text="Actualizar seccion"
                     android:id="@+id/ir_productosAca"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Ir a Productos Academicos"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+
+                    />
             </LinearLayout>
 
         </LinearLayout>
