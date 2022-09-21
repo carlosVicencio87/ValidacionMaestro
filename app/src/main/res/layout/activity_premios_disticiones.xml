@@ -13,6 +13,8 @@
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/azul"
+
         android:visibility="visible">
 
 
@@ -20,66 +22,78 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blanco"
             android:gravity="center"
+            android:background="@color/azul"
+
             android:orientation="vertical">
 
 
 
             <LinearLayout
+                android:background="@color/azul"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
+                android:layout_height="27dp"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_margin="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@color/blanco"
-                    android:gravity="center"
-                    android:text="Premios, distinciones o reconocimientos validos"
-                    android:textColor="@color/negro"
-                    android:textSize="14dp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@color/blanco"
-                android:gravity="left"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="25dp"
+                    android:text="Premios, distinciones o reconocimientos validos"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="35dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blanco"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Descripcion del premio o reconocmiento"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_desPreRec"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desPreRec_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/desPreRec_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_desPreRec"
                     android:layout_width="20dp"
@@ -91,23 +105,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_desPreRec_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/desPreRec"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/desPreRec"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_desPreRec"
@@ -118,40 +134,41 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Descpricion del premio o reconocimiento"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_desPreRec2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desPreRec2_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
+                    android:textSize="14dp"
+                    android:id="@+id/desPreRec2_texto"
+
                     />
                 <ImageView
                     android:id="@+id/guardar_desPreRec2"
@@ -164,23 +181,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_desPreRec2_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/desPreRec2"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/desPreRec2"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_desPreRec2"
@@ -191,41 +210,41 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Descripcion de premio o reconocimiento"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_desPreRec3"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desPreRec3_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    android:inputType="date"
+                    android:textSize="14dp"
+                    android:id="@+id/desPreRec3_texto"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_desPreRec3"
@@ -238,23 +257,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_desPreRec3_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/desPreRec3"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/desPreRec3"
+                    />
                 <ImageView
                     android:id="@+id/cambiar_desPreRec3"
                     android:layout_width="20dp"
@@ -264,40 +285,41 @@
                     android:background="@drawable/palomita"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Descripcion del preio o reconocimiento"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_desPreRec4"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desPreRec4_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"
-                    android:inputType="date"
+                    android:textSize="14dp"
+                    android:id="@+id/desPreRec4_texto"
+                    android:inputType="text"
                     />
                 <ImageView
                     android:id="@+id/guardar_desPreRec4"
@@ -310,23 +332,26 @@
 
             <LinearLayout
                 android:id="@+id/caja_desPreRec4_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/desPreRec4"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/desPreRec4"
+
+                    />
                 <ImageView
                     android:id="@+id/cambiar_desPreRec4"
                     android:layout_width="20dp"
@@ -337,41 +362,41 @@
             </LinearLayout>
             <LinearLayout
 
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@color/blanco"
                 android:gravity="left"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/blanco"
                     android:gravity="left"
+                    android:textColor="@color/blanco"
+                    android:textSize="17dp"
                     android:text="Descripcion del premio o reconocimiento"
-                    android:textColor="@color/negro"
-                    android:textSize="17dp" />
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/caja_edit_desPreRec5"
-
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/desPreRec5_texto"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="14dp"
+                    android:id="@+id/desPreRec5_texto"
+                    />
                 <ImageView
                     android:id="@+id/guardar_desPreRec5"
                     android:layout_width="20dp"
@@ -383,23 +408,25 @@
 
             <LinearLayout
                 android:id="@+id/caja_desPreRec5_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="56dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
+                android:background="@drawable/border_blanco"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <TextView
-                    android:id="@+id/desPreRec5"
                     android:layout_width="250dp"
-                    android:layout_height="22dp"
-                    android:background="@color/blanco"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:gravity="bottom"
                     android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp" />
+                    android:textSize="21dp"
+                    android:id="@+id/desPreRec5"
+                    />
 
                 <ImageView
                     android:id="@+id/cambiar_desPreRec5"
@@ -412,31 +439,23 @@
 
 
             <LinearLayout
-                android:id="@+id/caja_siguiente_scroll10"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
-                android:background="@color/blanco"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:id="@+id/regresar_partColeCam"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_margin="15dp"
                     android:layout_marginTop="30dp"
-                    android:text="Regresar a gestion academica"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/ir_aportaRele"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Ir aportaciones relevantes"
-                    android:textColor="@color/negro"
-                    android:gravity="center"/>
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:text="Actualizar seccion"
+                    />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

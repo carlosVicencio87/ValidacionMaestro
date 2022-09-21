@@ -119,7 +119,7 @@ public class ParticipacionColCam extends AppCompatActivity {
         guardar_orgColeCam4 = findViewById(R.id.guardar_orgColeCam4);
         orgColeCam4_texto= findViewById(R.id.orgColeCam4_texto);
         orgColeCam4= findViewById(R.id.orgColeCam4);
-        caja_orgColeCam4_final= findViewById(R.id.caja_organismo4_final);
+        caja_orgColeCam4_final= findViewById(R.id.caja_orgColeCam4_final);
         cambiar_orgColeCam4= findViewById(R.id.cambiar_orgColeCam4);
 
         guardar_periColeCam4 = findViewById(R.id.guardar_periColeCam4);
