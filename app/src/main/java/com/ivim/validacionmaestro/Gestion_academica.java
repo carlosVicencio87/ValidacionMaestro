@@ -2,8 +2,10 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +15,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Gestion_academica extends AppCompatActivity {
     private ScrollView formulario_gestioAcademica;
@@ -46,12 +64,17 @@ public class Gestion_academica extends AppCompatActivity {
 
     private TextView borrar_otraGesAca4,agregar_otraGesAca3,borrar_otraGesAca3,agregar_otraGesAca2,
             borrar_otraGesAca2,agregar_otraGesAca,actiPuesto,instGesAca,tiemGesAca,tiemGesAcaA,actiPues2,intGesAca2,tiemGesAca2,tiemGesAcaA2,actiPues3,
-            intGesAca3,tiemGesAca3_vista,tiemGesAcaA3,actiPues4,intGesAca4,tiemGesAca4_vista,tiemGesAcaA4;
+            intGesAca3,tiemGesAca3_vista,tiemGesAcaA3,actiPues4,intGesAca4,tiemGesAca4_vista,tiemGesAcaA4,actuaGes;
 
     private String nuevo_actiPuesto,
             nuevo_instGesAca,nuevo_tiemGesAca,nuevo_tiemGesAcaA,nuevo_actiPues2,nuevo_intGesAca2,
             nuevo_tiemGesAca2,nuevo_tiemGesAcaA2,nuevo_actiPues3,nuevo_intGesAca3,nuevo_tiemGesAca3,
-            nuevo_tiemGesAcaA3,nuevo_actiPues4,nuevo_intGesAca4,nuevo_tiemGesAca4,nuevo_tiemGesAcaA4;
+            nuevo_tiemGesAcaA3,nuevo_actiPues4,nuevo_intGesAca4,nuevo_tiemGesAca4,nuevo_tiemGesAcaA4, gestAcade_totales,id_SesionUsuer,id_usuer;
+    private JSONArray json_datos_actuaDisci;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -200,6 +223,15 @@ public class Gestion_academica extends AppCompatActivity {
         caja_edit_tiemGesAcaA4 = findViewById(R.id.caja_edit_tiemGesAcaA4);
         caja_borrar_otraGesAca4 = findViewById(R.id.caja_borrar_otraGesAca4);
         borrar_otraGesAca4 = findViewById(R.id.borrar_otraGesAca4);
+        actuaGes=findViewById(R.id.actuaGes);
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer =idSher.getString("id","no");
+        Log.e("ID",""+ gestAcade_totales);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
 
         guardar_actiPuesto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -737,5 +769,169 @@ public class Gestion_academica extends AppCompatActivity {
 
             }
         });
+        actuaGes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_actiPuesto = actiPuesto_texto.getText().toString();
+                nuevo_instGesAca = instGesAca_texto.getText().toString();
+                nuevo_tiemGesAca = tiemGesAca_texto.getText().toString();
+                nuevo_tiemGesAcaA = tiemGesAcaA_texto.getText().toString();
+                nuevo_actiPues2 = actiPues2_texto.getText().toString();
+                nuevo_intGesAca2= intGesAca2_texto.getText().toString();
+                nuevo_tiemGesAca2 = tiemGesAca2_texto.getText().toString();
+                nuevo_tiemGesAcaA2 = tiemGesAcaA2_texto.getText().toString();
+                nuevo_actiPues3 = actiPues3_texto.getText().toString();
+                nuevo_intGesAca3 = intGesAca3_texto.getText().toString();
+                nuevo_tiemGesAca3 = tiemGesAca3_texto.getText().toString();
+                nuevo_tiemGesAcaA3= tiemGesAcaA3_texto.getText().toString();
+                nuevo_actiPues4= actiPues4_texto.getText().toString();
+                nuevo_intGesAca4 = intGesAca4_texto.getText().toString();
+                nuevo_tiemGesAca4 = tiemGesAca4_texto.getText().toString();
+                nuevo_tiemGesAcaA4= tiemGesAcaA4_texto.getText().toString();
+
+                if (nuevo_actiPuesto.trim().equals("")){
+                    nuevo_actiPuesto.equals(" ");
+                }
+                if (nuevo_instGesAca.trim().equals("")){
+                    nuevo_instGesAca.equals(" ");
+                }
+                if (nuevo_tiemGesAca.trim().equals("")){
+                    nuevo_tiemGesAca.equals(" ");
+                }
+                if (nuevo_tiemGesAcaA.trim().equals("")){
+                    nuevo_tiemGesAcaA.equals(" ");
+                }
+                if (nuevo_actiPues2.trim().equals("")){
+                    nuevo_actiPues2.equals(" ");
+                }
+                if (nuevo_intGesAca2.trim().equals("")){
+                    nuevo_intGesAca2.equals(" ");
+                }
+                if (nuevo_tiemGesAca2.trim().equals("")){
+                    nuevo_tiemGesAca2.equals(" ");
+                }
+                if (nuevo_tiemGesAcaA2.trim().equals("")){
+                    nuevo_tiemGesAcaA2.equals(" ");
+                }
+                if (nuevo_actiPues3.trim().equals("")){
+                    nuevo_actiPues3.equals(" ");
+                }
+                if (nuevo_intGesAca3.trim().equals("")){
+                    nuevo_intGesAca3.equals(" ");
+                }
+                if (nuevo_tiemGesAca3.trim().equals("")){
+                    nuevo_tiemGesAca3.equals(" ");
+                }
+                if (nuevo_tiemGesAcaA3.trim().equals("")){
+                    nuevo_tiemGesAcaA3.equals(" ");
+                }
+                if (nuevo_actiPues4.trim().equals("")){
+                    nuevo_actiPues4.equals(" ");
+                }
+                if (nuevo_intGesAca4.trim().equals("")){
+                    nuevo_intGesAca4.equals(" ");
+                }
+                if (nuevo_tiemGesAca4.trim().equals("")){
+                    nuevo_tiemGesAca4.equals(" ");
+                }
+                if (nuevo_tiemGesAcaA4.trim().equals("")){
+                    nuevo_tiemGesAcaA4.equals(" ");
+                }
+                JSONObject jsonObject=new JSONObject();
+                json_datos_actuaDisci =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_actiPuesto",nuevo_actiPuesto);
+                    jsonObject.put("nuevo_instGesAca",nuevo_instGesAca);
+                    jsonObject.put("nuevo_tiemGesAca",nuevo_tiemGesAca);
+                    jsonObject.put("nuevo_tiemGesAcaA",nuevo_tiemGesAcaA);
+                    jsonObject.put("nuevo_actiPues2",nuevo_actiPues2);
+                    jsonObject.put("nuevo_intGesAca2",nuevo_intGesAca2);
+                    jsonObject.put("nuevo_tiemGesAca2",nuevo_tiemGesAca2);
+                    jsonObject.put("nuevo_tiemGesAcaA2",nuevo_tiemGesAcaA2);
+                    jsonObject.put("nuevo_actiPues3",nuevo_actiPues3);
+                    jsonObject.put("nuevo_intGesAca3",nuevo_intGesAca3);
+                    jsonObject.put("nuevo_tiemGesAca3",nuevo_tiemGesAca3);
+                    jsonObject.put("nuevo_tiemGesAcaA3",nuevo_tiemGesAcaA3);
+                    jsonObject.put("nuevo_actiPues4",nuevo_actiPues4);
+                    jsonObject.put("nuevo_intGesAca4",nuevo_intGesAca4);
+                    jsonObject.put("nuevo_tiemGesAca4",nuevo_tiemGesAca4);
+                    jsonObject.put("nuevo_tiemGesAcaA4",nuevo_tiemGesAcaA4);
+                    json_datos_actuaDisci.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_actuaDisci));
+                    for(int i = 0; i< json_datos_actuaDisci.length(); i++){
+                        try {JSONObject jsoSacandoPro= json_datos_actuaDisci.getJSONObject(i);
+                            String strnuevo_actiPuesto=jsoSacandoPro.get("nuevo_actiPuesto").toString();
+                            String strnuevo_instGesAca=jsoSacandoPro.get("nuevo_instGesAca").toString();
+                            String strnuevo_tiemGesAca=jsoSacandoPro.get("nuevo_tiemGesAca").toString();
+                            String strnuevo_tiemGesAcaA=jsoSacandoPro.get("nuevo_tiemGesAcaA").toString();
+                            String strnuevo_actiPues2=jsoSacandoPro.get("nuevo_actiPues2").toString();
+                            String strnuevo_intGesAca2=jsoSacandoPro.get("nuevo_intGesAca2").toString();
+                            String strnuevo_tiemGesAca2=jsoSacandoPro.get("nuevo_tiemGesAca2").toString();
+                            String strnuevo_tiemGesAcaA2=jsoSacandoPro.get("nuevo_tiemGesAcaA2").toString();
+                            String strnuevo_actiPues3=jsoSacandoPro.get("nuevo_actiPues3").toString();
+                            String strnuevo_intGesAca3=jsoSacandoPro.get("nuevo_intGesAca3").toString();
+                            String strnuevo_tiemGesAca3=jsoSacandoPro.get("nuevo_tiemGesAca3").toString();
+                            String strnuevo_tiemGesAcaA3=jsoSacandoPro.get("nuevo_tiemGesAcaA3").toString();
+                            String strnuevo_actiPues4=jsoSacandoPro.get("nuevo_actiPues4").toString();
+                            String strnuevo_intGesAca4=jsoSacandoPro.get("nuevo_intGesAca4").toString();
+                            String strnuevo_tiemGesAca4=jsoSacandoPro.get("nuevo_tiemGesAca4").toString();
+                            String strnuevo_tiemGesAcaA4=jsoSacandoPro.get("nuevo_tiemGesAcaA4").toString();
+
+                            gestAcade_totales =strnuevo_actiPuesto+" /*-*/ "+strnuevo_instGesAca+" /*-*/ "+strnuevo_tiemGesAca+" /*-*/ "+strnuevo_tiemGesAcaA
+                                    +" /*-*/ "+strnuevo_actiPues2+" /*-*/ "+strnuevo_intGesAca2+" /*-*/ "+strnuevo_tiemGesAca2+
+                                    " /*-*/ "+strnuevo_tiemGesAcaA2+" /*-*/ "+strnuevo_actiPues3+" /*-*/ "+strnuevo_intGesAca3+" /*-*/ "+strnuevo_tiemGesAca3
+                                    +" /*-*/ "+strnuevo_tiemGesAcaA3+" /*-*/ "+strnuevo_actiPues4+" /*-*/ "+strnuevo_intGesAca4+
+                                    " /*-*/ "+strnuevo_tiemGesAca4+" /*-*/ "+strnuevo_tiemGesAcaA4;
+                            if(!gestAcade_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_gestAcadem();
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+    }
+    public void guardando_gestAcadem(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"gestion_academica.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("gestion_academica",gestAcade_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

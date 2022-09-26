@@ -2,8 +2,10 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +15,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Capacitacion_docente extends AppCompatActivity {
     private ScrollView formulario_formaCapaDocente;
@@ -45,11 +63,16 @@ public class Capacitacion_docente extends AppCompatActivity {
 
     private TextView borrar_otraCapa,agregar_otraCapa,agregar_otraOtracapa2,borrar_otraCapa2,agregar_otraOtracapa3,borrar_otraCapa3,tipoCapa,
             instPaisCapa,anoObtencionCapa,horasCapa,capa2,intCapa2,anoCapa2,horaCapa2,capa3,instcapa3,anoCapa3_vista,
-            horaCapa3,capa4,instcapa4,anoCapa4_vista,horaCapa4;
+            horaCapa3,capa4,instcapa4,anoCapa4_vista,horaCapa4,actua_capaDocente;
 
     private String nuevo_tipoCapa,nuevo_instPaisCapa,nuevo_anoObtencionCapa,nuevo_horasCapa,nuevo_capa2,
             nuevo_intCapa2,nuevo_anoCapa2,nuevo_horaCapa2,nuevo_capa3,nuevo_instcapa3,nuevo_anoCapa3,
-            nuevo_horaCapa3,nuevo_capa4,nuevo_instcapa4,nuevo_anoCapa4,nuevo_horaCapa4;
+            nuevo_horaCapa3,nuevo_capa4,nuevo_instcapa4,nuevo_anoCapa4,nuevo_horaCapa4,id_usuer,id_SesionUsuer,capDocente_totales;
+    private JSONArray json_datos_capDocente;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -203,6 +226,15 @@ public class Capacitacion_docente extends AppCompatActivity {
         horaCapa4= findViewById(R.id.horaCapa4);
         caja_horaCapa4_final = findViewById(R.id.caja_horaCapa4_final);
         cambiar_horaCapa4= findViewById(R.id.cambiar_horaCapa4);
+        actua_capaDocente=findViewById(R.id.actua_capaDocente);
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer=idSher.getString("id","no");
+        Log.e("ID",""+id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
 
         guardar_tipoCapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -743,6 +775,170 @@ public class Capacitacion_docente extends AppCompatActivity {
             }
         });
 
+        actua_capaDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_tipoCapa = tipoCapa_texto.getText().toString();
+                nuevo_instPaisCapa = instPaisCapa_texto.getText().toString();
+                nuevo_anoObtencionCapa = anoObtencionCapa_texto.getText().toString();
+                nuevo_horasCapa = horasCapa_texto.getText().toString();
+                nuevo_capa2 = capa2_texto.getText().toString();
+                nuevo_intCapa2= intCapa2_texto.getText().toString();
+                nuevo_anoCapa2 = anoCapa2_texto.getText().toString();
+                nuevo_horaCapa2 = horaCapa2_texto.getText().toString();
+                nuevo_capa3= capa3_texto.getText().toString();
+                nuevo_instcapa3= instcapa3_texto.getText().toString();
+                nuevo_anoCapa3 = anoCapa3_texto.getText().toString();
+                nuevo_horaCapa3 = horaCapa3_texto.getText().toString();
+                nuevo_capa4= capa4_texto.getText().toString();
+                nuevo_instcapa4= instcapa4_texto.getText().toString();
+                nuevo_anoCapa4 = anoCapa4_texto.getText().toString();
+                nuevo_horaCapa4 = horaCapa4_texto.getText().toString();
 
+                if (nuevo_tipoCapa.trim().equals("")){
+                    nuevo_tipoCapa.equals(" ");
+                }
+                if (nuevo_instPaisCapa.trim().equals("")){
+                    nuevo_instPaisCapa.equals(" ");
+                }
+                if (nuevo_anoObtencionCapa.trim().equals("")){
+                    nuevo_anoObtencionCapa.equals(" ");
+                }
+                if (nuevo_horasCapa.trim().equals("")){
+                    nuevo_horasCapa.equals(" ");
+                }
+                if (nuevo_capa2.trim().equals("")){
+                    nuevo_capa2.equals(" ");
+                }
+                if (nuevo_intCapa2.trim().equals("")){
+                    nuevo_intCapa2.equals(" ");
+                }
+                if (nuevo_anoCapa2.trim().equals("")){
+                    nuevo_anoCapa2.equals(" ");
+                }
+                if (nuevo_horaCapa2.trim().equals("")){
+                    nuevo_horaCapa2.equals(" ");
+                }
+                if (nuevo_capa3.trim().equals("")){
+                    nuevo_capa3.equals(" ");
+                }
+                if (nuevo_instcapa3.trim().equals("")){
+                    nuevo_instcapa3.equals(" ");
+                }
+                if (nuevo_anoCapa3.trim().equals("")){
+                    nuevo_anoCapa3.equals(" ");
+                }
+                if (nuevo_horaCapa3.trim().equals("")){
+                    nuevo_horaCapa3.equals(" ");
+                }
+                if (nuevo_capa4.trim().equals("")){
+                    nuevo_capa4.equals(" ");
+                }
+                if (nuevo_instcapa4.trim().equals("")){
+                    nuevo_instcapa4.equals(" ");
+                }
+                if (nuevo_anoCapa4.trim().equals("")){
+                    nuevo_anoCapa4.equals(" ");
+                }
+                if (nuevo_horaCapa4.trim().equals("")){
+                    nuevo_horaCapa4.equals(" ");
+                }
+                JSONObject jsonObject=new JSONObject();
+                json_datos_capDocente =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_tipoCapa",nuevo_tipoCapa);
+                    jsonObject.put("nuevo_instPaisCapa",nuevo_instPaisCapa);
+                    jsonObject.put("nuevo_anoObtencionCapa",nuevo_anoObtencionCapa);
+                    jsonObject.put("nuevo_horasCapa",nuevo_horasCapa);
+                    jsonObject.put("nuevo_capa2",nuevo_capa2);
+                    jsonObject.put("nuevo_intCapa2",nuevo_intCapa2);
+                    jsonObject.put("nuevo_anoCapa2",nuevo_anoCapa2);
+                    jsonObject.put("nuevo_horaCapa2",nuevo_horaCapa2);
+                    jsonObject.put("nuevo_capa3",nuevo_capa3);
+                    jsonObject.put("nuevo_instcapa3",nuevo_instcapa3);
+                    jsonObject.put("nuevo_anoCapa3",nuevo_anoCapa3);
+                    jsonObject.put("nuevo_horaCapa3",nuevo_horaCapa3);
+                    jsonObject.put("nuevo_capa4",nuevo_capa4);
+                    jsonObject.put("nuevo_instcapa4",nuevo_instcapa4);
+                    jsonObject.put("nuevo_anoCapa4",nuevo_anoCapa4);
+                    jsonObject.put("nuevo_horaCapa4",nuevo_horaCapa4);
+                    json_datos_capDocente.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_capDocente));
+                    for(int i=0;i<json_datos_capDocente.length();i++){
+                        try {JSONObject jsoSacandoPro=json_datos_capDocente.getJSONObject(i);
+                            String strnuevo_tipoCapa=jsoSacandoPro.get("nuevo_tipoCapa").toString();
+                            String strnuevo_instPaisCapa=jsoSacandoPro.get("nuevo_instPaisCapa").toString();
+                            String strnuevo_anoObtencionCapa=jsoSacandoPro.get("nuevo_anoObtencionCapa").toString();
+                            String strnuevo_horasCapa=jsoSacandoPro.get("nuevo_horasCapa").toString();
+                            String strnuevo_capa2=jsoSacandoPro.get("nuevo_capa2").toString();
+                            String strnuevo_intCapa2=jsoSacandoPro.get("nuevo_intCapa2").toString();
+                            String strnuevo_anoCapa2=jsoSacandoPro.get("nuevo_anoCapa2").toString();
+                            String strnuevo_horaCapa2=jsoSacandoPro.get("nuevo_horaCapa2").toString();
+                            String strnuevo_capa3=jsoSacandoPro.get("nuevo_capa3").toString();
+                            String strnuevo_instcapa3=jsoSacandoPro.get("nuevo_instcapa3").toString();
+                            String strnuevo_anoCapa3=jsoSacandoPro.get("nuevo_anoCapa3").toString();
+                            String strnuevo_horaCapa3=jsoSacandoPro.get("nuevo_horaCapa3").toString();
+                            String strnuevo_capa4=jsoSacandoPro.get("nuevo_capa4").toString();
+                            String strnuevo_instcapa4=jsoSacandoPro.get("nuevo_instcapa4").toString();
+                            String strnuevo_anoCapa4=jsoSacandoPro.get("nuevo_anoCapa4").toString();
+                            String strnuevo_horaCapa4=jsoSacandoPro.get("nuevo_horaCapa4").toString();
+
+                            capDocente_totales=strnuevo_tipoCapa+" /*-*/ "+strnuevo_instPaisCapa+" /*-*/ "+strnuevo_anoObtencionCapa+" /*-*/ "+strnuevo_horasCapa
+                                    +" /*-*/ "+strnuevo_capa2+" /*-*/ "+strnuevo_intCapa2+" /*-*/ "+strnuevo_anoCapa2+
+                                    " /*-*/ "+strnuevo_horaCapa2+" /*-*/ "+strnuevo_capa3+" /*-*/ "+strnuevo_instcapa3+" /*-*/ "+strnuevo_anoCapa3
+                                    +" /*-*/ "+strnuevo_horaCapa3+" /*-*/ "+strnuevo_capa4+" /*-*/ "+strnuevo_instcapa4+
+                                    " /*-*/ "+strnuevo_anoCapa4+" /*-*/ "+strnuevo_horaCapa4;
+                            if(!capDocente_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_capaDoce();
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+    }
+    public void guardando_capaDoce(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"capacitacion_docente.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("capacitacion_docente",capDocente_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

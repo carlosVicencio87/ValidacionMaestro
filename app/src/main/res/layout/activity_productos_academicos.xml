@@ -678,7 +678,7 @@
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:textColor="@color/blanco"
-                    android:id="@+id/regresar_gestionAcademica"
+                    android:id="@+id/actuatualizar_seccion"
                     android:text="Actualizar seccion"
 
                     />

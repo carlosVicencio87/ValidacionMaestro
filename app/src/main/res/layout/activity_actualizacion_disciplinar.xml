@@ -1428,6 +1428,7 @@
                     android:gravity="center"
                     android:textColor="@color/blanco"
                     android:text="Actualizar seccion"
+                    android:id="@+id/actua_disciplinar"
                     />
             </LinearLayout>
         </LinearLayout>

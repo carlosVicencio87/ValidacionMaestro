@@ -2,8 +2,10 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +15,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Actualizacion_disciplinar extends AppCompatActivity {
     private ScrollView formulario_datosBasicos,formulario_formaDocente,formulario_formaCapaDocente,
@@ -50,12 +68,17 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
 
     private TextView agregar_otraActua,borrar_otraActua,agregar_otraActua2,borrar_otraactua3,agregar_otraactua3,borrar_otraactua4,tipoActua,instPaisActua,anoObtencionActua,horasActua,
             actua2,instPaisActua2,anoActua2,horaActua2,actua3,instactua3,anoactua3_vista,horaactua3,actua4,
-            instactua4,anoactua4_vista,horaactua4;
+            instactua4,anoactua4_vista,horaactua4,actua_disciplinar;
 
     private String nuevo_tipoActua,
             nuevo_instPaisActua,nuevo_anoObtencionActua,nuevo_horasActua,nuevo_actua2,nuevo_instPaisActua2,
             nuevo_anoActua2,nuevo_horaActua2,nuevo_actua3,nuevo_instactua3,nuevo_anoactua3,nuevo_horaactua3,
-            nuevo_actua4,nuevo_instactua4,nuevo_anoactua4,nuevo_horaactua4;
+            nuevo_actua4,nuevo_instactua4,nuevo_anoactua4,nuevo_horaactua4, actuaDisci_totales,id_usuer,id_SesionUsuer;
+    private JSONArray json_datos_actuaDisci;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -205,6 +228,17 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
         horaactua4= findViewById(R.id.horaactua4);
         caja_horaactua4_final= findViewById(R.id.caja_horaactua4_final);
         cambiar_horaactua4= findViewById(R.id.cambiar_horaactua4);
+        actua_disciplinar=findViewById(R.id.actua_disciplinar);
+
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer=idSher.getString("id","no");
+        Log.e("ID",""+id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
+
         guardar_tipoActua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -742,5 +776,170 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
 
             }
         });
+        actua_disciplinar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_tipoActua = tipoActua_texto.getText().toString();
+                nuevo_instPaisActua = instPaisActua_texto.getText().toString();
+                nuevo_anoObtencionActua = anoObtencionActua_texto.getText().toString();
+                nuevo_horasActua = horasActua_texto.getText().toString();
+                nuevo_actua2 = actua2_texto.getText().toString();
+                nuevo_instPaisActua2= instPaisActua2_texto.getText().toString();
+                nuevo_anoActua2 = anoActua2_texto.getText().toString();
+                nuevo_horaActua2 = horaActua2_texto.getText().toString();
+                nuevo_actua3 = actua3_texto.getText().toString();
+                nuevo_instactua3= instactua3_texto.getText().toString();
+                nuevo_anoactua3 = anoactua3_texto.getText().toString();
+                nuevo_horaactua3 = horaactua3_texto.getText().toString();
+                nuevo_actua4 = actua4_texto.getText().toString();
+                nuevo_instactua4= instactua4_texto.getText().toString();
+                nuevo_anoactua4 = anoactua4_texto.getText().toString();
+                nuevo_horaactua4 = horaactua4_texto.getText().toString();
+
+
+                if (nuevo_tipoActua.trim().equals("")){
+                    nuevo_tipoActua.equals(" ");
+                }
+                if (nuevo_instPaisActua.trim().equals("")){
+                    nuevo_instPaisActua.equals(" ");
+                }
+                if (nuevo_anoObtencionActua.trim().equals("")){
+                    nuevo_anoObtencionActua.equals(" ");
+                }
+                if (nuevo_horasActua.trim().equals("")){
+                    nuevo_horasActua.equals(" ");
+                }
+                if (nuevo_actua2.trim().equals("")){
+                    nuevo_actua2.equals(" ");
+                }
+                if (nuevo_instPaisActua2.trim().equals("")){
+                    nuevo_instPaisActua2.equals(" ");
+                }
+                if (nuevo_anoActua2.trim().equals("")){
+                    nuevo_anoActua2.equals(" ");
+                }
+                if (nuevo_horaActua2.trim().equals("")){
+                    nuevo_horaActua2.equals(" ");
+                }
+                if (nuevo_actua3.trim().equals("")){
+                    nuevo_actua3.equals(" ");
+                }
+                if (nuevo_instactua3.trim().equals("")){
+                    nuevo_instactua3.equals(" ");
+                }
+                if (nuevo_anoactua3.trim().equals("")){
+                    nuevo_anoactua3.equals(" ");
+                }
+                if (nuevo_horaactua3.trim().equals("")){
+                    nuevo_horaactua3.equals(" ");
+                }
+                if (nuevo_actua4.trim().equals("")){
+                    nuevo_actua4.equals(" ");
+                }
+                if (nuevo_instactua4.trim().equals("")){
+                    nuevo_instactua4.equals(" ");
+                }
+                if (nuevo_anoactua4.trim().equals("")){
+                    nuevo_anoactua4.equals(" ");
+                }
+                if (nuevo_horaactua4.trim().equals("")){
+                    nuevo_horaactua4.equals(" ");
+                }
+                JSONObject jsonObject=new JSONObject();
+                json_datos_actuaDisci =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_tipoActua",nuevo_tipoActua);
+                    jsonObject.put("nuevo_instPaisActua",nuevo_instPaisActua);
+                    jsonObject.put("nuevo_anoObtencionActua",nuevo_anoObtencionActua);
+                    jsonObject.put("nuevo_horasActua",nuevo_horasActua);
+                    jsonObject.put("nuevo_actua2",nuevo_actua2);
+                    jsonObject.put("nuevo_instPaisActua2",nuevo_instPaisActua2);
+                    jsonObject.put("nuevo_anoActua2",nuevo_anoActua2);
+                    jsonObject.put("nuevo_horaActua2",nuevo_horaActua2);
+                    jsonObject.put("nuevo_actua3",nuevo_actua3);
+                    jsonObject.put("nuevo_instactua3",nuevo_instactua3);
+                    jsonObject.put("nuevo_anoactua3",nuevo_anoactua3);
+                    jsonObject.put("nuevo_horaactua3",nuevo_horaactua3);
+                    jsonObject.put("nuevo_actua4",nuevo_actua4);
+                    jsonObject.put("nuevo_instactua4",nuevo_instactua4);
+                    jsonObject.put("nuevo_anoactua4",nuevo_anoactua4);
+                    jsonObject.put("nuevo_horaactua4",nuevo_horaactua4);
+                    json_datos_actuaDisci.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_actuaDisci));
+                    for(int i = 0; i< json_datos_actuaDisci.length(); i++){
+                        try {JSONObject jsoSacandoPro= json_datos_actuaDisci.getJSONObject(i);
+                            String strnuevo_tipoActua=jsoSacandoPro.get("nuevo_tipoActua").toString();
+                            String strnuevo_instPaisActua=jsoSacandoPro.get("nuevo_instPaisActua").toString();
+                            String strnuevo_anoObtencionActua=jsoSacandoPro.get("nuevo_anoObtencionActua").toString();
+                            String strnuevo_horasActua=jsoSacandoPro.get("nuevo_horasActua").toString();
+                            String strnuevo_actua2=jsoSacandoPro.get("nuevo_actua2").toString();
+                            String strnuevo_instPaisActua2=jsoSacandoPro.get("nuevo_instPaisActua2").toString();
+                            String strnuevo_anoActua2=jsoSacandoPro.get("nuevo_anoActua2").toString();
+                            String strnuevo_horaActua2=jsoSacandoPro.get("nuevo_horaActua2").toString();
+                            String strnuevo_actua3=jsoSacandoPro.get("nuevo_actua3").toString();
+                            String strnuevo_instactua3=jsoSacandoPro.get("nuevo_instactua3").toString();
+                            String strnuevo_anoactua3=jsoSacandoPro.get("nuevo_anoactua3").toString();
+                            String strnuevo_horaactua3=jsoSacandoPro.get("nuevo_horaactua3").toString();
+                            String strnuevo_actua4=jsoSacandoPro.get("nuevo_actua4").toString();
+                            String strnuevo_instactua4=jsoSacandoPro.get("nuevo_instactua4").toString();
+                            String strnuevo_anoactua4=jsoSacandoPro.get("nuevo_anoactua4").toString();
+                            String strnuevo_horaactua4=jsoSacandoPro.get("nuevo_horaactua4").toString();
+
+                            actuaDisci_totales =strnuevo_tipoActua+" /*-*/ "+strnuevo_instPaisActua+" /*-*/ "+strnuevo_anoObtencionActua+" /*-*/ "+strnuevo_horasActua
+                                    +" /*-*/ "+strnuevo_actua2+" /*-*/ "+strnuevo_instPaisActua2+" /*-*/ "+strnuevo_anoActua2+
+                                    " /*-*/ "+strnuevo_horaActua2+" /*-*/ "+strnuevo_actua3+" /*-*/ "+strnuevo_instactua3+" /*-*/ "+strnuevo_anoactua3
+                                    +" /*-*/ "+strnuevo_horaactua3+" /*-*/ "+strnuevo_actua4+" /*-*/ "+strnuevo_instactua4+
+                                    " /*-*/ "+strnuevo_anoactua4+" /*-*/ "+strnuevo_horaactua4;
+                            if(!actuaDisci_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_actuaDisci();
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+    }
+    public void guardando_actuaDisci(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"actualizacion_disciplinar.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("actualizacion_disciplinar",actuaDisci_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

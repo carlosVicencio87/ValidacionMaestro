@@ -743,14 +743,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/blanco"
-                android:gravity="center"
-                android:orientation="vertical"
-                />
+
             <LinearLayout
                 android:id="@+id/caja_anuncio_capa3"
                 android:visibility="gone"

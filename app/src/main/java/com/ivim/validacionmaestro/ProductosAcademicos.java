@@ -2,8 +2,11 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +16,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ProductosAcademicos extends AppCompatActivity {
     private ScrollView formulario_datosBasicos,formulario_formaDocente,formulario_formaCapaDocente,
@@ -38,10 +57,18 @@ public class ProductosAcademicos extends AppCompatActivity {
             cambiar_desProdAca7,guardar_desProdAca8,cambiar_desProdAca8;
 
     private TextView desProdAca,desProdAca2,desProdAca3,desProdAca4,desProdAca5,
-            desProdAca6,desProdAca7,desProdAca8;
+            desProdAca6,desProdAca7,desProdAca8,actuatualizar_seccion;
 
     private String nuevo_desProdAca,nuevo_desProdAca2,
-            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8;
+            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8,produc_totales,id_usuer,id_SesionUsuer;
+
+    private JSONArray json_datos_productoAca;
+
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +135,16 @@ public class ProductosAcademicos extends AppCompatActivity {
         cambiar_desProdAca8= findViewById(R.id.cambiar_desProdAca8);
 
         formulario_productosAcademicos = findViewById(R.id.formulario_productosAcademicos);
+        actuatualizar_seccion=findViewById(R.id.actuatualizar_seccion);
 
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer=idSher.getString("id","no");
+        Log.e("ID",""+id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
 
         guardar_desProdAca.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -302,5 +338,117 @@ public class ProductosAcademicos extends AppCompatActivity {
 
             }
         });
+        actuatualizar_seccion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_desProdAca= desProdAca_texto.getText().toString();
+                nuevo_desProdAca2 = desProdAca2_texto.getText().toString();
+                nuevo_desProdAca3 = desProdAca3_texto.getText().toString();
+                nuevo_desProdAca4=desProdAca4_texto.getText().toString();
+                nuevo_desProdAca5= desProdAca5_texto.getText().toString();
+                nuevo_desProdAca6 = desProdAca6_texto.getText().toString();
+                nuevo_desProdAca7 = desProdAca7_texto.getText().toString();
+                nuevo_desProdAca8= desProdAca8_texto.getText().toString();
+                    if (nuevo_desProdAca.trim().equals("")){
+                        nuevo_desProdAca.equals(" ");
+                    }
+                    if (nuevo_desProdAca2.trim().equals("")){
+                        nuevo_desProdAca2.equals(" ");
+                    }
+                    if (nuevo_desProdAca3.trim().equals("")){
+                        nuevo_desProdAca3.equals(" ");
+                    }
+                    if (nuevo_desProdAca4.trim().equals("")){
+                        nuevo_desProdAca4.equals(" ");
+                    }
+                    if (nuevo_desProdAca5.trim().equals("")){
+                        nuevo_desProdAca5.equals(" ");
+                    }
+                    if (nuevo_desProdAca6.trim().equals("")){
+                        nuevo_desProdAca6.equals(" ");
+                    }
+                    if (nuevo_desProdAca7.trim().equals("")){
+                        nuevo_desProdAca7.equals(" ");
+                    }
+                    if (nuevo_desProdAca8.trim().equals("")){
+                        nuevo_desProdAca8.equals(" ");
+                    }
+                    JSONObject jsonObject=new JSONObject();
+                    json_datos_productoAca =new JSONArray();
+                        try {
+                            jsonObject.put("nuevo_desProdAca",nuevo_desProdAca);
+                            jsonObject.put("nuevo_desProdAca2",nuevo_desProdAca2);
+                            jsonObject.put("nuevo_desProdAca3",nuevo_desProdAca3);
+                            jsonObject.put("nuevo_desProdAca4",nuevo_desProdAca4);
+                            jsonObject.put("nuevo_desProdAca5",nuevo_desProdAca5);
+                            jsonObject.put("nuevo_desProdAca6",nuevo_desProdAca6);
+                            jsonObject.put("nuevo_desProdAca7",nuevo_desProdAca7);
+                            jsonObject.put("nuevo_desProdAca8",nuevo_desProdAca8);
+                            json_datos_productoAca.put(jsonObject);
+                            Log.e("1", String.valueOf(jsonObject));
+                            Log.e("2", String.valueOf(json_datos_productoAca));
+                            for(int i=0;i<json_datos_productoAca.length();i++){
+                                    try {JSONObject jsoSacandoPro=json_datos_productoAca.getJSONObject(i);
+                                        String strnuevo_desProdAca=jsoSacandoPro.get("nuevo_desProdAca").toString();
+                                        String strnuevo_desProdAca2=jsoSacandoPro.get("nuevo_desProdAca2").toString();
+                                        String strnuevo_desProdAca3=jsoSacandoPro.get("nuevo_desProdAca3").toString();
+                                        String strnuevo_desProdAca4=jsoSacandoPro.get("nuevo_desProdAca4").toString();
+                                        String strnuevo_desProdAca5=jsoSacandoPro.get("nuevo_desProdAca5").toString();
+                                        String strnuevo_desProdAca6=jsoSacandoPro.get("nuevo_desProdAca6").toString();
+                                        String strnuevo_desProdAca7=jsoSacandoPro.get("nuevo_desProdAca7").toString();
+                                        String strnuevo_desProdAca8=jsoSacandoPro.get("nuevo_desProdAca8").toString();
+
+                                        produc_totales=strnuevo_desProdAca+" /*-*/ "+strnuevo_desProdAca2+" /*-*/ "+strnuevo_desProdAca3+" /*-*/ "+strnuevo_desProdAca4
+                                                +" /*-*/ "+strnuevo_desProdAca5+" /*-*/ "+strnuevo_desProdAca6+" /*-*/ "+strnuevo_desProdAca7+
+                                                " /*-*/ "+strnuevo_desProdAca8;
+                                        if(!produc_totales.trim().equals("")){
+                                            executorService.execute(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    guardando_proAca();
+                                                }
+                                            });
+                                        }
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+            }
+        });
+    }
+    public void guardando_proAca(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"productos_academicos.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("productos_academicos",produc_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

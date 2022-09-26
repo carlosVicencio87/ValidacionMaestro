@@ -2,8 +2,10 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +15,22 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Formacion_docente extends AppCompatActivity {
@@ -59,14 +77,19 @@ public class Formacion_docente extends AppCompatActivity {
     private TextView borrar_otraLic,borrar_otraEsp,agregar_otraEsp,agregar_otraMaes,borrar_otraMaes,agregar_otraDoc,borrar_otraDoc,licenciatura,instPaisLic,anoObtencionLic,cedulaProfLic,
             licenciatura2,cedulaProfLic2,anoObtencionLic2,instPaisLic2,ceduEsp,anoEsp_vista,instEsp,especialidad,
             ceduEsp2,anoEsp2_vista,instEsp2,especialidad2,maes,instMaes,anoMaes_vista,ceduMaes,maes2,instMaes2,
-            anoMaes2_vista,ceduMaes2,doc,instDoc,anoDoc_vista,ceduDoc,doc2,instdoc2,anoDoc2_vista,ceduDoc2,agregar_otraLic;
+            anoMaes2_vista,ceduMaes2,doc,instDoc,anoDoc_vista,ceduDoc,doc2,instdoc2,anoDoc2_vista,ceduDoc2,agregar_otraLic,actua_formDocente;
 
     private String nuevo_licenciatura,nuevo_instPaisLic,nuevo_anoObtencionLic,nuevo_cedulaProfLic,
             nuevo_licenciatura2,nuevo_cedulaProfLic2,nuevo_anoObtencion2Lic,nuevo_instPaisLic2,
             nuevo_ceduEsp,nuevo_anoEsp,nuevo_instEsp,nuevo_especialidad,nuevo_ceduEsp2,nuevo_anoEsp2,
             nuevo_instEsp2,nuevo_especialidad2,nuevo_maes,nuevo_instMaes,nuevo_anoMaes,nuevo_ceduMaes,
             nuevo_maes2,nuevo_instMaes2,nuevo_anoMaes2,nuevo_ceduMaes2,nuevo_doc,nuevo_instDoc,nuevo_anoDoc,
-            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2;
+            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2,formDocente_totales,id_usuer,id_SesionUsuer;
+
+    private JSONArray json_datos_formDocente;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -342,7 +365,15 @@ public class Formacion_docente extends AppCompatActivity {
         ceduDoc2 = findViewById(R.id.ceduDoc2);
         caja_ceduDoc2_final = findViewById(R.id.caja_ceduDoc2_final);
         cambiar_ceduDoc2 = findViewById(R.id.cambiar_ceduDoc2);
-
+        actua_formDocente=findViewById(R.id.actua_formDocente);
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer=idSher.getString("id","no");
+        Log.e("ID",""+id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
         guardar_licenciatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1405,6 +1436,271 @@ public class Formacion_docente extends AppCompatActivity {
 
             }
         });
+        actua_formDocente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_licenciatura = licenciatura_texto.getText().toString();
+                nuevo_instPaisLic = instPaisLic_texto.getText().toString();
+                nuevo_anoObtencionLic = anoObtencionLic_texto.getText().toString();
+                nuevo_cedulaProfLic = cedulaProfLic_texto.getText().toString();
+                nuevo_licenciatura2 = licenciatura2_texto.getText().toString();
+                nuevo_instPaisLic2 = instPaisLic2_texto.getText().toString();
+                nuevo_anoObtencion2Lic = anoObtencion2Lic_texto.getText().toString();
+                nuevo_cedulaProfLic2 = cedulaProfLic2_texto.getText().toString();
+                nuevo_especialidad = especialidad_texto.getText().toString();
+                nuevo_instEsp = instEsp_texto.getText().toString();
+                nuevo_anoEsp = anoEsp_texto.getText().toString();
+                nuevo_ceduEsp = ceduEsp_texto.getText().toString();
+                nuevo_especialidad2 = especialidad2_texto.getText().toString();
+                nuevo_instEsp2 = instEsp2_texto.getText().toString();
+                nuevo_anoEsp2 = anoEsp2_texto.getText().toString();
+                nuevo_ceduEsp2 = ceduEsp2_texto.getText().toString();
+                nuevo_maes = maes_texto.getText().toString();
+                nuevo_instMaes = instMaes_texto.getText().toString();
+                nuevo_anoMaes = anoMaes_texto.getText().toString();
+                nuevo_ceduMaes = ceduMaes_texto.getText().toString();
+                nuevo_maes2 = maes2_texto.getText().toString();
+                nuevo_instMaes2= instMaes2_texto.getText().toString();
+                nuevo_anoMaes2 = anoMaes2_texto.getText().toString();
+                nuevo_ceduMaes2 = ceduMaes2_texto.getText().toString();
+                nuevo_doc = doc_texto.getText().toString();
+                nuevo_instDoc= instDoc_texto.getText().toString();
+                nuevo_anoDoc = anoDoc_texto.getText().toString();
+                nuevo_ceduDoc = ceduDoc_texto.getText().toString();
+                nuevo_doc2 = doc2_texto.getText().toString();
+                nuevo_instdoc2= instdoc2_texto.getText().toString();
+                nuevo_anoDoc2 = anoDoc2_texto.getText().toString();
+                nuevo_ceduDoc2 = ceduDoc2_texto.getText().toString();
 
+
+                if (nuevo_licenciatura.trim().equals("")){
+                    nuevo_licenciatura.equals(" ");
+                }
+                if (nuevo_instPaisLic.trim().equals("")){
+                    nuevo_instPaisLic.equals(" ");
+                }
+                if (nuevo_anoObtencionLic.trim().equals("")){
+                    nuevo_anoObtencionLic.equals(" ");
+                }
+                if (nuevo_cedulaProfLic.trim().equals("")){
+                    nuevo_cedulaProfLic.equals(" ");
+                }
+                if (nuevo_licenciatura2.trim().equals("")){
+                    nuevo_licenciatura2.equals(" ");
+                }
+                if (nuevo_instPaisLic2.trim().equals("")){
+                    nuevo_instPaisLic2.equals(" ");
+                }
+                if (nuevo_anoObtencion2Lic.trim().equals("")){
+                    nuevo_anoObtencion2Lic.equals(" ");
+                }
+                if (nuevo_cedulaProfLic2.trim().equals("")){
+                    nuevo_cedulaProfLic2.equals(" ");
+                }
+                if (nuevo_especialidad.trim().equals("")){
+                    nuevo_especialidad.equals(" ");
+                }
+                if (nuevo_instEsp.trim().equals("")){
+                    nuevo_instEsp.equals(" ");
+                }
+                if (nuevo_anoEsp.trim().equals("")){
+                    nuevo_anoEsp.equals(" ");
+                }
+                if (nuevo_ceduEsp.trim().equals("")){
+                    nuevo_ceduEsp.equals(" ");
+                }
+                if (nuevo_especialidad2.trim().equals("")){
+                    nuevo_especialidad2.equals(" ");
+                }
+                if (nuevo_instEsp2.trim().equals("")){
+                    nuevo_instEsp2.equals(" ");
+                }
+                if (nuevo_anoEsp2.trim().equals("")){
+                    nuevo_anoEsp2.equals(" ");
+                }
+                if (nuevo_ceduEsp2.trim().equals("")){
+                    nuevo_ceduEsp2.equals(" ");
+                }
+                if (nuevo_maes.trim().equals("")){
+                    nuevo_maes.equals(" ");
+                }
+                if (nuevo_instMaes.trim().equals("")){
+                    nuevo_instMaes.equals(" ");
+                }
+                if (nuevo_anoMaes.trim().equals("")){
+                    nuevo_anoMaes.equals(" ");
+                }
+                if (nuevo_ceduMaes.trim().equals("")){
+                    nuevo_ceduMaes.equals(" ");
+                }
+                if (nuevo_maes2.trim().equals("")){
+                    nuevo_maes2.equals(" ");
+                }
+                if (nuevo_instMaes2.trim().equals("")){
+                    nuevo_instMaes2.equals(" ");
+                }
+                if (nuevo_anoMaes2.trim().equals("")){
+                    nuevo_anoMaes2.equals(" ");
+                }
+                if (nuevo_ceduMaes2.trim().equals("")){
+                    nuevo_ceduMaes2.equals(" ");
+                }
+                if (nuevo_doc.trim().equals("")){
+                    nuevo_doc.equals(" ");
+                }
+                if (nuevo_instDoc.trim().equals("")){
+                    nuevo_instDoc.equals(" ");
+                }
+                if (nuevo_anoDoc.trim().equals("")){
+                    nuevo_anoDoc.equals(" ");
+                }
+                if (nuevo_ceduDoc.trim().equals("")){
+                    nuevo_ceduDoc.equals(" ");
+                }
+                if (nuevo_doc2.trim().equals("")){
+                    nuevo_doc2.equals(" ");
+                }
+                if (nuevo_instdoc2.trim().equals("")){
+                    nuevo_instdoc2.equals(" ");
+                }
+                if (nuevo_anoDoc2.trim().equals("")){
+                    nuevo_anoDoc2.equals(" ");
+                }
+                if (nuevo_ceduDoc2.trim().equals("")){
+                    nuevo_ceduDoc2.equals(" ");
+                }
+                JSONObject jsonObject=new JSONObject();
+                json_datos_formDocente =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_licenciatura",nuevo_licenciatura);
+                    jsonObject.put("nuevo_instPaisLic",nuevo_instPaisLic);
+                    jsonObject.put("nuevo_anoObtencionLic",nuevo_anoObtencionLic);
+                    jsonObject.put("nuevo_cedulaProfLic",nuevo_cedulaProfLic);
+                    jsonObject.put("nuevo_licenciatura2",nuevo_licenciatura2);
+                    jsonObject.put("nuevo_instPaisLic2",nuevo_instPaisLic2);
+                    jsonObject.put("nuevo_anoObtencion2Lic",nuevo_anoObtencion2Lic);
+                    jsonObject.put("nuevo_cedulaProfLic2",nuevo_cedulaProfLic2);
+                    jsonObject.put("nuevo_especialidad",nuevo_especialidad);
+                    jsonObject.put("nuevo_instEsp",nuevo_instEsp);
+                    jsonObject.put("nuevo_anoEsp",nuevo_anoEsp);
+                    jsonObject.put("nuevo_ceduEsp",nuevo_ceduEsp);
+                    jsonObject.put("nuevo_especialidad2",nuevo_especialidad2);
+                    jsonObject.put("nuevo_instEsp2",nuevo_instEsp2);
+                    jsonObject.put("nuevo_anoEsp2",nuevo_anoEsp2);
+                    jsonObject.put("nuevo_ceduEsp2",nuevo_ceduEsp2);
+                    jsonObject.put("nuevo_maes",nuevo_maes);
+                    jsonObject.put("nuevo_instMaes",nuevo_instMaes);
+                    jsonObject.put("nuevo_anoMaes",nuevo_anoMaes);
+                    jsonObject.put("nuevo_ceduMaes",nuevo_ceduMaes);
+                    jsonObject.put("nuevo_maes2",nuevo_maes2);
+                    jsonObject.put("nuevo_instMaes2",nuevo_instMaes2);
+                    jsonObject.put("nuevo_anoMaes2",nuevo_anoMaes2);
+                    jsonObject.put("nuevo_ceduMaes2",nuevo_ceduMaes2);
+                    jsonObject.put("nuevo_doc",nuevo_doc);
+                    jsonObject.put("nuevo_instDoc",nuevo_instDoc);
+                    jsonObject.put("nuevo_anoDoc",nuevo_anoDoc);
+                    jsonObject.put("nuevo_ceduDoc",nuevo_ceduDoc);
+                    jsonObject.put("nuevo_doc2",nuevo_doc2);
+                    jsonObject.put("nuevo_instdoc2",nuevo_instdoc2);
+                    jsonObject.put("nuevo_anoDoc2",nuevo_anoDoc2);
+                    jsonObject.put("nuevo_ceduDoc2",nuevo_ceduDoc2);
+                    json_datos_formDocente.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_formDocente));
+                    for(int i=0;i<json_datos_formDocente.length();i++){
+                        try {JSONObject jsoSacandoPro=json_datos_formDocente.getJSONObject(i);
+                            String strnuevo_licenciatura=jsoSacandoPro.get("nuevo_licenciatura").toString();
+                            String strnuevo_instPaisLic=jsoSacandoPro.get("nuevo_instPaisLic").toString();
+                            String strnuevo_anoObtencionLic=jsoSacandoPro.get("nuevo_anoObtencionLic").toString();
+                            String strnuevo_cedulaProfLic=jsoSacandoPro.get("nuevo_cedulaProfLic").toString();
+                            String strnuevo_licenciatura2=jsoSacandoPro.get("nuevo_licenciatura2").toString();
+                            String strnuevo_instPaisLic2=jsoSacandoPro.get("nuevo_instPaisLic2").toString();
+                            String strnuevo_anoObtencion2Lic=jsoSacandoPro.get("nuevo_anoObtencion2Lic").toString();
+                            String strnuevo_cedulaProfLic2=jsoSacandoPro.get("nuevo_cedulaProfLic2").toString();
+                            String strnuevo_especialidad=jsoSacandoPro.get("nuevo_especialidad").toString();
+                            String strnuevo_instEsp=jsoSacandoPro.get("nuevo_instEsp").toString();
+                            String strnuevo_anoEsp=jsoSacandoPro.get("nuevo_anoEsp").toString();
+                            String strnuevo_ceduEsp=jsoSacandoPro.get("nuevo_ceduEsp").toString();
+                            String strnuevo_especialidad2=jsoSacandoPro.get("nuevo_especialidad2").toString();
+                            String strnuevo_instEsp2=jsoSacandoPro.get("nuevo_instEsp2").toString();
+                            String strnuevo_anoEsp2=jsoSacandoPro.get("nuevo_anoEsp2").toString();
+                            String strnuevo_ceduEsp2=jsoSacandoPro.get("nuevo_ceduEsp2").toString();
+                            String strnuevo_maes=jsoSacandoPro.get("nuevo_maes").toString();
+                            String strnuevo_instMaes=jsoSacandoPro.get("nuevo_instMaes").toString();
+                            String strnuevo_anoMaes=jsoSacandoPro.get("nuevo_anoMaes").toString();
+                            String strnuevo_ceduMaes=jsoSacandoPro.get("nuevo_ceduMaes").toString();
+                            String strnuevo_maes2=jsoSacandoPro.get("nuevo_maes2").toString();
+                            String strnuevo_instMaes2=jsoSacandoPro.get("nuevo_instMaes2").toString();
+                            String strnuevo_anoMaes2=jsoSacandoPro.get("nuevo_anoMaes2").toString();
+                            String strnuevo_ceduMaes2=jsoSacandoPro.get("nuevo_ceduMaes2").toString();
+                            String strnuevo_doc=jsoSacandoPro.get("nuevo_doc").toString();
+                            String strnuevo_instDoc=jsoSacandoPro.get("nuevo_instDoc").toString();
+                            String stnnuevo_anoDoc=jsoSacandoPro.get("nuevo_anoDoc").toString();
+                            String strnuevo_ceduDoc=jsoSacandoPro.get("nuevo_ceduDoc").toString();
+                            String strnuevo_doc2=jsoSacandoPro.get("nuevo_doc2").toString();
+                            String strnuevo_instdoc2=jsoSacandoPro.get("nuevo_instdoc2").toString();
+                            String strnuevo_anoDoc2=jsoSacandoPro.get("nuevo_anoDoc2").toString();
+                            String strnuevo_ceduDoc2=jsoSacandoPro.get("nuevo_ceduDoc2").toString();
+
+                            formDocente_totales=strnuevo_licenciatura+" /*-*/ "+strnuevo_instPaisLic+" /*-*/ "+strnuevo_anoObtencionLic+" /*-*/ "+strnuevo_cedulaProfLic
+                                    +" /*-*/ "+strnuevo_licenciatura2+" /*-*/ "+strnuevo_instPaisLic2+" /*-*/ "+strnuevo_anoObtencion2Lic+
+                                    " /*-*/ "+strnuevo_cedulaProfLic2+" /*-*/ "+strnuevo_especialidad+" /*-*/ "+strnuevo_instEsp+" /*-*/ "+strnuevo_anoEsp
+                                    +" /*-*/ "+strnuevo_ceduEsp+" /*-*/ "+strnuevo_especialidad2+" /*-*/ "+strnuevo_instEsp2+
+                                    " /*-*/ "+strnuevo_anoEsp2+" /*-*/ "+strnuevo_ceduEsp2+" /*-*/ "+strnuevo_maes+" /*-*/ "+strnuevo_instMaes
+                                    +" /*-*/ "+strnuevo_anoMaes+" /*-*/ "+strnuevo_ceduMaes+" /*-*/ "+strnuevo_maes2+
+                                    " /*-*/ "+strnuevo_instMaes2+" /*-*/ "+strnuevo_anoMaes2+" /*-*/ "+strnuevo_ceduMaes2+" /*-*/ "+strnuevo_doc
+                                    +" /*-*/ "+strnuevo_instDoc+" /*-*/ "+stnnuevo_anoDoc+" /*-*/ "+strnuevo_ceduDoc+
+                                    " /*-*/ "+strnuevo_doc2+" /*-*/ "+strnuevo_instdoc2+" /*-*/ "+strnuevo_anoDoc2+
+                                    " /*-*/ "+strnuevo_ceduDoc2;
+                            if(!formDocente_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_formAca();
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+    }
+    public void guardando_formAca(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"formacion_docente.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("formacion_docente",formDocente_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }
