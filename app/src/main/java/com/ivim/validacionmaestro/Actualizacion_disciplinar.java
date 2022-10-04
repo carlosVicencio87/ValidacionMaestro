@@ -2,6 +2,7 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -73,11 +75,12 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
     private String nuevo_tipoActua,
             nuevo_instPaisActua,nuevo_anoObtencionActua,nuevo_horasActua,nuevo_actua2,nuevo_instPaisActua2,
             nuevo_anoActua2,nuevo_horaActua2,nuevo_actua3,nuevo_instactua3,nuevo_anoactua3,nuevo_horaactua3,
-            nuevo_actua4,nuevo_instactua4,nuevo_anoactua4,nuevo_horaactua4, actuaDisci_totales,id_usuer,id_SesionUsuer;
+            nuevo_actua4,nuevo_instactua4,nuevo_anoactua4,nuevo_horaactua4, actuaDisci_totales,id_usuer,id_SesionUsuer,actuaDis_Usuer;
+
     private JSONArray json_datos_actuaDisci;
     private ExecutorService executorService;
     private static String SERVIDOR_CONTROLADOR;
-    private SharedPreferences idSher,id_SesionSher;
+    private SharedPreferences idSher,id_SesionSher,actuaDis_sher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,7 +241,10 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
         id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
         Log.e("ID",""+id_SesionUsuer);
-
+        actuaDis_sher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        actuaDis_Usuer=actuaDis_sher.getString("actualizacion_disciplinar","no");
+        Log.e("actua",""+actuaDis_Usuer);
+        pedir_actDisci();
         guardar_tipoActua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -367,18 +373,22 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
                 caja_anuncio_tipoActua2.setVisibility(View.GONE);
                 caja_edit_actua2.setVisibility(View.GONE);
                 caja_actua2_final.setVisibility(View.GONE);
+                actua2.setText("");
 
                 caja_anuncio_actuaInts2.setVisibility(View.GONE);
                 caja_edit_instPaisActua2.setVisibility(View.GONE);
                 caja_instPaisActua2_final.setVisibility(View.GONE);
+                instPaisActua2.setText("");
 
                 caja_anuncio_anoActua2.setVisibility(View.GONE);
                 caja_edit_anoActua2.setVisibility(View.GONE);
                 caja_anoActua2_final.setVisibility(View.GONE);
+                anoActua2.setText("");
 
                 caja_anuncio_horaActua2.setVisibility(View.GONE);
                 caja_edit_horaActua2.setVisibility(View.GONE);
                 caja_horaActua2_final.setVisibility(View.GONE);
+                horaActua2.setText("");
 
                 caja_agregar_otraActua.setVisibility(View.VISIBLE);
                 caja_borrar_otraActua.setVisibility(View.GONE);
@@ -514,18 +524,22 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
                 caja_anuncio_actua3.setVisibility(View.GONE);
                 caja_actua3.setVisibility(View.GONE);
                 caja_actua3_final.setVisibility(View.GONE);
+                actua3.setText("");
 
                 caja_anuncio_instActua3.setVisibility(View.GONE);
                 caja_edit_intactua3.setVisibility(View.GONE);
                 caja_instactua3_final.setVisibility(View.GONE);
+                instactua3.setText("");
 
                 caja_anuncio_anoactua3.setVisibility(View.GONE);
                 caja_anoactua3.setVisibility(View.GONE);
                 caja_anoactua3_final.setVisibility(View.GONE);
+                anoactua3_vista.setText("");
 
                 caja_anuncio_horaactua3.setVisibility(View.GONE);
                 caja_edit_horaactua3.setVisibility(View.GONE);
                 caja_horaactua3_final.setVisibility(View.GONE);
+                horaactua3.setText("");
 
                 caja_borrar_otraActua.setVisibility(View.VISIBLE);
                 caja_agregar_otraactua3.setVisibility(View.GONE);
@@ -661,18 +675,23 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
                 caja_anuncio_actua4.setVisibility(View.GONE);
                 caja_actua4.setVisibility(View.GONE);
                 caja_actua4_final.setVisibility(View.GONE);
+                actua4.setText("");
+
                 caja_anuncio_instactua4.setVisibility(View.GONE);
                 caja_edit_instactua4.setVisibility(View.GONE);
                 caja_instactua4_final.setVisibility(View.GONE);
+                instactua4.setText("");
 
                 caja_anuncio_anoactua4.setVisibility(View.GONE);
                 caja_anoactua4.setVisibility(View.GONE);
                 caja_anoactua4_final.setVisibility(View.GONE);
+                anoactua4_vista.setText("");
 
 
                 caja_anuncio_horasactua4.setVisibility(View.GONE);
                 caja_edit_horaactua4.setVisibility(View.GONE);
                 caja_horaactua4_final.setVisibility(View.GONE);
+                horaactua4.setText("");
 
                 caja_agregar_otraactua3.setVisibility(View.VISIBLE);
                 caja_borrar_otraactua4.setVisibility(View.GONE);
@@ -779,71 +798,76 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
         actua_disciplinar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_tipoActua = tipoActua_texto.getText().toString();
-                nuevo_instPaisActua = instPaisActua_texto.getText().toString();
-                nuevo_anoObtencionActua = anoObtencionActua_texto.getText().toString();
-                nuevo_horasActua = horasActua_texto.getText().toString();
-                nuevo_actua2 = actua2_texto.getText().toString();
-                nuevo_instPaisActua2= instPaisActua2_texto.getText().toString();
-                nuevo_anoActua2 = anoActua2_texto.getText().toString();
-                nuevo_horaActua2 = horaActua2_texto.getText().toString();
-                nuevo_actua3 = actua3_texto.getText().toString();
-                nuevo_instactua3= instactua3_texto.getText().toString();
-                nuevo_anoactua3 = anoactua3_texto.getText().toString();
-                nuevo_horaactua3 = horaactua3_texto.getText().toString();
-                nuevo_actua4 = actua4_texto.getText().toString();
-                nuevo_instactua4= instactua4_texto.getText().toString();
-                nuevo_anoactua4 = anoactua4_texto.getText().toString();
-                nuevo_horaactua4 = horaactua4_texto.getText().toString();
+
+                nuevo_tipoActua = tipoActua.getText().toString();
+                nuevo_instPaisActua = instPaisActua.getText().toString();
+                nuevo_anoObtencionActua = anoObtencionActua.getText().toString();
+                nuevo_horasActua = horasActua.getText().toString();
+
+                nuevo_actua2 = actua2.getText().toString();
+                nuevo_instPaisActua2= instPaisActua2.getText().toString();
+                nuevo_anoActua2 = anoActua2.getText().toString();
+                nuevo_horaActua2 = horaActua2.getText().toString();
+
+
+                nuevo_actua3 = actua3.getText().toString();
+                nuevo_instactua3= instactua3.getText().toString();
+                nuevo_anoactua3 = anoactua3_vista.getText().toString();
+                nuevo_horaactua3 = horaactua3.getText().toString();
+
+                nuevo_actua4 = actua4.getText().toString();
+                nuevo_instactua4= instactua4.getText().toString();
+                nuevo_anoactua4 = anoactua4_vista.getText().toString();
+                nuevo_horaactua4 = horaactua4.getText().toString();
 
 
                 if (nuevo_tipoActua.trim().equals("")){
-                    nuevo_tipoActua.equals(" ");
+                    nuevo_tipoActua=" ";
                 }
                 if (nuevo_instPaisActua.trim().equals("")){
-                    nuevo_instPaisActua.equals(" ");
+                    nuevo_instPaisActua=" ";
                 }
                 if (nuevo_anoObtencionActua.trim().equals("")){
-                    nuevo_anoObtencionActua.equals(" ");
+                    nuevo_anoObtencionActua=" ";
                 }
                 if (nuevo_horasActua.trim().equals("")){
-                    nuevo_horasActua.equals(" ");
+                    nuevo_horasActua=" ";
                 }
                 if (nuevo_actua2.trim().equals("")){
-                    nuevo_actua2.equals(" ");
+                    nuevo_actua2=" ";
                 }
                 if (nuevo_instPaisActua2.trim().equals("")){
-                    nuevo_instPaisActua2.equals(" ");
+                    nuevo_instPaisActua2=" ";
                 }
                 if (nuevo_anoActua2.trim().equals("")){
-                    nuevo_anoActua2.equals(" ");
+                    nuevo_anoActua2=" ";
                 }
                 if (nuevo_horaActua2.trim().equals("")){
-                    nuevo_horaActua2.equals(" ");
+                    nuevo_horaActua2=" ";
                 }
                 if (nuevo_actua3.trim().equals("")){
-                    nuevo_actua3.equals(" ");
+                    nuevo_actua3=" ";
                 }
                 if (nuevo_instactua3.trim().equals("")){
-                    nuevo_instactua3.equals(" ");
+                    nuevo_instactua3=" ";
                 }
                 if (nuevo_anoactua3.trim().equals("")){
-                    nuevo_anoactua3.equals(" ");
+                    nuevo_anoactua3=" ";
                 }
                 if (nuevo_horaactua3.trim().equals("")){
-                    nuevo_horaactua3.equals(" ");
+                    nuevo_horaactua3=" ";
                 }
                 if (nuevo_actua4.trim().equals("")){
-                    nuevo_actua4.equals(" ");
+                    nuevo_actua4=" ";;
                 }
                 if (nuevo_instactua4.trim().equals("")){
-                    nuevo_instactua4.equals(" ");
+                    nuevo_instactua4=" ";
                 }
                 if (nuevo_anoactua4.trim().equals("")){
-                    nuevo_anoactua4.equals(" ");
+                    nuevo_anoactua4=" ";
                 }
                 if (nuevo_horaactua4.trim().equals("")){
-                    nuevo_horaactua4.equals(" ");
+                    nuevo_horaactua4=" ";
                 }
                 JSONObject jsonObject=new JSONObject();
                 json_datos_actuaDisci =new JSONArray();
@@ -896,6 +920,8 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         guardando_actuaDisci();
+                                        Intent intent = new Intent(Actualizacion_disciplinar.this,Login.class);
+                                        startActivity(intent);
                                     }
                                 });
                             }
@@ -935,6 +961,186 @@ public class Actualizacion_disciplinar extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("actualizacion_disciplinar",actuaDisci_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_actDisci(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_actualizacion_disciplinar.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                            String str_actua_disc = jsonObject.getString("actualizacion_disciplinar");
+
+                            if(!str_actua_disc.equals("")){
+                                Log.e("respuesta_frag",""+str_actua_disc);
+                                String[] actuaDis_fragmentada=str_actua_disc.split(" /\\*-\\*/ ");
+                                Log.e("respuesta_frag",""+actuaDis_fragmentada);
+                                if(!actuaDis_fragmentada[0].equals(" ")){
+
+
+
+                                    nuevo_tipoActua=actuaDis_fragmentada[0];
+                                    nuevo_instPaisActua=actuaDis_fragmentada[1];
+                                    nuevo_anoObtencionActua=actuaDis_fragmentada[2];
+                                    nuevo_horasActua=actuaDis_fragmentada[3];
+
+                                    Log.e("Nuevalic",""+nuevo_tipoActua);
+                                    tipoActua.setText(nuevo_tipoActua);
+                                    instPaisActua.setText(nuevo_instPaisActua);
+                                    anoObtencionActua.setText(nuevo_anoObtencionActua);
+                                    horasActua.setText(nuevo_horasActua);
+                                    caja_edit_tipoActua.setVisibility(View.GONE);
+                                    caja_tipoActua_final.setVisibility(View.VISIBLE);
+                                    caja_edit_instPaisActua.setVisibility(View.GONE);
+                                    caja_instPaisActua_final.setVisibility(View.VISIBLE);
+                                    caja_edit_anoObtencionActua.setVisibility(View.GONE);
+                                    caja_anoObtencionActua_final.setVisibility(View.VISIBLE);
+                                    caja_edit_horasActua.setVisibility(View.GONE);
+                                    caja_horasActua_final.setVisibility(View.VISIBLE);
+
+
+
+                                    if(!actuaDis_fragmentada[4].equals(" ")){
+
+
+
+                                        nuevo_actua2=actuaDis_fragmentada[4];
+                                        nuevo_instPaisActua2=actuaDis_fragmentada[5];
+                                        nuevo_anoActua2=actuaDis_fragmentada[6];
+                                        nuevo_horaActua2=actuaDis_fragmentada[7];
+                                        Log.e("Nuevalic",""+nuevo_actua2);
+                                        actua2.setText(nuevo_actua2);
+                                        instPaisActua2.setText(nuevo_instPaisActua2);
+                                        anoActua2.setText(nuevo_anoActua2);
+                                        horaActua2.setText(nuevo_horaActua2);
+
+                                        caja_edit_actua2.setVisibility(View.GONE);
+                                        caja_actua2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tipoActua2.setVisibility(View.VISIBLE);
+
+                                        caja_edit_instPaisActua2.setVisibility(View.GONE);
+                                        caja_instPaisActua2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actuaInts2.setVisibility(View.VISIBLE);
+
+                                        caja_edit_horaActua2.setVisibility(View.GONE);
+                                        caja_horaActua2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_horaActua2.setVisibility(View.VISIBLE);
+
+                                        caja_edit_anoActua2.setVisibility(View.GONE);
+                                        caja_anoActua2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_anoActua2.setVisibility(View.VISIBLE);
+
+                                        caja_agregar_otraActua.setVisibility(View.GONE);
+                                        caja_borrar_otraActua.setVisibility(View.VISIBLE);
+
+                                    }
+                                    if(!actuaDis_fragmentada[8].equals(" ")){
+
+
+
+                                        nuevo_actua3=actuaDis_fragmentada[8];
+                                        nuevo_instactua3=actuaDis_fragmentada[9];
+                                        nuevo_anoactua3=actuaDis_fragmentada[10];
+                                        nuevo_horaactua3=actuaDis_fragmentada[11];
+
+
+                                        Log.e("Nuevalic3",""+nuevo_actua3);
+                                        actua3.setText(nuevo_actua3);
+                                        instactua3.setText(nuevo_instactua3);
+                                        anoactua3_vista.setText(nuevo_anoactua3);
+                                        horaactua3.setText(nuevo_horaactua3);
+                                        caja_actua3.setVisibility(View.GONE);
+                                        caja_actua3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actua3.setVisibility(View.VISIBLE);
+                                        caja_edit_intactua3.setVisibility(View.GONE);
+                                        caja_instactua3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_instActua3.setVisibility(View.VISIBLE);
+
+                                        caja_edit_horaactua3.setVisibility(View.GONE);
+                                        caja_horaactua3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_horaactua3.setVisibility(View.VISIBLE);
+
+                                        caja_anoactua3.setVisibility(View.GONE);
+                                        caja_anoactua3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_anoactua3.setVisibility(View.VISIBLE);
+
+
+                                        caja_borrar_otraActua.setVisibility(View.GONE);
+                                        caja_agregar_otraactua3.setVisibility(View.VISIBLE);
+
+
+                                    }
+                                    if(!actuaDis_fragmentada[12].equals(" ")){
+
+                                        nuevo_actua4=actuaDis_fragmentada[12];
+                                        nuevo_instactua4=actuaDis_fragmentada[13];
+                                        nuevo_anoactua4=actuaDis_fragmentada[14];
+                                        nuevo_horaactua4=actuaDis_fragmentada[15];
+                                        Log.e("Nuevalic4",""+nuevo_actua4);
+
+
+                                        actua4.setText(nuevo_actua4);
+                                        instactua4.setText(nuevo_instactua4);
+                                        anoactua4_vista.setText(nuevo_anoactua4);
+                                        horaactua4.setText(nuevo_horaactua4);
+                                        caja_edit_horaactua4.setVisibility(View.GONE);
+                                        caja_horaactua4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actua4.setVisibility(View.VISIBLE);
+
+                                        caja_anoactua4.setVisibility(View.GONE);
+                                        caja_anoactua4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_instactua4.setVisibility(View.VISIBLE);
+
+                                        caja_edit_instactua4.setVisibility(View.GONE);
+                                        caja_instactua4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_anoactua4.setVisibility(View.VISIBLE);
+
+                                        caja_actua4.setVisibility(View.GONE);
+                                        caja_actua4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_horasactua4.setVisibility(View.VISIBLE);
+
+                                        caja_agregar_otraactua3.setVisibility(View.GONE);
+                                        caja_borrar_otraactua4.setVisibility(View.VISIBLE);
+
+
+                                    }
+
+                                }
+
+
+
+
+
+
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
                 map.put("id",id_usuer);
                 map.put("id_sesion",id_SesionUsuer);
                 return map;

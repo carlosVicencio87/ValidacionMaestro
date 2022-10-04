@@ -2,8 +2,11 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +16,23 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ExperienciaDisenoInge extends AppCompatActivity {
     private ScrollView formulario_expDiseñoIng;
@@ -39,10 +59,15 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
 
     private TextView borrar_otraExpInge3,agregar_otraExpInge3,borrar_otraExpInge2,agregar_otraExpInge2,
             borrar_otraExpInge,agregar_otraExpInge,organismo,periodo,nivelExp,organismo2,periodo2,nivelExp2,
-            organismo3,periodo3,nivelExp3_vista,organismo4,periodo4,nivelExp4_vista;
+            organismo3,periodo3,nivelExp3_vista,organismo4,periodo4,nivelExp4_vista,actua_diseInge;
 
     private String nuevo_organismo, nuevo_periodo,nuevo_nivelExp,nuevo_organismo2,nuevo_periodo2,nuevo_nivelExp2,nuevo_nivelExp3,nuevo_periodo3,
-            nuevo_organismo3,nuevo_nivelExp4,nuevo_periodo4,nuevo_organismo4;
+            nuevo_organismo3,nuevo_nivelExp4,nuevo_periodo4,nuevo_organismo4,id_usuer,id_SesionUsuer,expDiseIng_totales,expDise_Usuer;
+
+    private JSONArray json_datos_exDisIng;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher,expDise_Sher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -162,7 +187,20 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
         nivelExp4_vista= findViewById(R.id.nivelExp4_vista);
         caja_nivelExp4_final = findViewById(R.id.caja_nivelExp4_final);
         cambiar_nivelExp4= findViewById(R.id.cambiar_nivelExp4);
+        actua_diseInge=findViewById(R.id.actua_diseInge);
 
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer =idSher.getString("id","no");
+        Log.e("ID",""+ id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
+        expDise_Sher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        expDise_Usuer=expDise_Sher.getString("experiencia_diseno","no");
+        Log.e("expdiseno",""+expDise_Usuer);
+        pedir_expDisenIng();
         guardar_organismo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -264,15 +302,18 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
                 caja_anuncio_organismo2.setVisibility(View.GONE);
                 caja_edit_organismo2.setVisibility(View.GONE);
                 caja_organismo2_final.setVisibility(View.GONE);
+                organismo2.setText("");
 
                 caja_anuncio_periodo2.setVisibility(View.GONE);
                 caja_edit_periodo2.setVisibility(View.GONE);
                 caja_periodo2_final.setVisibility(View.GONE);
+                periodo2.setText("");
 
 
                 caja_anuncio_nivelExp2.setVisibility(View.GONE);
                 caja_edit_nivelExp2.setVisibility(View.GONE);
                 caja_nivelExp2_final.setVisibility(View.GONE);
+                nivelExp2.setText("");
 
 
 
@@ -384,16 +425,19 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
                 caja_anuncio_organismo3.setVisibility(View.GONE);
                 caja_organismo3.setVisibility(View.GONE);
                 caja_organismo3_final.setVisibility(View.GONE);
+                organismo3.setText("");
 
 
                 caja_anuncio_periodo3.setVisibility(View.GONE);
                 caja_edit_periodo3.setVisibility(View.GONE);
                 caja_periodo3_final.setVisibility(View.GONE);
+                periodo3.setText("");
 
 
                 caja_anuncio_nivelExp3.setVisibility(View.GONE);
                 caja_nivelExp3.setVisibility(View.GONE);
                 caja_nivelExp3_final.setVisibility(View.GONE);
+                nivelExp3_vista.setText("");
 
 
                 caja_agregar_otraExpInge2.setVisibility(View.VISIBLE);
@@ -504,16 +548,17 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
                 caja_anuncio_organismo4.setVisibility(View.GONE);
                 caja_organismo4.setVisibility(View.GONE);
                 caja_organismo4_final.setVisibility(View.GONE);
-
+                organismo4.setText("");
 
                 caja_anuncio_periodo4.setVisibility(View.GONE);
                 caja_edit_periodo4.setVisibility(View.GONE);
                 caja_periodo4_final.setVisibility(View.GONE);
-
+                periodo4.setText("");
 
                 caja_anuncio_nivelExp4.setVisibility(View.GONE);
                 caja_nivelExp4.setVisibility(View.GONE);
                 caja_nivelExp4_final.setVisibility(View.GONE);
+                nivelExp4_vista.setText("");
 
 
 
@@ -595,6 +640,293 @@ public class ExperienciaDisenoInge extends AppCompatActivity {
 
             }
         });
+        actua_diseInge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_organismo=organismo.getText().toString();
+                nuevo_periodo= periodo.getText().toString();
+                nuevo_nivelExp= nivelExp.getText().toString();
+                nuevo_organismo2=organismo2.getText().toString();
+                nuevo_periodo2= periodo2.getText().toString();
+                nuevo_nivelExp2= nivelExp2.getText().toString();
+                nuevo_organismo3=organismo3.getText().toString();
+                nuevo_periodo3= periodo3.getText().toString();
+                nuevo_nivelExp3= nivelExp3_vista.getText().toString();
+                nuevo_organismo4=organismo4.getText().toString();
+                nuevo_periodo4= periodo4.getText().toString();
+                nuevo_nivelExp4= nivelExp4_vista.getText().toString();
 
+                if (nuevo_organismo.trim().equals("")){
+                    nuevo_organismo=" ";
+                }
+                if (nuevo_periodo.trim().equals("")){
+                    nuevo_periodo=" ";
+                }
+                if (nuevo_nivelExp.trim().equals("")){
+                    nuevo_nivelExp=" ";
+                }
+                if (nuevo_organismo2.trim().equals("")){
+                    nuevo_organismo2=" ";
+                }
+                if (nuevo_periodo2.trim().equals("")){
+                    nuevo_periodo2=" ";
+                }
+                if (nuevo_nivelExp2.trim().equals("")){
+                    nuevo_nivelExp2=" ";
+                }
+                if (nuevo_organismo3.trim().equals("")){
+                    nuevo_organismo3=" ";
+                }
+                if (nuevo_periodo3.trim().equals("")){
+                    nuevo_periodo3=" ";
+                }
+                if (nuevo_nivelExp3.trim().equals("")){
+                    nuevo_nivelExp3=" ";
+                }
+                if (nuevo_organismo4.trim().equals("")){
+                    nuevo_organismo4=" ";
+                }
+                if (nuevo_periodo4.trim().equals("")){
+                    nuevo_periodo4=" ";
+                }
+                if (nuevo_nivelExp4.trim().equals("")){
+                    nuevo_nivelExp4.equals(" ");
+                }
+
+                JSONObject jsonObject=new JSONObject();
+                json_datos_exDisIng =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_organismo",nuevo_organismo);
+                    jsonObject.put("nuevo_periodo",nuevo_periodo);
+                    jsonObject.put("nuevo_nivelExp",nuevo_nivelExp);
+                    jsonObject.put("nuevo_organismo2",nuevo_organismo2);
+                    jsonObject.put("nuevo_periodo2",nuevo_periodo2);
+                    jsonObject.put("nuevo_nivelExp2",nuevo_nivelExp2);
+                    jsonObject.put("nuevo_organismo3",nuevo_organismo3);
+                    jsonObject.put("nuevo_periodo3",nuevo_periodo3);
+                    jsonObject.put("nuevo_nivelExp3",nuevo_nivelExp3);
+                    jsonObject.put("nuevo_organismo4",nuevo_organismo4);
+                    jsonObject.put("nuevo_periodo4",nuevo_periodo4);
+                    jsonObject.put("nuevo_nivelExp4",nuevo_nivelExp4);
+                    json_datos_exDisIng.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_exDisIng));
+                    for(int i = 0; i< json_datos_exDisIng.length(); i++){
+                        try {JSONObject jsoSacandoPro= json_datos_exDisIng.getJSONObject(i);
+                            String strnuevo_organismo=jsoSacandoPro.get("nuevo_organismo").toString();
+                            String strnuevo_periodo=jsoSacandoPro.get("nuevo_periodo").toString();
+                            String strnuevo_nivelExp=jsoSacandoPro.get("nuevo_nivelExp").toString();
+                            String strnuevo_organismo2=jsoSacandoPro.get("nuevo_organismo2").toString();
+                            String strnuevo_periodo2=jsoSacandoPro.get("nuevo_periodo2").toString();
+                            String strnuevo_nivelExp2=jsoSacandoPro.get("nuevo_nivelExp2").toString();
+                            String strnuevo_organismo3=jsoSacandoPro.get("nuevo_organismo3").toString();
+                            String strnuevo_periodo3=jsoSacandoPro.get("nuevo_periodo3").toString();
+                            String strnuevo_nivelExp3=jsoSacandoPro.get("nuevo_nivelExp3").toString();
+                            String strnuevo_organismo4=jsoSacandoPro.get("nuevo_organismo4").toString();
+                            String strnuevo_periodo4=jsoSacandoPro.get("nuevo_periodo4").toString();
+                            String strnuevo_nivelExp4=jsoSacandoPro.get("nuevo_nivelExp4").toString();
+
+                            expDiseIng_totales =strnuevo_organismo+" /*-*/ "+strnuevo_periodo+" /*-*/ "+strnuevo_nivelExp+" /*-*/ "+strnuevo_organismo2
+                                    +" /*-*/ "+strnuevo_periodo2+" /*-*/ "+strnuevo_nivelExp2+" /*-*/ "+strnuevo_organismo3+
+                                    " /*-*/ "+strnuevo_periodo3+" /*-*/ "+strnuevo_nivelExp3+" /*-*/ "+strnuevo_organismo4+" /*-*/ "+strnuevo_periodo4
+                                    +" /*-*/ "+strnuevo_nivelExp4;
+                            if(!expDiseIng_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_exIngCivil();
+                                        Intent intent = new Intent(ExperienciaDisenoInge.this,Login.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+    }
+    public void guardando_exIngCivil(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"experiencia_diseno.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("experiencia_diseno",expDiseIng_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_expDisenIng(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_experiencia_diseno.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                            String str_experiencia_diseno = jsonObject.getString("experiencia_diseno");
+
+                            if(!str_experiencia_diseno.equals("")){
+                                Log.e("respuesta_frag",""+str_experiencia_diseno);
+                                String[] expDiseno_fragmentada=str_experiencia_diseno.split(" /\\*-\\*/ ");
+                                Log.e("respuesta_frag",""+expDiseno_fragmentada);
+                                if(!expDiseno_fragmentada[0].equals(" ")){
+
+                                    nuevo_organismo=expDiseno_fragmentada[0];
+                                    nuevo_periodo=expDiseno_fragmentada[1];
+                                    nuevo_nivelExp=expDiseno_fragmentada[2];
+
+                                    Log.e("Nuevalic",""+nuevo_organismo);
+                                    organismo.setText(nuevo_organismo);
+                                    periodo.setText(nuevo_periodo);
+                                    nivelExp.setText(nuevo_nivelExp);
+                                    caja_edit_organismo.setVisibility(View.GONE);
+                                    caja_organismo_final.setVisibility(View.VISIBLE);
+                                    caja_edit_periodo.setVisibility(View.GONE);
+                                    caja_periodo_final.setVisibility(View.VISIBLE);
+                                    caja_edit_nivelExp.setVisibility(View.GONE);
+                                    caja_nivelExp_final.setVisibility(View.VISIBLE);
+                                }
+                                if(!expDiseno_fragmentada[3].equals(" ")){
+
+                                    nuevo_organismo2=expDiseno_fragmentada[3];
+                                    nuevo_periodo2=expDiseno_fragmentada[4];
+                                    nuevo_nivelExp2=expDiseno_fragmentada[5];
+                                    Log.e("Nuevalic",""+nuevo_organismo2);
+                                    organismo2.setText(nuevo_organismo2);
+                                    periodo2.setText(nuevo_periodo2);
+                                    nivelExp2.setText(nuevo_nivelExp2);
+
+                                    caja_edit_organismo2.setVisibility(View.GONE);
+                                    caja_organismo2_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_organismo2.setVisibility(View.VISIBLE);
+
+                                    caja_edit_periodo2.setVisibility(View.GONE);
+                                    caja_periodo2_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_periodo2.setVisibility(View.VISIBLE);
+
+                                    caja_edit_nivelExp2.setVisibility(View.GONE);
+                                    caja_nivelExp2_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_nivelExp2.setVisibility(View.VISIBLE);
+
+                                    caja_agregar_otraExpInge.setVisibility(View.GONE);
+                                    caja_agregar_otraExpInge2.setVisibility(View.VISIBLE);
+                                }
+                                if(!expDiseno_fragmentada[6].equals(" ")){
+
+                                    nuevo_organismo3=expDiseno_fragmentada[6];
+                                    nuevo_periodo3=expDiseno_fragmentada[7];
+                                    nuevo_nivelExp3=expDiseno_fragmentada[8];
+
+                                    Log.e("Nuevalic3",""+nuevo_organismo3);
+                                    organismo3.setText(nuevo_organismo3);
+                                    periodo3.setText(nuevo_periodo3);
+                                    nivelExp3_vista.setText(nuevo_nivelExp3);
+
+
+                                    caja_organismo3.setVisibility(View.GONE);
+                                    caja_organismo3_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_organismo3.setVisibility(View.VISIBLE);
+
+                                    caja_edit_periodo3.setVisibility(View.GONE);
+                                    caja_periodo3_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_periodo3.setVisibility(View.VISIBLE);
+
+                                    caja_nivelExp3.setVisibility(View.GONE);
+                                    caja_nivelExp3_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_nivelExp3.setVisibility(View.VISIBLE);
+
+                                    caja_agregar_otraExpInge2.setVisibility(View.GONE);
+                                    caja_agregar_otraExpInge3.setVisibility(View.VISIBLE);
+
+
+                                }
+                                if(!expDiseno_fragmentada[9].equals(" ")){
+
+                                    nuevo_organismo4=expDiseno_fragmentada[9];
+                                    nuevo_periodo4=expDiseno_fragmentada[10];
+                                    nuevo_nivelExp4=expDiseno_fragmentada[11];
+                                    Log.e("Nuevalic4",""+nuevo_organismo4);
+                                    organismo4.setText(nuevo_organismo4);
+                                    periodo4.setText(nuevo_periodo4);
+                                    nivelExp4_vista.setText(nuevo_nivelExp4);
+
+                                    caja_organismo4.setVisibility(View.GONE);
+                                    caja_organismo4_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_organismo4.setVisibility(View.VISIBLE);
+
+                                    caja_edit_periodo4.setVisibility(View.GONE);
+                                    caja_periodo4_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_periodo4.setVisibility(View.VISIBLE);
+
+                                    caja_nivelExp4.setVisibility(View.GONE);
+                                    caja_nivelExp4_final.setVisibility(View.VISIBLE);
+                                    caja_anuncio_nivelExp4.setVisibility(View.VISIBLE);
+
+                                    caja_agregar_otraExpInge3.setVisibility(View.GONE);
+                                    caja_borrar_otraExpInge3.setVisibility(View.VISIBLE);
+                                }
+
+
+
+
+
+
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

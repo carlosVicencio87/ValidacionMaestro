@@ -36,7 +36,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:gravity="center"
                     android:textColor="@color/blanco"
                     android:textSize="15dp"
@@ -76,7 +76,6 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caja_edit_aportacionPE"
-
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_margin="10dp"
@@ -85,51 +84,54 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/aportacionPE_texto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/blanco"
                     android:gravity="top"
                     android:textColorHint="@color/negro"
-                    android:textSize="17dp"/>
+                    android:textSize="17dp"
+                    android:id="@+id/aportacionPE_texto"
+                    />
 
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/guardar_aportacionPE"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_margin="15dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/palomita" />
             <LinearLayout
                 android:id="@+id/caja_aportacionPE_final"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="27dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 android:background="@color/blanco"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/aportacionPE"
-                    android:layout_width="400dp"
-                    android:layout_height="22dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@color/blanco"
-                    android:gravity="bottom"
-                    android:text="nombre de usuario"
+                    android:gravity="top"
                     android:textColorHint="@color/negro"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:id="@+id/aportacionPE"
+                    />
 
-                <ImageView
-                    android:id="@+id/cambiar_aportacionPE"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="15dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/palomita"/>
+
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/cambiar_aportacionPE"
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/palomita"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,6 +149,7 @@
                     android:gravity="center"
                     android:textColor="@color/blanco"
                     android:text="Actualizar seccion"
+                    android:id="@+id/actuAport"
                     />
             </LinearLayout>
         </LinearLayout>

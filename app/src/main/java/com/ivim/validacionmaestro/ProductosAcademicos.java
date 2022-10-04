@@ -26,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -60,13 +61,13 @@ public class ProductosAcademicos extends AppCompatActivity {
             desProdAca6,desProdAca7,desProdAca8,actuatualizar_seccion;
 
     private String nuevo_desProdAca,nuevo_desProdAca2,
-            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8,produc_totales,id_usuer,id_SesionUsuer;
+            nuevo_desProdAca3,nuevo_desProdAca4,nuevo_desProdAca5,nuevo_desProdAca6,nuevo_desProdAca7,nuevo_desProdAca8,produc_totales,id_usuer,id_SesionUsuer,prodAca_Usuer;
 
     private JSONArray json_datos_productoAca;
 
     private ExecutorService executorService;
     private static String SERVIDOR_CONTROLADOR;
-    private SharedPreferences idSher,id_SesionSher;
+    private SharedPreferences idSher,id_SesionSher,prodAca_sher;
 
 
     @Override
@@ -146,6 +147,10 @@ public class ProductosAcademicos extends AppCompatActivity {
         id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
         Log.e("ID",""+id_SesionUsuer);
 
+        prodAca_sher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        prodAca_Usuer=prodAca_sher.getString("productos_academicos","no");
+        Log.e("productos",""+prodAca_Usuer);
+        pedir_prodAca();
         guardar_desProdAca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -167,6 +172,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca.setVisibility(View.VISIBLE);
                 caja_desProdAca_final.setVisibility(View.GONE);
+                desProdAca.setText("");
+
 
             }
         });
@@ -191,6 +198,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca2.setVisibility(View.VISIBLE);
                 caja_desProdAca2_final.setVisibility(View.GONE);
+                desProdAca2.setText("");
+
 
             }
         });
@@ -215,6 +224,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca3.setVisibility(View.VISIBLE);
                 caja_desProdAca3_final.setVisibility(View.GONE);
+                desProdAca3.setText("");
+
 
             }
         });
@@ -239,6 +250,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca4.setVisibility(View.VISIBLE);
                 caja_desProdAca4_final.setVisibility(View.GONE);
+                desProdAca4.setText("");
+
 
             }
         });
@@ -263,6 +276,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca5.setVisibility(View.VISIBLE);
                 caja_desProdAca5_final.setVisibility(View.GONE);
+                desProdAca5.setText("");
+
 
             }
         });
@@ -287,6 +302,7 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca6.setVisibility(View.VISIBLE);
                 caja_desProdAca6_final.setVisibility(View.GONE);
+                desProdAca6.setText("");
 
             }
         });
@@ -299,6 +315,7 @@ public class ProductosAcademicos extends AppCompatActivity {
                 if (!nuevo_desProdAca7.trim().equals("")) {
                     caja_edit_desProdAca7.setVisibility(View.GONE);
                     caja_desProdAca7_final.setVisibility(View.VISIBLE);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "El producto academico  es necesario.", Toast.LENGTH_LONG).show();
                 }
@@ -311,6 +328,8 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca7.setVisibility(View.VISIBLE);
                 caja_desProdAca7_final.setVisibility(View.GONE);
+                desProdAca7.setText("");
+
 
             }
         });
@@ -335,43 +354,44 @@ public class ProductosAcademicos extends AppCompatActivity {
 
                 caja_edit_desProdAca8.setVisibility(View.VISIBLE);
                 caja_desProdAca8_final.setVisibility(View.GONE);
+                desProdAca8.setText("");
 
             }
         });
         actuatualizar_seccion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_desProdAca= desProdAca_texto.getText().toString();
-                nuevo_desProdAca2 = desProdAca2_texto.getText().toString();
-                nuevo_desProdAca3 = desProdAca3_texto.getText().toString();
-                nuevo_desProdAca4=desProdAca4_texto.getText().toString();
-                nuevo_desProdAca5= desProdAca5_texto.getText().toString();
-                nuevo_desProdAca6 = desProdAca6_texto.getText().toString();
-                nuevo_desProdAca7 = desProdAca7_texto.getText().toString();
-                nuevo_desProdAca8= desProdAca8_texto.getText().toString();
+                nuevo_desProdAca= desProdAca.getText().toString();
+                nuevo_desProdAca2 = desProdAca2.getText().toString();
+                nuevo_desProdAca3 = desProdAca3.getText().toString();
+                nuevo_desProdAca4=desProdAca4.getText().toString();
+                nuevo_desProdAca5= desProdAca5.getText().toString();
+                nuevo_desProdAca6 = desProdAca6.getText().toString();
+                nuevo_desProdAca7 = desProdAca7.getText().toString();
+                nuevo_desProdAca8= desProdAca8.getText().toString();
                     if (nuevo_desProdAca.trim().equals("")){
-                        nuevo_desProdAca.equals(" ");
+                        nuevo_desProdAca=" ";
                     }
                     if (nuevo_desProdAca2.trim().equals("")){
-                        nuevo_desProdAca2.equals(" ");
+                        nuevo_desProdAca2=" ";
                     }
                     if (nuevo_desProdAca3.trim().equals("")){
-                        nuevo_desProdAca3.equals(" ");
+                        nuevo_desProdAca3=" ";
                     }
                     if (nuevo_desProdAca4.trim().equals("")){
-                        nuevo_desProdAca4.equals(" ");
+                        nuevo_desProdAca4=" ";
                     }
                     if (nuevo_desProdAca5.trim().equals("")){
-                        nuevo_desProdAca5.equals(" ");
+                        nuevo_desProdAca5=" ";
                     }
                     if (nuevo_desProdAca6.trim().equals("")){
-                        nuevo_desProdAca6.equals(" ");
+                        nuevo_desProdAca6=" ";
                     }
                     if (nuevo_desProdAca7.trim().equals("")){
-                        nuevo_desProdAca7.equals(" ");
+                        nuevo_desProdAca7=" ";
                     }
                     if (nuevo_desProdAca8.trim().equals("")){
-                        nuevo_desProdAca8.equals(" ");
+                        nuevo_desProdAca8=" ";
                     }
                     JSONObject jsonObject=new JSONObject();
                     json_datos_productoAca =new JSONArray();
@@ -406,6 +426,8 @@ public class ProductosAcademicos extends AppCompatActivity {
                                                 @Override
                                                 public void run() {
                                                     guardando_proAca();
+                                                    Intent intent = new Intent(ProductosAcademicos.this,Login.class);
+                                                    startActivity(intent);
                                                 }
                                             });
                                         }
@@ -444,6 +466,126 @@ public class ProductosAcademicos extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("productos_academicos",produc_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_prodAca(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_productos_academicos.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                            String str_prod_academicos = jsonObject.getString("productos_academicos");
+
+                            if(!str_prod_academicos.equals("")){
+                                Log.e("respuesta_frag",""+str_prod_academicos);
+                                String[] productosAca_fragmentada=str_prod_academicos.split(" /\\*-\\*/ ");
+                                Log.e("respuesta_frag",""+productosAca_fragmentada);
+
+                                if(!productosAca_fragmentada[0].equals(" ")){
+
+                                    nuevo_desProdAca=productosAca_fragmentada[0];
+                                    Log.e("Nuevalic",""+nuevo_desProdAca);
+                                    desProdAca.setText(nuevo_desProdAca);
+                                    caja_edit_desProdAca.setVisibility(View.GONE);
+                                    caja_desProdAca_final.setVisibility(View.VISIBLE);
+
+                                }
+                                if(!productosAca_fragmentada[1].equals(" ")){
+
+                                    nuevo_desProdAca2=productosAca_fragmentada[1];
+
+                                    Log.e("Nuevalic",""+nuevo_desProdAca2);
+                                    desProdAca2.setText(nuevo_desProdAca2);
+                                    caja_edit_desProdAca2.setVisibility(View.GONE);
+                                    caja_desProdAca2_final.setVisibility(View.VISIBLE);
+
+
+                                }
+                                if(!productosAca_fragmentada[2].equals(" ")){
+
+                                    nuevo_desProdAca3=productosAca_fragmentada[2];
+
+
+                                    Log.e("Nuevalic3",""+nuevo_desProdAca3);
+                                    desProdAca3.setText(nuevo_desProdAca3);
+                                    caja_edit_desProdAca3.setVisibility(View.GONE);
+                                    caja_desProdAca3_final.setVisibility(View.VISIBLE);
+
+                                }
+                                if(!productosAca_fragmentada[3].equals(" ")){
+
+                                    nuevo_desProdAca4=productosAca_fragmentada[3];
+
+                                    Log.e("Nuevalic4",""+nuevo_desProdAca4);
+
+                                    desProdAca4.setText(nuevo_desProdAca4);
+                                    caja_edit_desProdAca4.setVisibility(View.GONE);
+                                    caja_desProdAca4_final.setVisibility(View.VISIBLE);
+
+                                }
+                                if(!productosAca_fragmentada[4].equals(" ")){
+                                    nuevo_desProdAca5=productosAca_fragmentada[4];
+                                    Log.e("Nuevalic4",""+nuevo_desProdAca5);
+
+                                    desProdAca5.setText(nuevo_desProdAca5);
+                                    caja_edit_desProdAca5.setVisibility(View.GONE);
+                                    caja_desProdAca5_final.setVisibility(View.VISIBLE);
+                                }
+                                if(!productosAca_fragmentada[5].equals(" ")){
+                                    nuevo_desProdAca6=productosAca_fragmentada[5];
+
+                                    Log.e("Nuevalic4",""+nuevo_desProdAca6);
+
+                                    desProdAca6.setText(nuevo_desProdAca6);
+                                    caja_edit_desProdAca6.setVisibility(View.GONE);
+                                    caja_desProdAca6_final.setVisibility(View.VISIBLE);
+                                }
+                                if(!productosAca_fragmentada[6].equals(" ")){
+                                    nuevo_desProdAca7=productosAca_fragmentada[6];
+
+                                    Log.e("Nuevalic4",""+nuevo_desProdAca7);
+
+                                    desProdAca7.setText(nuevo_desProdAca7);
+                                    caja_edit_desProdAca7.setVisibility(View.GONE);
+                                    caja_desProdAca7_final.setVisibility(View.VISIBLE);
+                                }
+                                if(!productosAca_fragmentada[7].equals(" ")){
+                                    nuevo_desProdAca8=productosAca_fragmentada[7];
+
+                                    Log.e("Nuevalic4",""+nuevo_desProdAca8);
+
+                                    desProdAca8.setText(nuevo_desProdAca8);
+                                    caja_edit_desProdAca8.setVisibility(View.GONE);
+                                    caja_desProdAca8_final.setVisibility(View.VISIBLE);
+                                }
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
                 map.put("id",id_usuer);
                 map.put("id_sesion",id_SesionUsuer);
                 return map;

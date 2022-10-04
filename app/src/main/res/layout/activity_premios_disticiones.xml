@@ -38,10 +38,10 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:gravity="center"
                     android:textColor="@color/blanco"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:text="Premios, distinciones o reconocimientos validos"
                     />
             </LinearLayout>
@@ -119,7 +119,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp"
                     android:id="@+id/desPreRec"
@@ -195,7 +194,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp"
                     android:id="@+id/desPreRec2"
@@ -271,7 +269,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp"
                     android:id="@+id/desPreRec3"
@@ -346,7 +343,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp"
                     android:id="@+id/desPreRec4"
@@ -422,7 +418,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp"
                     android:id="@+id/desPreRec5"
@@ -454,6 +449,7 @@
                     android:gravity="center"
                     android:textColor="@color/blanco"
                     android:text="Actualizar seccion"
+                    android:id="@+id/actuaPremiosDist"
                     />
 
             </LinearLayout>

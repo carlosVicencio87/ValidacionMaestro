@@ -2,8 +2,11 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +16,23 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ParticipacionColCam extends AppCompatActivity {
     private ScrollView formulario_partColeCam;
@@ -41,11 +61,15 @@ public class ParticipacionColCam extends AppCompatActivity {
     private TextView borrar_otraPart3,agregar_otraPart3,borrar_otraPart2,
             agregar_otraPart2,borrar_otraPart,agregar_otraPart,orgColeCam,
             periColeCam,nivelPart,orgColeCam2,periColeCam2,nivelPart2,orgColeCam3,periColeCam3,nivelPart3_vista,
-            orgColeCam4,periColeCam4,nivelPart4_vista;
+            orgColeCam4,periColeCam4,nivelPart4_vista,actuaParColCam;
 
     private String nuevo_orgColeCam,nuevo_periColeCam,nuevo_nivelPart,nuevo_orgColeCam2,
             nuevo_periColeCam2,nuevo_nivelPart2,nuevo_orgColeCam3,nuevo_periColeCam3,nuevo_nivelPart3,nuevo_orgColeCam4,
-            nuevo_periColeCam4,nuevo_nivelPart4;
+            nuevo_periColeCam4,nuevo_nivelPart4,partColCam_totales,id_usuer,id_SesionUsuer,partColCam_Usuer;
+    private JSONArray json_datos_parColCam;
+    private ExecutorService executorService;
+    private static String SERVIDOR_CONTROLADOR;
+    private SharedPreferences idSher,id_SesionSher,partColCam_Sher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,6 +191,21 @@ public class ParticipacionColCam extends AppCompatActivity {
         caja_nivelPart4 = findViewById(R.id.caja_nivelPart4);
         borrar_otraPart3 = findViewById(R.id.borrar_otraPart3);
         caja_borrar_otraPart3 = findViewById(R.id.caja_borrar_otraPart3);
+        
+        actuaParColCam=findViewById(R.id.actuaParColCam);
+        executorService= Executors.newSingleThreadExecutor();
+        SERVIDOR_CONTROLADOR = new Servidor().local;
+        idSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_usuer =idSher.getString("id","no");
+        Log.e("ID",""+ id_usuer);
+        id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
+        Log.e("ID",""+id_SesionUsuer);
+        partColCam_Sher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        partColCam_Usuer=partColCam_Sher.getString("participacion_colecam","no");
+        Log.e("partcolcam",""+partColCam_Usuer);
+        pedir_parColCam();
+
         guardar_orgColeCam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -266,15 +305,18 @@ public class ParticipacionColCam extends AppCompatActivity {
                 caja_anuncio_orgColeCam2.setVisibility(View.GONE);
                 caja_edit_orgColeCam2.setVisibility(View.GONE);
                 caja_orgColeCam2_final.setVisibility(View.GONE);
+                orgColeCam2.setText("");
 
                 caja_anuncio_periColeCam2.setVisibility(View.GONE);
                 caja_edit_periColeCam2.setVisibility(View.GONE);
                 caja_periColeCam2_final.setVisibility(View.GONE);
+                periColeCam2.setText("");
 
 
                 caja_anuncio_nivelPart2.setVisibility(View.GONE);
                 caja_edit_nivelPart2.setVisibility(View.GONE);
                 caja_nivelPart2_final.setVisibility(View.GONE);
+                nivelPart2.setText("");
 
 
                 caja_agregar_otraPart.setVisibility(View.VISIBLE);
@@ -384,16 +426,19 @@ public class ParticipacionColCam extends AppCompatActivity {
                 caja_anuncio_orgColeCam3.setVisibility(View.GONE);
                 caja_orgColeCam3.setVisibility(View.GONE);
                 caja_orgColeCam3_final.setVisibility(View.GONE);
+                orgColeCam3.setText("");
 
 
                 caja_anuncio_periColeCam3.setVisibility(View.GONE);
                 caja_edit_periColeCam3.setVisibility(View.GONE);
                 caja_periColeCam3_final.setVisibility(View.GONE);
+                periColeCam3.setText("");
 
 
                 caja_anuncio_nivelPart3.setVisibility(View.GONE);
                 caja_nivelPart3.setVisibility(View.GONE);
                 caja_nivelPart3_final.setVisibility(View.GONE);
+                nivelPart3_vista.setText("");
 
                 caja_agregar_otraPart2.setVisibility(View.VISIBLE);
                 caja_agregar_otraPart3.setVisibility(View.GONE);
@@ -502,14 +547,19 @@ public class ParticipacionColCam extends AppCompatActivity {
                 caja_anuncio_orgColeCam4.setVisibility(View.GONE);
                 caja_orgColeCam4.setVisibility(View.GONE);
                 caja_orgColeCam4_final.setVisibility(View.GONE);
+                orgColeCam4.setText("");
+
 
                 caja_anuncio_periColeCam4.setVisibility(View.GONE);
                 caja_edit_periColeCam4.setVisibility(View.GONE);
                 caja_periColeCam4_final.setVisibility(View.GONE);
+                periColeCam4.setText("");
+
 
                 caja_anuncio_nivelPart4.setVisibility(View.GONE);
                 caja_nivelPart4.setVisibility(View.GONE);
                 caja_nivelPart4_final.setVisibility(View.GONE);
+                nivelPart4_vista.setText("");
 
 
 
@@ -591,5 +641,291 @@ public class ParticipacionColCam extends AppCompatActivity {
 
             }
         });
+        actuaParColCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nuevo_orgColeCam=orgColeCam.getText().toString();
+                nuevo_periColeCam= periColeCam.getText().toString();
+                nuevo_nivelPart= nivelPart.getText().toString();
+                nuevo_orgColeCam2=orgColeCam2.getText().toString();
+                nuevo_periColeCam2= periColeCam2.getText().toString();
+                nuevo_nivelPart2= nivelPart2.getText().toString();
+                nuevo_orgColeCam3=orgColeCam3.getText().toString();
+                nuevo_periColeCam3= periColeCam3.getText().toString();
+                nuevo_nivelPart3= nivelPart3_vista.getText().toString();
+                nuevo_orgColeCam4=orgColeCam4.getText().toString();
+                nuevo_periColeCam4= periColeCam4.getText().toString();
+                nuevo_nivelPart4= nivelPart4_vista.getText().toString();
+
+
+                if (nuevo_orgColeCam.trim().equals("")){
+                    nuevo_orgColeCam=" ";
+                }
+                if (nuevo_periColeCam.trim().equals("")){
+                    nuevo_periColeCam=" ";
+                }
+                if (nuevo_nivelPart.trim().equals("")){
+                    nuevo_nivelPart=" ";
+                }
+                if (nuevo_orgColeCam2.trim().equals("")){
+                    nuevo_orgColeCam2=" ";
+                }
+                if (nuevo_periColeCam2.trim().equals("")){
+                    nuevo_periColeCam2=" ";
+                }
+                if (nuevo_nivelPart2.trim().equals("")){
+                    nuevo_nivelPart2=" ";
+                }
+                if (nuevo_orgColeCam3.trim().equals("")){
+                    nuevo_orgColeCam3=" ";
+                }
+                if (nuevo_periColeCam3.trim().equals("")){
+                    nuevo_periColeCam3=" ";
+                }
+                if (nuevo_nivelPart3.trim().equals("")){
+                    nuevo_nivelPart3=" ";
+                }
+                if (nuevo_orgColeCam4.trim().equals("")){
+                    nuevo_orgColeCam4=" ";
+                }
+                if (nuevo_periColeCam4.trim().equals("")){
+                    nuevo_periColeCam4=" ";
+                }
+                if (nuevo_nivelPart4.trim().equals("")){
+                    nuevo_nivelPart4=" ";
+                }
+
+                JSONObject jsonObject=new JSONObject();
+                json_datos_parColCam =new JSONArray();
+                try {
+                    jsonObject.put("nuevo_orgColeCam",nuevo_orgColeCam);
+                    jsonObject.put("nuevo_periColeCam",nuevo_periColeCam);
+                    jsonObject.put("nuevo_nivelPart",nuevo_nivelPart);
+                    jsonObject.put("nuevo_orgColeCam2",nuevo_orgColeCam2);
+                    jsonObject.put("nuevo_periColeCam2",nuevo_periColeCam2);
+                    jsonObject.put("nuevo_nivelPart2",nuevo_nivelPart2);
+                    jsonObject.put("nuevo_orgColeCam3",nuevo_orgColeCam3);
+                    jsonObject.put("nuevo_periColeCam3",nuevo_periColeCam3);
+                    jsonObject.put("nuevo_nivelPart3",nuevo_nivelPart3);
+                    jsonObject.put("nuevo_orgColeCam4",nuevo_orgColeCam4);
+                    jsonObject.put("nuevo_periColeCam4",nuevo_periColeCam4);
+                    jsonObject.put("nuevo_nivelPart4",nuevo_nivelPart4);
+                    json_datos_parColCam.put(jsonObject);
+                    Log.e("1", String.valueOf(jsonObject));
+                    Log.e("2", String.valueOf(json_datos_parColCam));
+                    for(int i = 0; i< json_datos_parColCam.length(); i++){
+                        try {JSONObject jsoSacandoPro= json_datos_parColCam.getJSONObject(i);
+                            String strnuevo_orgColeCam=jsoSacandoPro.get("nuevo_orgColeCam").toString();
+                            String strnuevo_periColeCam=jsoSacandoPro.get("nuevo_periColeCam").toString();
+                            String strnuevo_nivelPart=jsoSacandoPro.get("nuevo_nivelPart").toString();
+                            String strnuevo_orgColeCam2=jsoSacandoPro.get("nuevo_orgColeCam2").toString();
+                            String strnuevo_periColeCam2=jsoSacandoPro.get("nuevo_periColeCam2").toString();
+                            String strnuevo_nivelPart2=jsoSacandoPro.get("nuevo_nivelPart2").toString();
+                            String strnuevo_orgColeCam3=jsoSacandoPro.get("nuevo_orgColeCam3").toString();
+                            String strnuevo_periColeCam3=jsoSacandoPro.get("nuevo_periColeCam3").toString();
+                            String strnuevo_nivelPart3=jsoSacandoPro.get("nuevo_nivelPart3").toString();
+                            String strnuevo_orgColeCam4=jsoSacandoPro.get("nuevo_orgColeCam4").toString();
+                            String strnuevo_periColeCam4=jsoSacandoPro.get("nuevo_periColeCam4").toString();
+                            String strnuevo_nivelPart4=jsoSacandoPro.get("nuevo_nivelPart4").toString();
+
+                            partColCam_totales =strnuevo_orgColeCam+" /*-*/ "+strnuevo_periColeCam+" /*-*/ "+strnuevo_nivelPart+" /*-*/ "+strnuevo_orgColeCam2
+                                    +" /*-*/ "+strnuevo_periColeCam2+" /*-*/ "+strnuevo_nivelPart2+" /*-*/ "+strnuevo_orgColeCam3+
+                                    " /*-*/ "+strnuevo_periColeCam3+" /*-*/ "+strnuevo_nivelPart3+" /*-*/ "+strnuevo_orgColeCam4+" /*-*/ "+strnuevo_periColeCam4
+                                    +" /*-*/ "+strnuevo_nivelPart4;
+                            if(!partColCam_totales.trim().equals("")){
+                                executorService.execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        guardando_parColCam();
+                                        Intent intent = new Intent(ParticipacionColCam.this,Login.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+    }
+    public void guardando_parColCam(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"participacion_colecam.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+                        if (response.equals("no_existe")) {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("participacion_colecam",partColCam_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_parColCam(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_participacion_colecam.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                            String str_parColCam = jsonObject.getString("participacion_colecam");
+
+                            if(!str_parColCam.equals("")){
+                                Log.e("respuesta_frag",""+str_parColCam);
+                                String[] parColCam_fragmentada=str_parColCam.split(" /\\*-\\*/ ");
+                                Log.e("respuesta_frag",""+parColCam_fragmentada);
+
+                                if(!parColCam_fragmentada[0].equals(" ")){
+
+
+                                    nuevo_orgColeCam=parColCam_fragmentada[0];
+                                    nuevo_periColeCam=parColCam_fragmentada[1];
+                                    nuevo_nivelPart=parColCam_fragmentada[2];
+
+                                    Log.e("Nuevalic",""+nuevo_orgColeCam);
+                                    orgColeCam.setText(nuevo_orgColeCam);
+                                    periColeCam.setText(nuevo_periColeCam);
+                                    nivelPart.setText(nuevo_nivelPart);
+
+                                    caja_edit_orgColeCam.setVisibility(View.GONE);
+                                    caja_orgColeCam_final.setVisibility(View.VISIBLE);
+                                    caja_edit_periColeCam.setVisibility(View.GONE);
+                                    caja_periColeCam_final.setVisibility(View.VISIBLE);
+                                    caja_edit_nivelPart.setVisibility(View.GONE);
+                                    caja_nivelPart_final.setVisibility(View.VISIBLE);
+                                    if(!parColCam_fragmentada[3].equals(" ")){
+
+                                        nuevo_orgColeCam2=parColCam_fragmentada[3];
+                                        nuevo_periColeCam2=parColCam_fragmentada[4];
+                                        nuevo_nivelPart2=parColCam_fragmentada[5];
+                                        Log.e("Nuevalic",""+nuevo_orgColeCam2);
+                                        orgColeCam2.setText(nuevo_orgColeCam2);
+                                        periColeCam2.setText(nuevo_periColeCam2);
+                                        nivelPart2.setText(nuevo_nivelPart2);
+
+                                        caja_edit_orgColeCam2.setVisibility(View.GONE);
+                                        caja_orgColeCam2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_orgColeCam2.setVisibility(View.VISIBLE);
+
+                                        caja_edit_periColeCam2.setVisibility(View.GONE);
+                                        caja_periColeCam2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_periColeCam2.setVisibility(View.VISIBLE);
+
+                                        caja_edit_nivelPart2.setVisibility(View.GONE);
+                                        caja_nivelPart2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_nivelPart2.setVisibility(View.VISIBLE);
+
+                                        caja_agregar_otraPart.setVisibility(View.GONE);
+                                        caja_agregar_otraPart2.setVisibility(View.VISIBLE);
+
+
+                                    }
+                                    if(!parColCam_fragmentada[6].equals(" ")){
+
+                                        nuevo_orgColeCam3=parColCam_fragmentada[6];
+                                        nuevo_periColeCam3=parColCam_fragmentada[7];
+                                        nuevo_nivelPart3=parColCam_fragmentada[8];
+
+                                        Log.e("Nuevalic3",""+nuevo_orgColeCam3);
+                                        orgColeCam3.setText(nuevo_orgColeCam3);
+                                        periColeCam3.setText(nuevo_periColeCam3);
+                                        nivelPart3_vista.setText(nuevo_nivelPart3);
+
+
+                                        caja_orgColeCam3.setVisibility(View.GONE);
+                                        caja_orgColeCam3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_orgColeCam3.setVisibility(View.VISIBLE);
+
+                                        caja_edit_periColeCam3.setVisibility(View.GONE);
+                                        caja_periColeCam3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_periColeCam3.setVisibility(View.VISIBLE);
+
+                                        caja_nivelPart3.setVisibility(View.GONE);
+                                        caja_nivelPart3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_nivelPart3.setVisibility(View.VISIBLE);
+
+                                        caja_agregar_otraPart2.setVisibility(View.GONE);
+                                        caja_agregar_otraPart3.setVisibility(View.VISIBLE);
+                                    }
+                                    if(!parColCam_fragmentada[9].equals(" ")){
+
+                                        nuevo_orgColeCam4=parColCam_fragmentada[9];
+                                        nuevo_periColeCam4=parColCam_fragmentada[10];
+                                        nuevo_nivelPart4=parColCam_fragmentada[11];
+                                        Log.e("Nuevalic4",""+nuevo_orgColeCam4);
+                                        orgColeCam4.setText(nuevo_orgColeCam4);
+                                        periColeCam4.setText(nuevo_periColeCam4);
+                                        nivelPart4_vista.setText(nuevo_nivelPart4);
+
+                                        caja_orgColeCam4.setVisibility(View.GONE);
+                                        caja_orgColeCam4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_orgColeCam4.setVisibility(View.VISIBLE);
+
+                                        caja_edit_periColeCam4.setVisibility(View.GONE);
+                                        caja_periColeCam4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_periColeCam4.setVisibility(View.VISIBLE);
+
+                                        caja_nivelPart4.setVisibility(View.GONE);
+                                        caja_nivelPart4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_nivelPart4.setVisibility(View.VISIBLE);
+
+                                        caja_agregar_otraPart3.setVisibility(View.GONE);
+                                        caja_borrar_otraPart3.setVisibility(View.VISIBLE);
+                                    }
+                                }
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
     }
 }

@@ -2,6 +2,7 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -69,11 +71,11 @@ public class Gestion_academica extends AppCompatActivity {
     private String nuevo_actiPuesto,
             nuevo_instGesAca,nuevo_tiemGesAca,nuevo_tiemGesAcaA,nuevo_actiPues2,nuevo_intGesAca2,
             nuevo_tiemGesAca2,nuevo_tiemGesAcaA2,nuevo_actiPues3,nuevo_intGesAca3,nuevo_tiemGesAca3,
-            nuevo_tiemGesAcaA3,nuevo_actiPues4,nuevo_intGesAca4,nuevo_tiemGesAca4,nuevo_tiemGesAcaA4, gestAcade_totales,id_SesionUsuer,id_usuer;
+            nuevo_tiemGesAcaA3,nuevo_actiPues4,nuevo_intGesAca4,nuevo_tiemGesAca4,nuevo_tiemGesAcaA4, gestAcade_totales,id_SesionUsuer,id_usuer,gestioAca_Usuer;
     private JSONArray json_datos_actuaDisci;
     private ExecutorService executorService;
     private static String SERVIDOR_CONTROLADOR;
-    private SharedPreferences idSher,id_SesionSher;
+    private SharedPreferences idSher,id_SesionSher,gestioAca_sher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,7 +234,10 @@ public class Gestion_academica extends AppCompatActivity {
         id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
         Log.e("ID",""+id_SesionUsuer);
-
+        gestioAca_sher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        gestioAca_Usuer=gestioAca_sher.getString("gestion_academica","no");
+        Log.e("gest",""+gestioAca_Usuer);
+        pedir_gesAca();
         guardar_actiPuesto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -360,18 +365,26 @@ public class Gestion_academica extends AppCompatActivity {
                 caja_anuncio_actiPues2.setVisibility(View.GONE);
                 caja_edit_actiPues2.setVisibility(View.GONE);
                 caja_actiPues2_final.setVisibility(View.GONE);
+                actiPues2.setText("");
+
 
                 caja_anuncio_intGesAca2.setVisibility(View.GONE);
                 caja_edit_intGesAca2.setVisibility(View.GONE);
                 caja_intGesAca2_final.setVisibility(View.GONE);
+                intGesAca2.setText("");
+
 
                 caja_anuncio_tiemGesAca2.setVisibility(View.GONE);
                 caja_edit_tiemGesAca2.setVisibility(View.GONE);
                 caja_tiemGesAca2_final.setVisibility(View.GONE);
+                tiemGesAcaA3.setText("");
+
 
                 caja_anuncio_tiemGesAcaA2.setVisibility(View.GONE);
                 caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
                 caja_tiemGesAcaA2_final.setVisibility(View.GONE);
+                tiemGesAcaA2.setText("");
+
 
                 caja_agregar_otraGesAca.setVisibility(View.VISIBLE);
                 caja_agregar_otraGesAca2.setVisibility(View.GONE);
@@ -508,18 +521,22 @@ public class Gestion_academica extends AppCompatActivity {
                 caja_anuncio_actiPues3.setVisibility(View.GONE);
                 caja_actiPues3.setVisibility(View.GONE);
                 caja_actiPues3_final.setVisibility(View.GONE);
+                actiPues3.setText("");
 
                 caja_anuncio_intGesAca3.setVisibility(View.GONE);
                 caja_edit_intGesAca3.setVisibility(View.GONE);
                 caja_intGesAca3_final.setVisibility(View.GONE);
+                intGesAca3.setText("");
 
                 caja_anuncio_tiemGesAca3.setVisibility(View.GONE);
                 caja_tiemGesAca3.setVisibility(View.GONE);
                 caja_tiemGesAca3_final.setVisibility(View.GONE);
+                tiemGesAca3_vista.setText("");
 
                 caja_anuncio_tiemGesAcaA3.setVisibility(View.GONE);
                 caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
                 caja_tiemGesAcaA3_final.setVisibility(View.GONE);
+                tiemGesAcaA3.setText("");
 
                 caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
                 caja_agregar_otraGesAca3.setVisibility(View.GONE);
@@ -654,18 +671,22 @@ public class Gestion_academica extends AppCompatActivity {
                 caja_anuncio_actiPues4.setVisibility(View.GONE);
                 caja_actiPues4.setVisibility(View.GONE);
                 caja_actiPues4_final.setVisibility(View.GONE);
+                actiPues4.setText("");
 
                 caja_anuncio_intGesAca4.setVisibility(View.GONE);
                 caja_edit_intGesAca4.setVisibility(View.GONE);
                 caja_intGesAca4_final.setVisibility(View.GONE);
+                intGesAca4.setText("");
 
                 caja_anuncio_tiemGesAca4.setVisibility(View.GONE);
                 caja_tiemGesAca4.setVisibility(View.GONE);
                 caja_tiemGesAca4_final.setVisibility(View.GONE);
+                tiemGesAca4_vista.setText("");
 
                 caja_anuncio_tiemGesAcaA4.setVisibility(View.GONE);
                 caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
                 caja_tiemGesAcaA4_final.setVisibility(View.GONE);
+                tiemGesAcaA4.setText("");
 
                 caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
                 caja_borrar_otraGesAca4.setVisibility(View.GONE);
@@ -772,70 +793,72 @@ public class Gestion_academica extends AppCompatActivity {
         actuaGes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_actiPuesto = actiPuesto_texto.getText().toString();
-                nuevo_instGesAca = instGesAca_texto.getText().toString();
-                nuevo_tiemGesAca = tiemGesAca_texto.getText().toString();
-                nuevo_tiemGesAcaA = tiemGesAcaA_texto.getText().toString();
-                nuevo_actiPues2 = actiPues2_texto.getText().toString();
-                nuevo_intGesAca2= intGesAca2_texto.getText().toString();
-                nuevo_tiemGesAca2 = tiemGesAca2_texto.getText().toString();
-                nuevo_tiemGesAcaA2 = tiemGesAcaA2_texto.getText().toString();
-                nuevo_actiPues3 = actiPues3_texto.getText().toString();
-                nuevo_intGesAca3 = intGesAca3_texto.getText().toString();
-                nuevo_tiemGesAca3 = tiemGesAca3_texto.getText().toString();
-                nuevo_tiemGesAcaA3= tiemGesAcaA3_texto.getText().toString();
-                nuevo_actiPues4= actiPues4_texto.getText().toString();
-                nuevo_intGesAca4 = intGesAca4_texto.getText().toString();
-                nuevo_tiemGesAca4 = tiemGesAca4_texto.getText().toString();
-                nuevo_tiemGesAcaA4= tiemGesAcaA4_texto.getText().toString();
+
+
+                nuevo_actiPuesto = actiPuesto.getText().toString();
+                nuevo_instGesAca = instGesAca.getText().toString();
+                nuevo_tiemGesAca =tiemGesAca.getText().toString();
+                nuevo_tiemGesAcaA = tiemGesAcaA.getText().toString();
+                nuevo_actiPues2 = actiPues2.getText().toString();
+                nuevo_intGesAca2= intGesAca2.getText().toString();
+                nuevo_tiemGesAca2 = tiemGesAca2.getText().toString();
+                nuevo_tiemGesAcaA2 = tiemGesAcaA2.getText().toString();
+                nuevo_actiPues3 = actiPues3.getText().toString();
+                nuevo_intGesAca3 = intGesAca3.getText().toString();
+                nuevo_tiemGesAca3 = tiemGesAca3_vista.getText().toString();
+                nuevo_tiemGesAcaA3= tiemGesAcaA3.getText().toString();
+                nuevo_actiPues4= actiPues4.getText().toString();
+                nuevo_intGesAca4 = intGesAca4.getText().toString();
+                nuevo_tiemGesAca4 = tiemGesAca4_vista.getText().toString();
+                nuevo_tiemGesAcaA4= tiemGesAcaA4.getText().toString();
 
                 if (nuevo_actiPuesto.trim().equals("")){
-                    nuevo_actiPuesto.equals(" ");
+                    nuevo_actiPuesto=" ";
                 }
                 if (nuevo_instGesAca.trim().equals("")){
-                    nuevo_instGesAca.equals(" ");
+                    nuevo_instGesAca=" ";
                 }
                 if (nuevo_tiemGesAca.trim().equals("")){
-                    nuevo_tiemGesAca.equals(" ");
+                    nuevo_tiemGesAca=" ";
                 }
                 if (nuevo_tiemGesAcaA.trim().equals("")){
-                    nuevo_tiemGesAcaA.equals(" ");
+                    nuevo_tiemGesAcaA=" ";
                 }
                 if (nuevo_actiPues2.trim().equals("")){
-                    nuevo_actiPues2.equals(" ");
+                    nuevo_actiPues2=" ";
                 }
                 if (nuevo_intGesAca2.trim().equals("")){
-                    nuevo_intGesAca2.equals(" ");
+                    nuevo_intGesAca2=" ";
                 }
                 if (nuevo_tiemGesAca2.trim().equals("")){
-                    nuevo_tiemGesAca2.equals(" ");
+                    nuevo_tiemGesAca2=" ";
                 }
                 if (nuevo_tiemGesAcaA2.trim().equals("")){
-                    nuevo_tiemGesAcaA2.equals(" ");
+                    nuevo_tiemGesAcaA2=" ";
                 }
                 if (nuevo_actiPues3.trim().equals("")){
-                    nuevo_actiPues3.equals(" ");
+                    nuevo_actiPues3=" ";
                 }
                 if (nuevo_intGesAca3.trim().equals("")){
-                    nuevo_intGesAca3.equals(" ");
+                    nuevo_intGesAca3=" ";
                 }
                 if (nuevo_tiemGesAca3.trim().equals("")){
-                    nuevo_tiemGesAca3.equals(" ");
+                    nuevo_tiemGesAca3=" ";
                 }
                 if (nuevo_tiemGesAcaA3.trim().equals("")){
-                    nuevo_tiemGesAcaA3.equals(" ");
+                    nuevo_tiemGesAcaA3=" ";
                 }
                 if (nuevo_actiPues4.trim().equals("")){
-                    nuevo_actiPues4.equals(" ");
+                    nuevo_actiPues4=" ";
                 }
                 if (nuevo_intGesAca4.trim().equals("")){
-                    nuevo_intGesAca4.equals(" ");
+                    nuevo_intGesAca4=" ";
                 }
                 if (nuevo_tiemGesAca4.trim().equals("")){
-                    nuevo_tiemGesAca4.equals(" ");
+                    nuevo_tiemGesAca4=" ";
                 }
                 if (nuevo_tiemGesAcaA4.trim().equals("")){
-                    nuevo_tiemGesAcaA4.equals(" ");
+                    nuevo_tiemGesAcaA4=" ";
                 }
                 JSONObject jsonObject=new JSONObject();
                 json_datos_actuaDisci =new JSONArray();
@@ -888,6 +911,8 @@ public class Gestion_academica extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         guardando_gestAcadem();
+                                        Intent intent = new Intent(Gestion_academica.this,Login.class);
+                                        startActivity(intent);
                                     }
                                 });
                             }
@@ -927,6 +952,190 @@ public class Gestion_academica extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("gestion_academica",gestAcade_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_gesAca(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_gestion_academica.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
+                            String str_gestion_academica = jsonObject.getString("gestion_academica");
+
+                            if(!str_gestion_academica.equals("")){
+                                Log.e("respuesta_frag",""+str_gestion_academica);
+                                String[] gestionAca_fragmentada=str_gestion_academica.split(" /\\*-\\*/ ");
+                                Log.e("respuesta_frag",""+gestionAca_fragmentada);
+
+                                if(!gestionAca_fragmentada[0].equals(" ")){
+
+
+                                    nuevo_actiPuesto=gestionAca_fragmentada[0];
+                                    nuevo_instGesAca=gestionAca_fragmentada[1];
+                                    nuevo_tiemGesAca=gestionAca_fragmentada[2];
+                                    nuevo_tiemGesAcaA=gestionAca_fragmentada[3];
+
+                                    Log.e("Nuevalic",""+nuevo_actiPuesto);
+                                    actiPuesto.setText(nuevo_actiPuesto);
+                                    instGesAca.setText(nuevo_instGesAca);
+                                    tiemGesAca.setText(nuevo_tiemGesAca);
+                                    tiemGesAcaA.setText(nuevo_tiemGesAcaA);
+                                    caja_edit_actiPuesto.setVisibility(View.GONE);
+                                    caja_actiPuesto_final.setVisibility(View.VISIBLE);
+
+                                    caja_edit_instGesAca.setVisibility(View.GONE);
+                                    caja_instGesAca_final.setVisibility(View.VISIBLE);
+
+                                    caja_edit_tiemGesAca.setVisibility(View.GONE);
+                                    caja_tiemGesAca_final.setVisibility(View.VISIBLE);
+
+                                    caja_edit_tiemGesAcaA.setVisibility(View.GONE);
+                                    caja_tiemGesAcaA_final.setVisibility(View.VISIBLE);
+
+
+                                    if(!gestionAca_fragmentada[4].equals(" ")){
+
+                                        nuevo_actiPues2=gestionAca_fragmentada[4];
+                                        nuevo_intGesAca2=gestionAca_fragmentada[5];
+                                        nuevo_tiemGesAca2=gestionAca_fragmentada[6];
+                                        nuevo_tiemGesAcaA2=gestionAca_fragmentada[7];
+                                        Log.e("Nuevalic",""+nuevo_actiPues2);
+                                        actiPues2.setText(nuevo_actiPues2);
+                                        intGesAca2.setText(nuevo_intGesAca2);
+                                        tiemGesAca2.setText(nuevo_tiemGesAca2);
+                                        tiemGesAcaA2.setText(nuevo_tiemGesAcaA2);
+
+                                        caja_edit_actiPues2.setVisibility(View.GONE);
+                                        caja_actiPues2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actiPues2.setVisibility(View.VISIBLE);
+
+
+                                        caja_edit_intGesAca2.setVisibility(View.GONE);
+                                        caja_intGesAca2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_intGesAca2.setVisibility(View.VISIBLE);
+
+
+                                        caja_edit_tiemGesAca2.setVisibility(View.GONE);
+                                        caja_tiemGesAca2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAca2.setVisibility(View.VISIBLE);
+
+
+                                        caja_edit_tiemGesAcaA2.setVisibility(View.GONE);
+                                        caja_tiemGesAcaA2_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAcaA2.setVisibility(View.VISIBLE);
+
+
+                                        caja_agregar_otraGesAca.setVisibility(View.GONE);
+                                        caja_agregar_otraGesAca2.setVisibility(View.VISIBLE);
+
+
+                                    }
+                                    if(!gestionAca_fragmentada[8].equals(" ")){
+
+                                        nuevo_actiPues3=gestionAca_fragmentada[8];
+                                        nuevo_intGesAca3=gestionAca_fragmentada[9];
+                                        nuevo_tiemGesAca3=gestionAca_fragmentada[10];
+                                        nuevo_tiemGesAcaA3=gestionAca_fragmentada[11];
+
+                                        Log.e("Nuevalic3",""+nuevo_actiPues3);
+                                        actiPues3.setText(nuevo_actiPues3);
+                                        intGesAca3.setText(nuevo_intGesAca3);
+                                        tiemGesAca3_vista.setText(nuevo_tiemGesAca3);
+                                        tiemGesAcaA3.setText(nuevo_tiemGesAcaA3);
+
+                                        caja_actiPues3.setVisibility(View.GONE);
+                                        caja_actiPues3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actiPues3.setVisibility(View.VISIBLE);
+
+
+                                        caja_edit_intGesAca3.setVisibility(View.GONE);
+                                        caja_intGesAca3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_intGesAca3.setVisibility(View.VISIBLE);
+
+
+                                        caja_tiemGesAca3.setVisibility(View.GONE);
+                                        caja_tiemGesAca3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAca3.setVisibility(View.VISIBLE);
+
+
+                                        caja_edit_tiemGesAcaA3.setVisibility(View.GONE);
+                                        caja_tiemGesAcaA3_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAcaA3.setVisibility(View.VISIBLE);
+
+
+                                        caja_agregar_otraGesAca2.setVisibility(View.GONE);
+                                        caja_agregar_otraGesAca3.setVisibility(View.VISIBLE);
+
+
+                                    }
+                                    if(!gestionAca_fragmentada[12].equals(" ")){
+
+                                        nuevo_actiPues4=gestionAca_fragmentada[12];
+                                        nuevo_intGesAca4=gestionAca_fragmentada[13];
+                                        nuevo_tiemGesAca4=gestionAca_fragmentada[14];
+                                        nuevo_tiemGesAcaA4=gestionAca_fragmentada[15];
+                                        Log.e("Nuevalic4",""+nuevo_actiPues4);
+                                        actiPues4.setText(nuevo_actiPues4);
+                                        intGesAca4.setText(nuevo_intGesAca4);
+                                        tiemGesAca4_vista.setText(nuevo_tiemGesAca4);
+                                        tiemGesAcaA4.setText(nuevo_tiemGesAcaA4);
+
+                                        caja_actiPues4.setVisibility(View.GONE);
+                                        caja_actiPues4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_actiPues4.setVisibility(View.VISIBLE);
+
+                                        caja_edit_intGesAca4.setVisibility(View.GONE);
+                                        caja_intGesAca4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_intGesAca4.setVisibility(View.VISIBLE);
+
+                                        caja_tiemGesAca4.setVisibility(View.GONE);
+                                        caja_tiemGesAca4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAca4.setVisibility(View.VISIBLE);
+
+                                        caja_edit_tiemGesAcaA4.setVisibility(View.GONE);
+                                        caja_tiemGesAcaA4_final.setVisibility(View.VISIBLE);
+                                        caja_anuncio_tiemGesAcaA4.setVisibility(View.VISIBLE);
+
+
+                                        caja_agregar_otraGesAca3.setVisibility(View.GONE);
+                                        caja_borrar_otraGesAca4.setVisibility(View.VISIBLE);
+                                    }
+
+                                }
+
+
+
+
+
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
                 map.put("id",id_usuer);
                 map.put("id_sesion",id_SesionUsuer);
                 return map;

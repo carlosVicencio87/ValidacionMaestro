@@ -172,6 +172,7 @@ public class Login extends AppCompatActivity {
                                 //Log.e("nombreMovies", String.valueOf(jsonObject));
                                 String strId = jsonObject.getString("id");
                                 String strId_sesion= jsonObject.getString("id_sesion");
+
                                 String strActivo = jsonObject.getString("activo");
                                 String strNombre=jsonObject.getString("nombre");
                                 String strApellido=jsonObject.getString("apellido");

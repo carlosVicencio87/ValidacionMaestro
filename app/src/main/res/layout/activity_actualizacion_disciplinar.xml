@@ -115,7 +115,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -191,7 +190,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -266,7 +264,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -342,7 +339,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -420,7 +416,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -499,7 +494,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -578,7 +572,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -787,7 +780,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -867,7 +859,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -946,7 +937,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -1024,7 +1014,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -1137,7 +1126,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -1216,7 +1204,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -1295,7 +1282,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 
@@ -1374,7 +1360,6 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:gravity="bottom"
-                    android:text="nombre de usuario"
                     android:textColorHint="@color/negro"
                     android:textSize="21dp" />
 

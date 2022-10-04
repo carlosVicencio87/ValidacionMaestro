@@ -93,7 +93,7 @@
                 android:hint="Fecha de nacimiento"
                 android:textColorHint="@color/blanco"
                 android:textColor="@color/blanco"
-                android:inputType="date"
+                android:inputType="text"
                 />
             <TextView
                 android:hint="Los apellidos solo puede contener letras."

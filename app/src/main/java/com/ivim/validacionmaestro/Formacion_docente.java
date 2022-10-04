@@ -2,6 +2,7 @@ package com.ivim.validacionmaestro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -84,12 +86,12 @@ public class Formacion_docente extends AppCompatActivity {
             nuevo_ceduEsp,nuevo_anoEsp,nuevo_instEsp,nuevo_especialidad,nuevo_ceduEsp2,nuevo_anoEsp2,
             nuevo_instEsp2,nuevo_especialidad2,nuevo_maes,nuevo_instMaes,nuevo_anoMaes,nuevo_ceduMaes,
             nuevo_maes2,nuevo_instMaes2,nuevo_anoMaes2,nuevo_ceduMaes2,nuevo_doc,nuevo_instDoc,nuevo_anoDoc,
-            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2,formDocente_totales,id_usuer,id_SesionUsuer;
+            nuevo_ceduDoc,nuevo_doc2,nuevo_instdoc2,nuevo_anoDoc2,nuevo_ceduDoc2,formDocente_totales,id_usuer,id_SesionUsuer,formDocente_Usuer;
 
     private JSONArray json_datos_formDocente;
     private ExecutorService executorService;
     private static String SERVIDOR_CONTROLADOR;
-    private SharedPreferences idSher,id_SesionSher;
+    private SharedPreferences idSher,id_SesionSher,sherFormacion_docente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -374,6 +376,14 @@ public class Formacion_docente extends AppCompatActivity {
         id_SesionSher=getSharedPreferences("Usuario",this.MODE_PRIVATE);
         id_SesionUsuer=id_SesionSher.getString("id_sesion","no");
         Log.e("ID",""+id_SesionUsuer);
+        sherFormacion_docente=getSharedPreferences("Usuario",this.MODE_PRIVATE);
+        formDocente_Usuer=sherFormacion_docente.getString("formacion_docente","no");
+        Log.e("forma",""+formDocente_Usuer);
+        pedir_formAca();
+
+
+
+
         guardar_licenciatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -473,45 +483,65 @@ public class Formacion_docente extends AppCompatActivity {
         agregar_otraLic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_licenciatura = licenciatura_texto.getText().toString();
-                nuevo_instPaisLic = instPaisLic_texto.getText().toString();
-                nuevo_anoObtencionLic = anoObtencionLic_texto.getText().toString();
-                nuevo_cedulaProfLic = cedulaProfLic_texto.getText().toString();
-                if (!nuevo_licenciatura.trim().equals("")) {
-                    if (!nuevo_instPaisLic.trim().equals("")) {
-                        if (!nuevo_anoObtencionLic.trim().equals("")) {
-                            if (!nuevo_cedulaProfLic.trim().equals("")) {
 
-                                caja_anuncio_lic.setVisibility(View.VISIBLE);
-                                caja_edit_licenciatura2.setVisibility(View.VISIBLE);
-                                licenciatura2_texto.setText("");
-                                caja_anuncio_inst.setVisibility(View.VISIBLE);
-                                caja_edit_instPais2.setVisibility(View.VISIBLE);
-                                instPaisLic2_texto.setText("");
-                                caja_anuncio_ano.setVisibility(View.VISIBLE);
-                                caja_edit_anoObtencion2.setVisibility(View.VISIBLE);
-                                anoObtencion2Lic_texto.setText("");
-                                caja_edit_cedulaProf2.setVisibility(View.VISIBLE);
-                                caja_anuncio_ced.setVisibility(View.VISIBLE);
-                                cedulaProfLic2_texto.setText("");
-                                caja_agregar_otraLic.setVisibility(View.GONE);
-                                caja_borrar_otraLic.setVisibility(View.VISIBLE);
+                if(!nuevo_licenciatura.equals("")){
+                    caja_anuncio_lic.setVisibility(View.VISIBLE);
+                    caja_edit_licenciatura2.setVisibility(View.VISIBLE);
+                    licenciatura2_texto.setText("");
+                    caja_anuncio_inst.setVisibility(View.VISIBLE);
+                    caja_edit_instPais2.setVisibility(View.VISIBLE);
+                    instPaisLic2_texto.setText("");
+                    caja_anuncio_ano.setVisibility(View.VISIBLE);
+                    caja_edit_anoObtencion2.setVisibility(View.VISIBLE);
+                    anoObtencion2Lic_texto.setText("");
+                    caja_edit_cedulaProf2.setVisibility(View.VISIBLE);
+                    caja_anuncio_ced.setVisibility(View.VISIBLE);
+                    cedulaProfLic2_texto.setText("");
+                    caja_agregar_otraLic.setVisibility(View.GONE);
+                    caja_borrar_otraLic.setVisibility(View.VISIBLE);
+                }
+                else{  nuevo_licenciatura = licenciatura_texto.getText().toString();
+                    nuevo_instPaisLic = instPaisLic_texto.getText().toString();
+                    nuevo_anoObtencionLic = anoObtencionLic_texto.getText().toString();
+                    nuevo_cedulaProfLic = cedulaProfLic_texto.getText().toString();
+                    if (!nuevo_licenciatura.trim().equals("")) {
+                        if (!nuevo_instPaisLic.trim().equals("")) {
+                            if (!nuevo_anoObtencionLic.trim().equals("")) {
+                                if (!nuevo_cedulaProfLic.trim().equals("")) {
 
-                            } else {
-                                Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                                    caja_anuncio_lic.setVisibility(View.VISIBLE);
+                                    caja_edit_licenciatura2.setVisibility(View.VISIBLE);
+                                    licenciatura2_texto.setText("");
+                                    caja_anuncio_inst.setVisibility(View.VISIBLE);
+                                    caja_edit_instPais2.setVisibility(View.VISIBLE);
+                                    instPaisLic2_texto.setText("");
+                                    caja_anuncio_ano.setVisibility(View.VISIBLE);
+                                    caja_edit_anoObtencion2.setVisibility(View.VISIBLE);
+                                    anoObtencion2Lic_texto.setText("");
+                                    caja_edit_cedulaProf2.setVisibility(View.VISIBLE);
+                                    caja_anuncio_ced.setVisibility(View.VISIBLE);
+                                    cedulaProfLic2_texto.setText("");
+                                    caja_agregar_otraLic.setVisibility(View.GONE);
+                                    caja_borrar_otraLic.setVisibility(View.VISIBLE);
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
                             }
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
                         }
                     }
                     else {
-                        Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "El nombre de la licenciatura es necesario..", Toast.LENGTH_LONG).show();
                     }
+
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la licenciatura es necesario..", Toast.LENGTH_LONG).show();
-                }
+
             }
         });
         guardar_licenciatura2.setOnClickListener(new View.OnClickListener() {
@@ -617,15 +647,22 @@ public class Formacion_docente extends AppCompatActivity {
                 caja_anuncio_lic.setVisibility(View.GONE);
                 caja_edit_licenciatura2.setVisibility(View.GONE);
                 caja_licenciatura2_final.setVisibility(View.GONE);
+                licenciatura2.setText("");
+
                 caja_anuncio_inst.setVisibility(View.GONE);
                 caja_edit_instPais2.setVisibility(View.GONE);
                 caja_instPais2_final.setVisibility(View.GONE);
+                instPaisLic2.setText("");
+
                 caja_anuncio_ano.setVisibility(View.GONE);
                 caja_edit_anoObtencion2.setVisibility(View.GONE);
                 caja_anoObtencionLic2_final.setVisibility(View.GONE);
+                anoObtencionLic2.setText("");
+
                 caja_edit_cedulaProf2.setVisibility(View.GONE);
                 caja_anuncio_ced.setVisibility(View.GONE);
                 caja_cedulaProfLic2_final.setVisibility(View.GONE);
+                cedulaProfLic2.setText("");
                 caja_agregar_otraLic.setVisibility(View.VISIBLE);
                 caja_borrar_otraLic.setVisibility(View.GONE);
 
@@ -732,51 +769,69 @@ public class Formacion_docente extends AppCompatActivity {
         agregar_otraEsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_especialidad = especialidad_texto.getText().toString();
-                nuevo_instEsp = instEsp_texto.getText().toString();
-                nuevo_anoEsp = anoEsp_texto.getText().toString();
-                nuevo_ceduEsp = ceduEsp_texto.getText().toString();
-                if (!nuevo_especialidad.trim().equals("")) {
-                    if (!nuevo_instEsp.trim().equals("")) {
-                        if (!nuevo_anoEsp.trim().equals("")) {
-                            if (!nuevo_ceduEsp.trim().equals("")) {
+                if(!nuevo_especialidad.equals("")){
+                    caja_anuncio_esp.setVisibility(View.VISIBLE);
+                    caja_especialidad2.setVisibility(View.VISIBLE);
+                    especialidad2_texto.setText("");
 
-                                caja_anuncio_esp.setVisibility(View.VISIBLE);
-                                caja_especialidad2.setVisibility(View.VISIBLE);
-                                especialidad2_texto.setText("");
+                    caja_anuncio_instEsp.setVisibility(View.VISIBLE);
+                    caja_edit_instEsp2.setVisibility(View.VISIBLE);
+                    instEsp2_texto.setText("");
 
-                                caja_anuncio_instEsp.setVisibility(View.VISIBLE);
-                                caja_edit_instEsp2.setVisibility(View.VISIBLE);
-                                instEsp2_texto.setText("");
+                    caja_anuncio_anoesp.setVisibility(View.VISIBLE);
+                    caja_anoEsp2.setVisibility(View.VISIBLE);
+                    anoEsp2_texto.setText("");
 
-                                caja_anuncio_anoesp.setVisibility(View.VISIBLE);
-                                caja_anoEsp2.setVisibility(View.VISIBLE);
-                                anoEsp2_texto.setText("");
+                    caja_anuncio_ceduesp.setVisibility(View.VISIBLE);
+                    caja_edit_ceduEsp2.setVisibility(View.VISIBLE);
+                    ceduEsp2_texto.setText("");
 
-                                caja_anuncio_ceduesp.setVisibility(View.VISIBLE);
-                                caja_edit_ceduEsp2.setVisibility(View.VISIBLE);
-                                ceduEsp2_texto.setText("");
-
-                                caja_agregar_otraEsp.setVisibility(View.GONE);
-                                caja_borrar_otraEsp.setVisibility(View.VISIBLE);
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
-                    }
+                    caja_agregar_otraEsp.setVisibility(View.GONE);
+                    caja_borrar_otraEsp.setVisibility(View.VISIBLE);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la especialidad es necesario..", Toast.LENGTH_LONG).show();
+                    nuevo_especialidad = especialidad_texto.getText().toString();
+                    nuevo_instEsp = instEsp_texto.getText().toString();
+                    nuevo_anoEsp = anoEsp_texto.getText().toString();
+                    nuevo_ceduEsp = ceduEsp_texto.getText().toString();
+                    if (!nuevo_especialidad.trim().equals("")) {
+                        if (!nuevo_instEsp.trim().equals("")) {
+                            if (!nuevo_anoEsp.trim().equals("")) {
+                                if (!nuevo_ceduEsp.trim().equals("")) {
+
+                                    caja_anuncio_esp.setVisibility(View.VISIBLE);
+                                    caja_especialidad2.setVisibility(View.VISIBLE);
+                                    especialidad2_texto.setText("");
+
+                                    caja_anuncio_instEsp.setVisibility(View.VISIBLE);
+                                    caja_edit_instEsp2.setVisibility(View.VISIBLE);
+                                    instEsp2_texto.setText("");
+
+                                    caja_anuncio_anoesp.setVisibility(View.VISIBLE);
+                                    caja_anoEsp2.setVisibility(View.VISIBLE);
+                                    anoEsp2_texto.setText("");
+
+                                    caja_anuncio_ceduesp.setVisibility(View.VISIBLE);
+                                    caja_edit_ceduEsp2.setVisibility(View.VISIBLE);
+                                    ceduEsp2_texto.setText("");
+
+                                    caja_agregar_otraEsp.setVisibility(View.GONE);
+                                    caja_borrar_otraEsp.setVisibility(View.VISIBLE);
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "El nombre de la especialidad es necesario..", Toast.LENGTH_LONG).show();
+                    }
+
                 }
-
-
 
             }
         });
@@ -882,18 +937,22 @@ public class Formacion_docente extends AppCompatActivity {
                 caja_anuncio_esp.setVisibility(View.GONE);
                 caja_especialidad2.setVisibility(View.GONE);
                 caja_especialidad2_final.setVisibility(View.GONE);
+                especialidad2.setText("");
 
                 caja_anuncio_instEsp.setVisibility(View.GONE);
                 caja_edit_instEsp2.setVisibility(View.GONE);
                 caja_instEsp_final2.setVisibility(View.GONE);
+                instEsp2.setText("");
 
                 caja_anuncio_anoesp.setVisibility(View.GONE);
                 caja_anoEsp2.setVisibility(View.GONE);
                 caja_anoEsp2_final.setVisibility(View.GONE);
+                anoEsp2_vista.setText("");
 
                 caja_anuncio_ceduesp.setVisibility(View.GONE);
                 caja_edit_ceduEsp2.setVisibility(View.GONE);
                 caja_ceduEsp_final2.setVisibility(View.GONE);
+                ceduEsp2.setText("");
 
                 caja_agregar_otraEsp.setVisibility(View.VISIBLE);
                 caja_borrar_otraEsp.setVisibility(View.GONE);
@@ -1000,52 +1059,71 @@ public class Formacion_docente extends AppCompatActivity {
         agregar_otraMaes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_maes = maes_texto.getText().toString();
-                nuevo_instMaes = instMaes_texto.getText().toString();
-                nuevo_anoMaes = anoMaes_texto.getText().toString();
-                nuevo_ceduMaes = ceduMaes_texto.getText().toString();
-                if (!nuevo_maes.trim().equals("")) {
-                    if (!nuevo_instMaes.trim().equals("")) {
-                        if (!nuevo_anoMaes.trim().equals("")) {
-                            if (!nuevo_ceduMaes.trim().equals("")) {
+                if(!nuevo_maes.equals("")){
+                    caja_anuncio_maes2.setVisibility(View.VISIBLE);
+                    caja_maes2.setVisibility(View.VISIBLE);
+                    maes2_texto.setText("");
 
-                                caja_anuncio_maes2.setVisibility(View.VISIBLE);
-                                caja_maes2.setVisibility(View.VISIBLE);
-                                maes2_texto.setText("");
+                    caja_anuncio_instMaes2.setVisibility(View.VISIBLE);
+                    caja_edit_instMaes2.setVisibility(View.VISIBLE);
+                    instMaes2_texto.setText("");
 
-                                caja_anuncio_instMaes2.setVisibility(View.VISIBLE);
-                                caja_edit_instMaes2.setVisibility(View.VISIBLE);
-                                instMaes2_texto.setText("");
+                    caja_anuncio_anoMaes2.setVisibility(View.VISIBLE);
+                    caja_anoMaes2.setVisibility(View.VISIBLE);
+                    anoMaes2_texto.setText("");
 
-                                caja_anuncio_anoMaes2.setVisibility(View.VISIBLE);
-                                caja_anoMaes2.setVisibility(View.VISIBLE);
-                                anoMaes2_texto.setText("");
-
-                                caja_anuncio_ceduMaes2.setVisibility(View.VISIBLE);
-                                caja_edit_ceduMaes2.setVisibility(View.VISIBLE);
-                                ceduMaes2_texto.setText("");
+                    caja_anuncio_ceduMaes2.setVisibility(View.VISIBLE);
+                    caja_edit_ceduMaes2.setVisibility(View.VISIBLE);
+                    ceduMaes2_texto.setText("");
 
 
-                                caja_agregar_maes.setVisibility(View.GONE);
-                                caja_borrar_otraMaes.setVisibility(View.VISIBLE);
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
-                    }
+                    caja_agregar_maes.setVisibility(View.GONE);
+                    caja_borrar_otraMaes.setVisibility(View.VISIBLE);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "El nombre de la maestria es necesario..", Toast.LENGTH_LONG).show();
+                    nuevo_maes = maes_texto.getText().toString();
+                    nuevo_instMaes = instMaes_texto.getText().toString();
+                    nuevo_anoMaes = anoMaes_texto.getText().toString();
+                    nuevo_ceduMaes = ceduMaes_texto.getText().toString();
+                    if (!nuevo_maes.trim().equals("")) {
+                        if (!nuevo_instMaes.trim().equals("")) {
+                            if (!nuevo_anoMaes.trim().equals("")) {
+                                if (!nuevo_ceduMaes.trim().equals("")) {
+
+                                    caja_anuncio_maes2.setVisibility(View.VISIBLE);
+                                    caja_maes2.setVisibility(View.VISIBLE);
+                                    maes2_texto.setText("");
+
+                                    caja_anuncio_instMaes2.setVisibility(View.VISIBLE);
+                                    caja_edit_instMaes2.setVisibility(View.VISIBLE);
+                                    instMaes2_texto.setText("");
+
+                                    caja_anuncio_anoMaes2.setVisibility(View.VISIBLE);
+                                    caja_anoMaes2.setVisibility(View.VISIBLE);
+                                    anoMaes2_texto.setText("");
+
+                                    caja_anuncio_ceduMaes2.setVisibility(View.VISIBLE);
+                                    caja_edit_ceduMaes2.setVisibility(View.VISIBLE);
+                                    ceduMaes2_texto.setText("");
+
+
+                                    caja_agregar_maes.setVisibility(View.GONE);
+                                    caja_borrar_otraMaes.setVisibility(View.VISIBLE);
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "La cedula profesional es necesario.", Toast.LENGTH_LONG).show();
+                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "El ano de obtencion es necesario", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), ".El instituto es necesario.", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "El nombre de la maestria es necesario..", Toast.LENGTH_LONG).show();
+                    }
+
                 }
-
-
             }
         });
         guardar_maes2.setOnClickListener(new View.OnClickListener() {
@@ -1150,18 +1228,22 @@ public class Formacion_docente extends AppCompatActivity {
                 caja_anuncio_maes2.setVisibility(View.GONE);
                 caja_maes2.setVisibility(View.GONE);
                 caja_maes2_final.setVisibility(View.GONE);
+                maes2.setText("");
 
                 caja_anuncio_instMaes2.setVisibility(View.GONE);
                 caja_edit_instMaes2.setVisibility(View.GONE);
                 caja_instMaes2_final.setVisibility(View.GONE);
+                instMaes2.setText("");
 
                 caja_anuncio_anoMaes2.setVisibility(View.GONE);
                 caja_anoMaes2.setVisibility(View.GONE);
                 caja_anoMaes2_final.setVisibility(View.GONE);
+                anoMaes2_vista.setText("");
 
                 caja_anuncio_ceduMaes2.setVisibility(View.GONE);
                 caja_edit_ceduMaes2.setVisibility(View.GONE);
                 caja_ceduMaes2_final.setVisibility(View.GONE);
+                ceduMaes2.setText("");
 
                 caja_agregar_maes.setVisibility(View.VISIBLE);
                 caja_borrar_otraMaes.setVisibility(View.GONE);
@@ -1268,10 +1350,11 @@ public class Formacion_docente extends AppCompatActivity {
         agregar_otraDoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_doc = doc_texto.getText().toString();
-                nuevo_instDoc= instDoc_texto.getText().toString();
-                nuevo_anoDoc = anoDoc_texto.getText().toString();
-                nuevo_ceduDoc = ceduDoc_texto.getText().toString();
+
+                nuevo_doc = doc.getText().toString();
+                nuevo_instDoc= instDoc.getText().toString();
+                nuevo_anoDoc = anoDoc_vista.getText().toString();
+                nuevo_ceduDoc = ceduDoc.getText().toString();
                 if (!nuevo_doc.trim().equals("")) {
                     if (!nuevo_instDoc.trim().equals("")) {
                         if (!nuevo_anoDoc.trim().equals("")) {
@@ -1283,7 +1366,7 @@ public class Formacion_docente extends AppCompatActivity {
 
                                 caja_anuncio_instdoc2.setVisibility(View.VISIBLE);
                                 caja_edit_instdoc2.setVisibility(View.VISIBLE);
-                                instdoc2_texto.setText("");
+
 
                                 caja_anuncio_anodoc2.setVisibility(View.VISIBLE);
                                 caja_anoDoc2.setVisibility(View.VISIBLE);
@@ -1417,19 +1500,19 @@ public class Formacion_docente extends AppCompatActivity {
                 caja_anuncio_doc2.setVisibility(View.GONE);
                 caja_doc2.setVisibility(View.GONE);
                 doc2_final.setVisibility(View.GONE);
-
+                doc2_texto.setText("");
                 caja_anuncio_instdoc2.setVisibility(View.GONE);
                 caja_edit_instdoc2.setVisibility(View.GONE);
                 caja_instdoc2_final.setVisibility(View.GONE);
-
+                instdoc2_texto.setText("");
                 caja_anuncio_anodoc2.setVisibility(View.GONE);
                 caja_anoDoc2.setVisibility(View.GONE);
                 caja_anoDoc2_final.setVisibility(View.GONE);
-
+                anoDoc2_texto.setText("");
                 caja_anuncio_ceduDoc2.setVisibility(View.GONE);
                 caja_edit_ceduDoc2.setVisibility(View.GONE);
                 caja_ceduDoc2_final.setVisibility(View.GONE);
-
+                ceduDoc2_texto.setText("");
                 caja_agregar_doc.setVisibility(View.VISIBLE);
                 caja_borrar_doc.setVisibility(View.GONE);
 
@@ -1439,135 +1522,144 @@ public class Formacion_docente extends AppCompatActivity {
         actua_formDocente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nuevo_licenciatura = licenciatura_texto.getText().toString();
-                nuevo_instPaisLic = instPaisLic_texto.getText().toString();
-                nuevo_anoObtencionLic = anoObtencionLic_texto.getText().toString();
-                nuevo_cedulaProfLic = cedulaProfLic_texto.getText().toString();
-                nuevo_licenciatura2 = licenciatura2_texto.getText().toString();
-                nuevo_instPaisLic2 = instPaisLic2_texto.getText().toString();
-                nuevo_anoObtencion2Lic = anoObtencion2Lic_texto.getText().toString();
-                nuevo_cedulaProfLic2 = cedulaProfLic2_texto.getText().toString();
-                nuevo_especialidad = especialidad_texto.getText().toString();
-                nuevo_instEsp = instEsp_texto.getText().toString();
-                nuevo_anoEsp = anoEsp_texto.getText().toString();
-                nuevo_ceduEsp = ceduEsp_texto.getText().toString();
-                nuevo_especialidad2 = especialidad2_texto.getText().toString();
-                nuevo_instEsp2 = instEsp2_texto.getText().toString();
-                nuevo_anoEsp2 = anoEsp2_texto.getText().toString();
-                nuevo_ceduEsp2 = ceduEsp2_texto.getText().toString();
-                nuevo_maes = maes_texto.getText().toString();
-                nuevo_instMaes = instMaes_texto.getText().toString();
-                nuevo_anoMaes = anoMaes_texto.getText().toString();
-                nuevo_ceduMaes = ceduMaes_texto.getText().toString();
-                nuevo_maes2 = maes2_texto.getText().toString();
-                nuevo_instMaes2= instMaes2_texto.getText().toString();
-                nuevo_anoMaes2 = anoMaes2_texto.getText().toString();
-                nuevo_ceduMaes2 = ceduMaes2_texto.getText().toString();
-                nuevo_doc = doc_texto.getText().toString();
-                nuevo_instDoc= instDoc_texto.getText().toString();
-                nuevo_anoDoc = anoDoc_texto.getText().toString();
-                nuevo_ceduDoc = ceduDoc_texto.getText().toString();
-                nuevo_doc2 = doc2_texto.getText().toString();
-                nuevo_instdoc2= instdoc2_texto.getText().toString();
-                nuevo_anoDoc2 = anoDoc2_texto.getText().toString();
-                nuevo_ceduDoc2 = ceduDoc2_texto.getText().toString();
+                Log.e("verifLIC",""+nuevo_licenciatura);
+                nuevo_licenciatura = licenciatura.getText().toString();
+                Log.e("verifLIC2",""+nuevo_licenciatura);
+                nuevo_instPaisLic = instPaisLic.getText().toString();
+                nuevo_anoObtencionLic = anoObtencionLic.getText().toString();
+                nuevo_cedulaProfLic = cedulaProfLic.getText().toString();
+                nuevo_licenciatura2 = licenciatura2.getText().toString();
+                nuevo_instPaisLic2 = instPaisLic2.getText().toString();
+                nuevo_anoObtencion2Lic = anoObtencionLic2.getText().toString();
+                nuevo_cedulaProfLic2 = cedulaProfLic2.getText().toString();
+
+                nuevo_especialidad = especialidad.getText().toString();
+                nuevo_instEsp = instEsp.getText().toString();
+                nuevo_anoEsp = anoEsp_vista.getText().toString();
+                nuevo_ceduEsp = ceduEsp.getText().toString();
+                nuevo_especialidad2 = especialidad2.getText().toString();
+                nuevo_instEsp2 = instEsp2.getText().toString();
+                nuevo_anoEsp2 = anoEsp2_vista.getText().toString();
+                nuevo_ceduEsp2 = ceduEsp2.getText().toString();
+
+
+                nuevo_maes = maes.getText().toString();
+                nuevo_instMaes = instMaes.getText().toString();
+                nuevo_anoMaes = anoMaes_vista.getText().toString();
+                nuevo_ceduMaes = ceduMaes.getText().toString();
+                nuevo_maes2 = maes2.getText().toString();
+                nuevo_instMaes2= instMaes2.getText().toString();
+                nuevo_anoMaes2 = anoMaes2_vista.getText().toString();
+                nuevo_ceduMaes2 = ceduMaes2.getText().toString();
+
+
+
+
+                nuevo_doc = doc.getText().toString();
+                nuevo_instDoc= instDoc.getText().toString();
+                nuevo_anoDoc = anoDoc_vista.getText().toString();
+                nuevo_ceduDoc = ceduDoc.getText().toString();
+                nuevo_doc2 = doc2.getText().toString();
+                nuevo_instdoc2= instdoc2.getText().toString();
+                nuevo_anoDoc2 = anoDoc2_vista.getText().toString();
+                nuevo_ceduDoc2 = ceduDoc2.getText().toString();
 
 
                 if (nuevo_licenciatura.trim().equals("")){
-                    nuevo_licenciatura.equals(" ");
+                    nuevo_licenciatura=" ";
                 }
                 if (nuevo_instPaisLic.trim().equals("")){
-                    nuevo_instPaisLic.equals(" ");
+                    nuevo_instPaisLic=" ";
                 }
                 if (nuevo_anoObtencionLic.trim().equals("")){
-                    nuevo_anoObtencionLic.equals(" ");
+                    nuevo_anoObtencionLic=" ";
                 }
                 if (nuevo_cedulaProfLic.trim().equals("")){
-                    nuevo_cedulaProfLic.equals(" ");
+                    nuevo_cedulaProfLic=" ";
                 }
                 if (nuevo_licenciatura2.trim().equals("")){
-                    nuevo_licenciatura2.equals(" ");
+                    nuevo_licenciatura2=" ";
                 }
                 if (nuevo_instPaisLic2.trim().equals("")){
-                    nuevo_instPaisLic2.equals(" ");
+                    nuevo_instPaisLic2=" ";
                 }
                 if (nuevo_anoObtencion2Lic.trim().equals("")){
-                    nuevo_anoObtencion2Lic.equals(" ");
+                    nuevo_anoObtencion2Lic=" ";
                 }
                 if (nuevo_cedulaProfLic2.trim().equals("")){
-                    nuevo_cedulaProfLic2.equals(" ");
+                    nuevo_cedulaProfLic2=" ";
                 }
                 if (nuevo_especialidad.trim().equals("")){
-                    nuevo_especialidad.equals(" ");
+                    nuevo_especialidad=" ";
                 }
                 if (nuevo_instEsp.trim().equals("")){
-                    nuevo_instEsp.equals(" ");
+                    nuevo_instEsp=" ";
                 }
                 if (nuevo_anoEsp.trim().equals("")){
-                    nuevo_anoEsp.equals(" ");
+                    nuevo_anoEsp=" ";
                 }
                 if (nuevo_ceduEsp.trim().equals("")){
-                    nuevo_ceduEsp.equals(" ");
+                    nuevo_ceduEsp=" ";
                 }
                 if (nuevo_especialidad2.trim().equals("")){
-                    nuevo_especialidad2.equals(" ");
+                    nuevo_especialidad2=" ";
                 }
                 if (nuevo_instEsp2.trim().equals("")){
-                    nuevo_instEsp2.equals(" ");
+                    nuevo_instEsp2=" ";
                 }
                 if (nuevo_anoEsp2.trim().equals("")){
-                    nuevo_anoEsp2.equals(" ");
+                    nuevo_anoEsp2=" ";
                 }
                 if (nuevo_ceduEsp2.trim().equals("")){
-                    nuevo_ceduEsp2.equals(" ");
+                    nuevo_ceduEsp2=" ";
                 }
                 if (nuevo_maes.trim().equals("")){
-                    nuevo_maes.equals(" ");
+                    nuevo_maes=" ";
                 }
                 if (nuevo_instMaes.trim().equals("")){
-                    nuevo_instMaes.equals(" ");
+                    nuevo_instMaes=" ";
                 }
                 if (nuevo_anoMaes.trim().equals("")){
-                    nuevo_anoMaes.equals(" ");
+                    nuevo_anoMaes=" ";
                 }
                 if (nuevo_ceduMaes.trim().equals("")){
-                    nuevo_ceduMaes.equals(" ");
+                    nuevo_ceduMaes=" ";
                 }
                 if (nuevo_maes2.trim().equals("")){
-                    nuevo_maes2.equals(" ");
+                    nuevo_maes2=" ";
                 }
                 if (nuevo_instMaes2.trim().equals("")){
-                    nuevo_instMaes2.equals(" ");
+                    nuevo_instMaes2=" ";
                 }
                 if (nuevo_anoMaes2.trim().equals("")){
-                    nuevo_anoMaes2.equals(" ");
+                    nuevo_anoMaes2=" ";
                 }
                 if (nuevo_ceduMaes2.trim().equals("")){
-                    nuevo_ceduMaes2.equals(" ");
+                    nuevo_ceduMaes2=" ";
                 }
                 if (nuevo_doc.trim().equals("")){
-                    nuevo_doc.equals(" ");
+                    nuevo_doc=" ";
                 }
                 if (nuevo_instDoc.trim().equals("")){
-                    nuevo_instDoc.equals(" ");
+                    nuevo_instDoc=" ";
                 }
                 if (nuevo_anoDoc.trim().equals("")){
-                    nuevo_anoDoc.equals(" ");
+                    nuevo_anoDoc=" ";
                 }
                 if (nuevo_ceduDoc.trim().equals("")){
-                    nuevo_ceduDoc.equals(" ");
+                    nuevo_ceduDoc=" ";
                 }
                 if (nuevo_doc2.trim().equals("")){
-                    nuevo_doc2.equals(" ");
+                    nuevo_doc2=" ";
                 }
                 if (nuevo_instdoc2.trim().equals("")){
-                    nuevo_instdoc2.equals(" ");
+                    nuevo_instdoc2=" ";
                 }
                 if (nuevo_anoDoc2.trim().equals("")){
-                    nuevo_anoDoc2.equals(" ");
+                    nuevo_anoDoc2=" ";
                 }
                 if (nuevo_ceduDoc2.trim().equals("")){
-                    nuevo_ceduDoc2.equals(" ");
+                    nuevo_ceduDoc2=" ";
                 }
                 JSONObject jsonObject=new JSONObject();
                 json_datos_formDocente =new JSONArray();
@@ -1657,6 +1749,8 @@ public class Formacion_docente extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         guardando_formAca();
+                                        Intent intent = new Intent(Formacion_docente.this,Login.class);
+                                        startActivity(intent);
                                     }
                                 });
                             }
@@ -1696,6 +1790,235 @@ public class Formacion_docente extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("formacion_docente",formDocente_totales);
+                map.put("id",id_usuer);
+                map.put("id_sesion",id_SesionUsuer);
+                return map;
+            }
+        };
+        requestQueue.add(request);
+    }
+    public void pedir_formAca(){
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.POST,  SERVIDOR_CONTROLADOR+"pedir_formacion_docente.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("respuesta:",response);
+
+                            JSONObject jsonObject = null;
+                            try {
+                                    jsonObject = new JSONObject(response);
+                                    String str_formacion_docente = jsonObject.getString("formacion_docente");
+
+                                    if(!str_formacion_docente.equals("")){
+                                        Log.e("respuesta_frag",""+str_formacion_docente);
+                                        String[] formacion_fragmentada=str_formacion_docente.split(" /\\*-\\*/ ");
+                                        Log.e("respuesta_frag",""+formacion_fragmentada);
+
+                                        if(!formacion_fragmentada[0].equals(" ")){
+
+                                            nuevo_licenciatura=formacion_fragmentada[0];
+                                            nuevo_instPaisLic=formacion_fragmentada[1];
+                                            nuevo_anoObtencionLic=formacion_fragmentada[2];
+                                            nuevo_cedulaProfLic=formacion_fragmentada[3];
+
+                                            Log.e("Nuevalic",""+nuevo_licenciatura);
+                                            licenciatura.setText(nuevo_licenciatura);
+                                            instPaisLic.setText(nuevo_instPaisLic);
+                                            anoObtencionLic.setText(nuevo_anoObtencionLic);
+                                            cedulaProfLic.setText(nuevo_cedulaProfLic);
+
+
+                                            caja_edit_licenciatura.setVisibility(View.GONE);
+                                            caja_licenciatura_final.setVisibility(View.VISIBLE);
+                                            caja_edit_instPais.setVisibility(View.GONE);
+                                            caja_instPais_final.setVisibility(View.VISIBLE);
+                                            caja_edit_anoObtencionLic.setVisibility(View.GONE);
+                                            caja_anoObtencionLic_final.setVisibility(View.VISIBLE);
+                                            caja_edit_anoObtencionLic.setVisibility(View.GONE);
+                                            caja_anoObtencionLic_final.setVisibility(View.VISIBLE);
+                                            caja_edit_cedulaProfLic.setVisibility(View.GONE);
+                                            caja_cedulaProfLic_final.setVisibility(View.VISIBLE);
+
+                                            if(!formacion_fragmentada[4].equals(" ")){
+                                                Log.e("Nuevalic",""+nuevo_licenciatura2);
+
+                                                nuevo_licenciatura2=formacion_fragmentada[4];
+                                                nuevo_instPaisLic2=formacion_fragmentada[5];
+                                                nuevo_anoObtencion2Lic=formacion_fragmentada[6];
+                                                nuevo_cedulaProfLic2=formacion_fragmentada[7];
+                                                licenciatura2.setText(nuevo_licenciatura2);
+                                                instPaisLic2.setText(nuevo_instPaisLic2);
+                                                anoObtencionLic2.setText(nuevo_anoObtencion2Lic);
+                                                cedulaProfLic2.setText(nuevo_cedulaProfLic2);
+                                                caja_anuncio_lic.setVisibility(View.VISIBLE);
+                                                caja_licenciatura2_final.setVisibility(View.VISIBLE);
+                                                caja_edit_licenciatura2.setVisibility(View.GONE);
+                                                caja_anuncio_inst.setVisibility(View.VISIBLE);
+                                                caja_instPais2_final.setVisibility(View.VISIBLE);
+                                                caja_edit_instPais2.setVisibility(View.GONE);
+                                                caja_anuncio_ano.setVisibility(View.VISIBLE);
+                                                caja_anoObtencionLic2_final.setVisibility(View.VISIBLE);
+                                                caja_edit_anoObtencion2.setVisibility(View.GONE);
+                                                caja_anuncio_ced.setVisibility(View.VISIBLE);
+                                                caja_edit_cedulaProf2.setVisibility(View.GONE);
+                                                caja_cedulaProfLic2_final.setVisibility(View.VISIBLE);
+                                                caja_agregar_otraLic.setVisibility(View.GONE);
+                                                caja_borrar_otraLic.setVisibility(View.VISIBLE);
+                                            }
+                                        }
+                                        if(!formacion_fragmentada[8].equals(" ")){
+                                            nuevo_especialidad=formacion_fragmentada[8];
+                                            nuevo_instEsp=formacion_fragmentada[9];
+                                            nuevo_anoEsp =formacion_fragmentada[10];
+                                            nuevo_ceduEsp =formacion_fragmentada[11];
+                                            especialidad.setText(nuevo_especialidad);
+                                            instEsp.setText(nuevo_instEsp);
+                                            anoEsp_vista.setText(nuevo_anoEsp);
+                                            ceduEsp.setText(nuevo_ceduEsp);
+                                            caja_especialidad.setVisibility(View.GONE);
+                                            caja_especialidad_final.setVisibility(View.VISIBLE);
+                                            caja_edit_instEsp.setVisibility(View.GONE);
+                                            caja_instEsp_final.setVisibility(View.VISIBLE);
+                                            caja_anoEsp.setVisibility(View.GONE);
+                                            caja_anoEsp_final.setVisibility(View.VISIBLE);
+                                            caja_edit_ceduEsp.setVisibility(View.GONE);
+                                            caja_ceduEsp_final.setVisibility(View.VISIBLE);
+                                            if(!formacion_fragmentada[12].equals(" ")) {
+                                                nuevo_especialidad2 = formacion_fragmentada[12];
+                                                nuevo_instEsp2 = formacion_fragmentada[13];
+                                                nuevo_anoEsp2 = formacion_fragmentada[14];
+                                                nuevo_ceduEsp2 = formacion_fragmentada[15];
+                                                especialidad2.setText(nuevo_especialidad2);
+                                                instEsp2.setText(nuevo_instEsp2);
+                                                anoEsp2_vista.setText(nuevo_anoEsp2);
+                                                ceduEsp2.setText(nuevo_ceduEsp2);
+                                                caja_anuncio_esp.setVisibility(View.VISIBLE);
+                                                caja_especialidad2.setVisibility(View.GONE);
+                                                caja_especialidad2_final.setVisibility(View.VISIBLE);
+                                                caja_anuncio_instEsp.setVisibility(View.VISIBLE);
+                                                caja_edit_instEsp2.setVisibility(View.GONE);
+                                                caja_instEsp_final2.setVisibility(View.VISIBLE);
+                                                caja_anuncio_anoesp.setVisibility(View.VISIBLE);
+                                                caja_anoEsp2.setVisibility(View.GONE);
+                                                caja_anoEsp2_final.setVisibility(View.VISIBLE);
+                                                caja_anuncio_ceduesp.setVisibility(View.VISIBLE);
+                                                caja_edit_ceduEsp2.setVisibility(View.GONE);
+                                                caja_ceduEsp_final2.setVisibility(View.VISIBLE);
+                                                caja_agregar_otraEsp.setVisibility(View.GONE);
+                                                caja_borrar_otraEsp.setVisibility(View.VISIBLE);
+
+                                            }
+                                        }
+                                        if(!formacion_fragmentada[16].equals(" ")){
+
+                                            nuevo_maes=formacion_fragmentada[16];
+                                            nuevo_instMaes=formacion_fragmentada[17];
+                                            nuevo_anoMaes =formacion_fragmentada[18];
+                                            nuevo_ceduMaes =formacion_fragmentada[19];
+                                            maes.setText(nuevo_maes);
+                                            instMaes.setText(nuevo_instMaes);
+                                            anoMaes_vista.setText(nuevo_anoMaes);
+                                            ceduMaes.setText(nuevo_ceduMaes);
+
+                                            caja_maes.setVisibility(View.GONE);
+                                            maes_final.setVisibility(View.VISIBLE);
+                                            caja_edit_instMaes.setVisibility(View.GONE);
+                                            caja_instMaes_final.setVisibility(View.VISIBLE);
+                                            caja_anoMaes.setVisibility(View.GONE);
+                                            caja_anoMaes_final.setVisibility(View.VISIBLE);
+                                            caja_edit_ceduMaes.setVisibility(View.GONE);
+                                            caja_ceduMaes_final.setVisibility(View.VISIBLE);
+                                            Log.e("20",""+formacion_fragmentada[20]);
+                                            if(!formacion_fragmentada[20].equals(" ")) {
+                                                nuevo_maes2 = formacion_fragmentada[20];
+                                                nuevo_instMaes2 = formacion_fragmentada[21];
+                                                nuevo_anoMaes2 = formacion_fragmentada[22];
+                                                nuevo_ceduMaes2 = formacion_fragmentada[23];
+                                                maes2.setText(nuevo_maes2);
+                                                instMaes2.setText(nuevo_instMaes2);
+                                                anoMaes2_vista.setText(nuevo_anoMaes2);
+                                                ceduMaes2.setText(nuevo_ceduMaes2);
+                                                caja_anuncio_maes2.setVisibility(View.VISIBLE);
+                                                caja_maes2_final.setVisibility(View.VISIBLE);
+                                                caja_maes2.setVisibility(View.GONE);
+                                                caja_anuncio_instMaes2.setVisibility(View.VISIBLE);
+                                                caja_instMaes2_final.setVisibility(View.VISIBLE);
+                                                caja_edit_instMaes2.setVisibility(View.GONE);
+                                                caja_anuncio_anoMaes2.setVisibility(View.VISIBLE);
+                                                caja_anoMaes2_final.setVisibility(View.VISIBLE);
+                                                caja_anoMaes2.setVisibility(View.GONE);
+                                                caja_anuncio_ceduMaes2.setVisibility(View.VISIBLE);
+                                                caja_ceduMaes2_final.setVisibility(View.VISIBLE);
+                                                caja_edit_ceduMaes2.setVisibility(View.GONE);
+                                                caja_agregar_maes.setVisibility(View.GONE);
+                                                caja_borrar_otraMaes.setVisibility(View.VISIBLE);
+                                            }
+                                            if(!formacion_fragmentada[24].equals(" ")) {
+
+                                                nuevo_doc = formacion_fragmentada[24];
+                                                nuevo_instDoc = formacion_fragmentada[25];
+                                                nuevo_anoDoc = formacion_fragmentada[26];
+                                                nuevo_ceduDoc = formacion_fragmentada[27];
+                                                doc.setText(nuevo_doc);
+                                                instDoc.setText(nuevo_instDoc);
+                                                anoDoc_vista.setText(nuevo_anoDoc);
+                                                ceduDoc.setText(nuevo_ceduDoc);
+                                                caja_doc.setVisibility(View.GONE);
+                                                doc_final.setVisibility(View.VISIBLE);
+                                                caja_edit_instDoc.setVisibility(View.GONE);
+                                                caja_instDoc_final.setVisibility(View.VISIBLE);
+                                                caja_anoDoc.setVisibility(View.GONE);
+                                                caja_anoDoc_final.setVisibility(View.VISIBLE);
+                                                caja_edit_ceduDoc.setVisibility(View.GONE);
+                                                caja_ceduDoc_final.setVisibility(View.VISIBLE);
+                                                if(!formacion_fragmentada[28].equals(" ")) {
+                                                    nuevo_doc2 = formacion_fragmentada[28];
+                                                    nuevo_instdoc2 = formacion_fragmentada[29];
+                                                    nuevo_anoDoc2 = formacion_fragmentada[30];
+                                                    nuevo_ceduDoc2 = formacion_fragmentada[31];
+                                                    doc2.setText(nuevo_doc2);
+                                                    instdoc2.setText(nuevo_instdoc2);
+                                                    anoDoc2_vista.setText(nuevo_anoDoc2);
+                                                    ceduDoc2.setText(nuevo_ceduDoc2);
+                                                    caja_anuncio_doc2.setVisibility(View.VISIBLE);
+                                                    caja_doc2.setVisibility(View.GONE);
+                                                    doc2_final.setVisibility(View.VISIBLE);
+                                                    caja_anuncio_instdoc2.setVisibility(View.VISIBLE);
+                                                    caja_edit_instdoc2.setVisibility(View.GONE);
+                                                    caja_instdoc2_final.setVisibility(View.VISIBLE);
+                                                    caja_anuncio_anodoc2.setVisibility(View.VISIBLE);
+                                                    caja_anoDoc2.setVisibility(View.GONE);
+                                                    caja_anoDoc2_final.setVisibility(View.VISIBLE);
+                                                    caja_anuncio_ceduDoc2.setVisibility(View.VISIBLE);
+                                                    caja_edit_ceduDoc2.setVisibility(View.GONE);
+                                                    caja_ceduDoc2_final.setVisibility(View.VISIBLE);
+                                                    caja_agregar_doc.setVisibility(View.GONE);
+                                                    caja_borrar_doc.setVisibility(View.VISIBLE);
+                                                }
+                                            }
+
+
+
+
+                                        }
+                                    }
+
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e( "error", "error: " +error.getMessage());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
                 map.put("id",id_usuer);
                 map.put("id_sesion",id_SesionUsuer);
                 return map;
